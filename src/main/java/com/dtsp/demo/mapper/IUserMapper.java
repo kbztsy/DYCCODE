@@ -12,7 +12,7 @@ import org.mybatis.spring.annotation.MapperScan;
  */
 @Mapper
 public interface IUserMapper {
-    @Select("select * from test01 where t1 = #{t1}")
+    @Select("select * from test01 where t1 = #{t1} AND 1=1")
     User findUserByUserid(@Param("t1") String t1);
     @Insert("insert into test01(t1,t2) values (#{t1},#{t2})")
     boolean insertUsers(@Param("t1") String t1, @Param("t2") String t2);
