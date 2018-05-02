@@ -10,7 +10,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import javax.annotation.Resource;
 
 @Configuration
 @PropertySource(value = {"classpath:url.properties"},encoding="utf-8")
