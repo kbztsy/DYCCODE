@@ -156,4 +156,28 @@ public class Hurt {
     public void setDept_id(String dept_id) {
         this.dept_id = dept_id;
     }
+
+    public Hurt(String patient_name, String sex_id, String nationality_id, String hj, Date date_of_birth,
+                String occupation_id, String address, String xzd, String sfgy, String xshbw, String fsdd, String yzcd, Date fs_date, Date date_of_tb, String tbdw, String person_of_tb, String dept_id) {
+        this.patient_name = patient_name;
+        this.sex_id = sex_id;
+        this.nationality_id = nationality_id;
+        this.hj = hj;
+        this.date_of_birth = date_of_birth;
+        this.occupation_id = occupation_id;
+        this.address = address;
+        this.xzd = xzd;
+        this.sfgy = sfgy;
+        this.xshbw = xshbw;
+        this.fsdd = fsdd;
+        this.yzcd = yzcd;
+        this.fs_date = fs_date;
+        this.date_of_tb = date_of_tb;
+        this.tbdw = tbdw;
+        this.person_of_tb = person_of_tb;
+        this.dept_id = dept_id;
+    }
+
+    public Hurt() {
+    }
 }

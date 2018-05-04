@@ -82,4 +82,20 @@ public class AIDS {
     public void setXszdsyyytgr(String xszdsyyytgr) {
         this.xszdsyyytgr = xszdsyyytgr;
     }
+
+    public AIDS(String marriagestate_id, String culturedegree_id, String crly, String xrqlb, String gqxbs,
+                String xlb, String xjrsy, String szqpz, String xszdsyyytgr) {
+        this.marriagestate_id = marriagestate_id;
+        this.culturedegree_id = culturedegree_id;
+        this.crly = crly;
+        this.xrqlb = xrqlb;
+        this.gqxbs = gqxbs;
+        this.xlb = xlb;
+        this.xjrsy = xjrsy;
+        this.szqpz = szqpz;
+        this.xszdsyyytgr = xszdsyyytgr;
+    }
+
+    public AIDS() {
+    }
 }

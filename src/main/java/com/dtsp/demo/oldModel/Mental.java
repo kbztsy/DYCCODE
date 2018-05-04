@@ -174,4 +174,30 @@ public class Mental {
     public void setBz(String bz) {
         this.bz = bz;
     }
+
+    public Mental(String mzzy_id, String patient_name, String sex_id, String nationality_id, String occupation_id, Date date_of_birth,
+                  String address, String gzdw, String xxgys, String xzd, Date fb_date, String ccmd_id, String zddw, Date date_of_zd, String tbdw, Date date_of_tb, String person_of_tb, String fhrqz, String bz) {
+        this.mzzy_id = mzzy_id;
+        this.patient_name = patient_name;
+        this.sex_id = sex_id;
+        this.nationality_id = nationality_id;
+        this.occupation_id = occupation_id;
+        this.date_of_birth = date_of_birth;
+        this.address = address;
+        this.gzdw = gzdw;
+        this.xxgys = xxgys;
+        this.xzd = xzd;
+        this.fb_date = fb_date;
+        this.ccmd_id = ccmd_id;
+        this.zddw = zddw;
+        this.date_of_zd = date_of_zd;
+        this.tbdw = tbdw;
+        this.date_of_tb = date_of_tb;
+        this.person_of_tb = person_of_tb;
+        this.fhrqz = fhrqz;
+        this.bz = bz;
+    }
+
+    public Mental() {
+    }
 }

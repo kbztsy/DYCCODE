@@ -129,4 +129,25 @@ public class HeartBrain {
     public void setPerson_of_tb(String person_of_tb) {
         this.person_of_tb = person_of_tb;
     }
+
+    public HeartBrain(String mzzy_id, String patient_name, String sex_id, String nationality_id,
+                      String occupation_id, Date date_of_birth, String address, String xyqk, String xzd, String zddw, Date date_of_zd, String tbdw, Date date_of_tb, String person_of_tb) {
+        this.mzzy_id = mzzy_id;
+        this.patient_name = patient_name;
+        this.sex_id = sex_id;
+        this.nationality_id = nationality_id;
+        this.occupation_id = occupation_id;
+        this.date_of_birth = date_of_birth;
+        this.address = address;
+        this.xyqk = xyqk;
+        this.xzd = xzd;
+        this.zddw = zddw;
+        this.date_of_zd = date_of_zd;
+        this.tbdw = tbdw;
+        this.date_of_tb = date_of_tb;
+        this.person_of_tb = person_of_tb;
+    }
+
+    public HeartBrain() {
+    }
 }

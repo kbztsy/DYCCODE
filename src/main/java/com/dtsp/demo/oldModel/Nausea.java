@@ -219,4 +219,35 @@ public class Nausea {
     public void setPerson_of_tb(String person_of_tb) {
         this.person_of_tb = person_of_tb;
     }
+
+    public Nausea(String mzzy_id, String patient_name, String sex_id, String nationality_id, String occupation_id, Date date_of_birth, String hyqk, String idcard_no, String address, String hk_address, String xyqk,
+                  String zd, String bllx, String qzsqb, String disease_id, String lcfq, String vicdo3, String fhcd, String xhbz, String zddw, Date date_of_zd, String tbdw, Date date_of_tb, String person_of_tb) {
+        this.mzzy_id = mzzy_id;
+        this.patient_name = patient_name;
+        this.sex_id = sex_id;
+        this.nationality_id = nationality_id;
+        this.occupation_id = occupation_id;
+        this.date_of_birth = date_of_birth;
+        this.hyqk = hyqk;
+        this.idcard_no = idcard_no;
+        this.address = address;
+        this.hk_address = hk_address;
+        this.xyqk = xyqk;
+        this.zd = zd;
+        this.bllx = bllx;
+        this.qzsqb = qzsqb;
+        this.disease_id = disease_id;
+        this.lcfq = lcfq;
+        this.vicdo3 = vicdo3;
+        this.fhcd = fhcd;
+        this.xhbz = xhbz;
+        this.zddw = zddw;
+        this.date_of_zd = date_of_zd;
+        this.tbdw = tbdw;
+        this.date_of_tb = date_of_tb;
+        this.person_of_tb = person_of_tb;
+    }
+
+    public Nausea() {
+    }
 }
