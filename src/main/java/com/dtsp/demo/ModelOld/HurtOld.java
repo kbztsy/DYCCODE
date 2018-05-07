@@ -2,7 +2,7 @@ package com.dtsp.demo.ModelOld;
 
 import java.util.Date;
 
-public class Hurt {
+public class HurtOld {
     private String patient_name;
     private String sex_id;
     private String nationality_id;
@@ -157,8 +157,8 @@ public class Hurt {
         this.dept_id = dept_id;
     }
 
-    public Hurt(String patient_name, String sex_id, String nationality_id, String hj, Date date_of_birth,
-                String occupation_id, String address, String xzd, String sfgy, String xshbw, String fsdd, String yzcd, Date fs_date, Date date_of_tb, String tbdw, String person_of_tb, String dept_id) {
+    public HurtOld(String patient_name, String sex_id, String nationality_id, String hj, Date date_of_birth,
+                   String occupation_id, String address, String xzd, String sfgy, String xshbw, String fsdd, String yzcd, Date fs_date, Date date_of_tb, String tbdw, String person_of_tb, String dept_id) {
         this.patient_name = patient_name;
         this.sex_id = sex_id;
         this.nationality_id = nationality_id;
@@ -178,6 +178,6 @@ public class Hurt {
         this.dept_id = dept_id;
     }
 
-    public Hurt() {
+    public HurtOld() {
     }
 }

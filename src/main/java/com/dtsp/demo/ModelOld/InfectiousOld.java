@@ -1,8 +1,8 @@
-package com.dtsp.demo.ModelNew;
+package com.dtsp.demo.ModelOld;
 
 import java.util.Date;
 
-public class Infectious {
+public class InfectiousOld {
 
 
     private String 	mzzy_id;// 门诊住院号
@@ -249,8 +249,8 @@ public class Infectious {
         this.idcard_no = idcard_no;
     }
 
-    public Infectious(String mzzy_id, String patient_name, String hejz_name, String idcard_no, String sex_id, Date date_of_birth, String telephone, String gzdw, String brsy, String address, String occupation_id, String xblfl1, String xblfl2, Date fb_date, Date date_of_zd, Date dare_date, String xzd, String xzd2, String xzd3, String dzbm, String yzd, String tbdw,
-                      String dept_id, String person_of_tb, Date date_of_tb, Date bysk_date, String bz) {
+    public InfectiousOld(String mzzy_id, String patient_name, String hejz_name, String idcard_no, String sex_id, Date date_of_birth, String telephone, String gzdw, String brsy, String address, String occupation_id, String xblfl1, String xblfl2, Date fb_date, Date date_of_zd, Date dare_date, String xzd, String xzd2, String xzd3, String dzbm, String yzd, String tbdw,
+                         String dept_id, String person_of_tb, Date date_of_tb, Date bysk_date, String bz) {
         this.mzzy_id = mzzy_id;
         this.patient_name = patient_name;
         this.hejz_name = hejz_name;
@@ -280,6 +280,6 @@ public class Infectious {
         this.bz = bz;
     }
 
-    public Infectious() {
+    public InfectiousOld() {
     }
 }

@@ -1,13 +1,13 @@
-package com.dtsp.demo.ModelNew;
+package com.dtsp.demo.ModelOld;
 
 import java.util.Date;
 
-public class Internal {
+public class InternalOld {
     private String mzzy_id;// 门诊住院号
     private String	dept_id;//科室
     private String	patient_name ;//患者姓名
     private String	sex_id ;// 性别
-    private String	date_of_birth ;//出生日期
+    private Date	date_of_birth ;//出生日期
     private String	zd ;//临床诊断
     private String	xshbw;//  感染部位
     private String	yygrzz;//院内感染症状
@@ -51,11 +51,11 @@ public class Internal {
         this.sex_id = sex_id;
     }
 
-    public String getDate_of_birth() {
+    public Date getDate_of_birth() {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(String date_of_birth) {
+    public void setDate_of_birth(Date date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 
@@ -139,25 +139,24 @@ public class Internal {
         this.syhkss = syhkss;
     }
 
-    public Internal(String mzzy_id, String dept_id, String patient_name, String sex_id, String date_of_birth, String zd, String xshbw, String yygrzz,
-                    Date yngr_date, Date sj_date, String bb_name, String xjz, String ymjg, String xwxys, String syhkss) {
-        this.mzzy_id = mzzy_id;
-        this.dept_id = dept_id;
-        this.patient_name = patient_name;
-        this.sex_id = sex_id;
-        this.date_of_birth = date_of_birth;
-        this.zd = zd;
-        this.xshbw = xshbw;
-        this.yygrzz = yygrzz;
-        this.yngr_date = yngr_date;
-        this.sj_date = sj_date;
-        this.bb_name = bb_name;
-        this.xjz = xjz;
-        this.ymjg = ymjg;
-        this.xwxys = xwxys;
-        this.syhkss = syhkss;
-    }
-
-    public Internal() {
+    @Override
+    public String toString() {
+        return "InternalOld{" +
+                "mzzy_id='" + mzzy_id + '\'' +
+                ", dept_id='" + dept_id + '\'' +
+                ", patient_name='" + patient_name + '\'' +
+                ", sex_id='" + sex_id + '\'' +
+                ", date_of_birth=" + date_of_birth +
+                ", zd='" + zd + '\'' +
+                ", xshbw='" + xshbw + '\'' +
+                ", yygrzz='" + yygrzz + '\'' +
+                ", yngr_date=" + yngr_date +
+                ", sj_date=" + sj_date +
+                ", bb_name='" + bb_name + '\'' +
+                ", xjz='" + xjz + '\'' +
+                ", ymjg='" + ymjg + '\'' +
+                ", xwxys='" + xwxys + '\'' +
+                ", syhkss='" + syhkss + '\'' +
+                '}';
     }
 }

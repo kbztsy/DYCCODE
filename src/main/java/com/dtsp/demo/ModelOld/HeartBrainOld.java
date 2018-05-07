@@ -2,7 +2,7 @@ package com.dtsp.demo.ModelOld;
 
 import java.util.Date;
 
-public class Cirrhosis {
+public class HeartBrainOld {
     private String mzzy_id;
     private String patient_name;
     private String sex_id;
@@ -10,10 +10,8 @@ public class Cirrhosis {
     private String occupation_id;
     private Date date_of_birth;
     private String address;
+    private String xyqk;
     private String xzd;
-    private String disease_id;
-    private String xjws;
-    private String xym;
     private String zddw;
     private Date date_of_zd;
     private String tbdw;
@@ -76,36 +74,20 @@ public class Cirrhosis {
         this.address = address;
     }
 
+    public String getXyqk() {
+        return xyqk;
+    }
+
+    public void setXyqk(String xyqk) {
+        this.xyqk = xyqk;
+    }
+
     public String getXzd() {
         return xzd;
     }
 
     public void setXzd(String xzd) {
         this.xzd = xzd;
-    }
-
-    public String getDisease_id() {
-        return disease_id;
-    }
-
-    public void setDisease_id(String disease_id) {
-        this.disease_id = disease_id;
-    }
-
-    public String getXjws() {
-        return xjws;
-    }
-
-    public void setXjws(String xjws) {
-        this.xjws = xjws;
-    }
-
-    public String getXym() {
-        return xym;
-    }
-
-    public void setXym(String xym) {
-        this.xym = xym;
     }
 
     public String getZddw() {
@@ -148,8 +130,8 @@ public class Cirrhosis {
         this.person_of_tb = person_of_tb;
     }
 
-    public Cirrhosis(String mzzy_id, String patient_name, String sex_id, String nationality_id, String occupation_id, Date date_of_birth, String address, String xzd,
-                     String disease_id, String xjws, String xym, String zddw, Date date_of_zd, String tbdw, Date date_of_tb, String person_of_tb) {
+    public HeartBrainOld(String mzzy_id, String patient_name, String sex_id, String nationality_id,
+                         String occupation_id, Date date_of_birth, String address, String xyqk, String xzd, String zddw, Date date_of_zd, String tbdw, Date date_of_tb, String person_of_tb) {
         this.mzzy_id = mzzy_id;
         this.patient_name = patient_name;
         this.sex_id = sex_id;
@@ -157,10 +139,8 @@ public class Cirrhosis {
         this.occupation_id = occupation_id;
         this.date_of_birth = date_of_birth;
         this.address = address;
+        this.xyqk = xyqk;
         this.xzd = xzd;
-        this.disease_id = disease_id;
-        this.xjws = xjws;
-        this.xym = xym;
         this.zddw = zddw;
         this.date_of_zd = date_of_zd;
         this.tbdw = tbdw;
@@ -168,6 +148,6 @@ public class Cirrhosis {
         this.person_of_tb = person_of_tb;
     }
 
-    public Cirrhosis() {
+    public HeartBrainOld() {
     }
 }

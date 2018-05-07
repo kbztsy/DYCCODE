@@ -2,7 +2,7 @@ package com.dtsp.demo.ModelOld;
 
 import java.util.Date;
 
-public class Mental {
+public class MentalOld {
     private String mzzy_id;
     private String patient_name;
     private String sex_id;
@@ -175,8 +175,8 @@ public class Mental {
         this.bz = bz;
     }
 
-    public Mental(String mzzy_id, String patient_name, String sex_id, String nationality_id, String occupation_id, Date date_of_birth,
-                  String address, String gzdw, String xxgys, String xzd, Date fb_date, String ccmd_id, String zddw, Date date_of_zd, String tbdw, Date date_of_tb, String person_of_tb, String fhrqz, String bz) {
+    public MentalOld(String mzzy_id, String patient_name, String sex_id, String nationality_id, String occupation_id, Date date_of_birth,
+                     String address, String gzdw, String xxgys, String xzd, Date fb_date, String ccmd_id, String zddw, Date date_of_zd, String tbdw, Date date_of_tb, String person_of_tb, String fhrqz, String bz) {
         this.mzzy_id = mzzy_id;
         this.patient_name = patient_name;
         this.sex_id = sex_id;
@@ -198,6 +198,6 @@ public class Mental {
         this.bz = bz;
     }
 
-    public Mental() {
+    public MentalOld() {
     }
 }

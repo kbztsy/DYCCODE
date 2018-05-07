@@ -1,22 +1,24 @@
-package com.dtsp.demo.ModelNew;
+package com.dtsp.demo.ModelOld;
 
-public class Diabetes {
+import java.util.Date;
 
-    private String  mzzy_id;//   门诊住院号
-    private String	patient_name;//  患者姓名
-    private String	sex_id;//    性别
-    private String	nationality_id;//    民族
-    private String	occupation_id;//    职业
-    private String	date_of_birth;// 出生日期
-    private String	address;//  现住址
-    private String	xzd1;//    诊断
-    private String 	xhbz1;//    合并症
-    private String disease_id;// ICD--10
-    private String	zddw;//    诊断单位
-    private String	date_of_zd;//诊断日期
-    private String	tbdw;//    填报单位
-    private String	date_of_tb;//  填报日期
-    private String	 person_of_tb;//  填报人
+public class CirrhosisOld {
+    private String mzzy_id;
+    private String patient_name;
+    private String sex_id;
+    private String nationality_id;
+    private String occupation_id;
+    private Date date_of_birth;
+    private String address;
+    private String xzd;
+    private String disease_id;
+    private String xjws;
+    private String xym;
+    private String zddw;
+    private Date date_of_zd;
+    private String tbdw;
+    private Date date_of_tb;
+    private String person_of_tb;
 
     public String getMzzy_id() {
         return mzzy_id;
@@ -58,11 +60,11 @@ public class Diabetes {
         this.occupation_id = occupation_id;
     }
 
-    public String getDate_of_birth() {
+    public Date getDate_of_birth() {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(String date_of_birth) {
+    public void setDate_of_birth(Date date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 
@@ -74,20 +76,12 @@ public class Diabetes {
         this.address = address;
     }
 
-    public String getXzd1() {
-        return xzd1;
+    public String getXzd() {
+        return xzd;
     }
 
-    public void setXzd1(String xzd1) {
-        this.xzd1 = xzd1;
-    }
-
-    public String getXhbz1() {
-        return xhbz1;
-    }
-
-    public void setXhbz1(String xhbz1) {
-        this.xhbz1 = xhbz1;
+    public void setXzd(String xzd) {
+        this.xzd = xzd;
     }
 
     public String getDisease_id() {
@@ -98,6 +92,22 @@ public class Diabetes {
         this.disease_id = disease_id;
     }
 
+    public String getXjws() {
+        return xjws;
+    }
+
+    public void setXjws(String xjws) {
+        this.xjws = xjws;
+    }
+
+    public String getXym() {
+        return xym;
+    }
+
+    public void setXym(String xym) {
+        this.xym = xym;
+    }
+
     public String getZddw() {
         return zddw;
     }
@@ -106,11 +116,11 @@ public class Diabetes {
         this.zddw = zddw;
     }
 
-    public String getDate_of_zd() {
+    public Date getDate_of_zd() {
         return date_of_zd;
     }
 
-    public void setDate_of_zd(String date_of_zd) {
+    public void setDate_of_zd(Date date_of_zd) {
         this.date_of_zd = date_of_zd;
     }
 
@@ -122,11 +132,11 @@ public class Diabetes {
         this.tbdw = tbdw;
     }
 
-    public String getDate_of_tb() {
+    public Date getDate_of_tb() {
         return date_of_tb;
     }
 
-    public void setDate_of_tb(String date_of_tb) {
+    public void setDate_of_tb(Date date_of_tb) {
         this.date_of_tb = date_of_tb;
     }
 
@@ -138,8 +148,8 @@ public class Diabetes {
         this.person_of_tb = person_of_tb;
     }
 
-    public Diabetes(String mzzy_id, String patient_name, String sex_id, String nationality_id, String occupation_id, String date_of_birth, String address, String xzd1, String xhbz1, String disease_id, String zddw,
-                    String date_of_zd, String tbdw, String date_of_tb, String person_of_tb) {
+    public CirrhosisOld(String mzzy_id, String patient_name, String sex_id, String nationality_id, String occupation_id, Date date_of_birth, String address, String xzd,
+                        String disease_id, String xjws, String xym, String zddw, Date date_of_zd, String tbdw, Date date_of_tb, String person_of_tb) {
         this.mzzy_id = mzzy_id;
         this.patient_name = patient_name;
         this.sex_id = sex_id;
@@ -147,9 +157,10 @@ public class Diabetes {
         this.occupation_id = occupation_id;
         this.date_of_birth = date_of_birth;
         this.address = address;
-        this.xzd1 = xzd1;
-        this.xhbz1 = xhbz1;
+        this.xzd = xzd;
         this.disease_id = disease_id;
+        this.xjws = xjws;
+        this.xym = xym;
         this.zddw = zddw;
         this.date_of_zd = date_of_zd;
         this.tbdw = tbdw;
@@ -157,6 +168,6 @@ public class Diabetes {
         this.person_of_tb = person_of_tb;
     }
 
-    public Diabetes() {
+    public CirrhosisOld() {
     }
 }
