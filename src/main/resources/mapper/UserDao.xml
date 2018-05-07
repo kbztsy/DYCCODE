@@ -14,5 +14,9 @@
        <insert id="addUser">
               insert into demo(name,create_time) values(#{name},#{createTime})
        </insert>
+       <insert id="insertUser">
+              insert into demo(id,name,create_time) values(#{id},#{name},#{createTime})
+       </insert>
+
 </mapper>
 

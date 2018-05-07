@@ -17,6 +17,7 @@ import java.util.Map;
 public interface MoredataDao {
     //使用xml配置形式查询
     public List<Map> getAllUser();
+    public boolean insertUser(@Param("id") String id,@Param("name")String name,@Param("createTime")String createTime);
     public Long addUserGetID(Demo user);
     public void addUser(@Param("name") String name);
 }

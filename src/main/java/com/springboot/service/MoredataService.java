@@ -29,6 +29,12 @@ public class MoredataService {
         return moredataDao.getAllUser();
     }
 
+    @DS("datasource1")
+    public boolean insertUser(String id,String name,String createTime){
+        return moredataDao.insertUser(id,name,createTime);
+    }
+
+
     //使用数据源1插入数据
     @DS("datasource1")
     public Long addUserGetID1(Demo user){
