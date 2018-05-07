@@ -59,7 +59,7 @@ public class TimerClass {
     @Value("${HospitalIP20}")
     private String HospitalIP20;
 
-    @Scheduled(cron = "0 0/1 * * * ?")
+//    @Scheduled(cron = "0 0/1 * * * ?")
     public void demo(){
         String[] hospitalIPs = new String[20];
         hospitalIPs = timerClass.Strs(hospitalIPs);

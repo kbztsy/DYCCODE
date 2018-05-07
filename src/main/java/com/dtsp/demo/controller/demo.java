@@ -20,6 +20,7 @@ public class demo {
     @Autowired
     private IRegService regService;
 
+
     @RequestMapping(value = "/hello")
     public String hello() {
         return "hello";

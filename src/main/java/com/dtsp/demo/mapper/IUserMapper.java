@@ -1,11 +1,10 @@
 package com.dtsp.demo.mapper;
 
-import com.dtsp.demo.model.User;
+import com.dtsp.demo.ModelNew.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import org.mybatis.spring.annotation.MapperScan;
 
 /**
  * Created by Administrator on 2018-04-27.
