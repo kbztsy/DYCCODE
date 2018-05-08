@@ -1,7 +1,7 @@
-package com.dtsp.demo.ModelRef;
+package com.springboot.ModelRef;
 
-import com.dtsp.demo.ModelNew.AIDSNew;
-import com.dtsp.demo.ModelOld.AIDSOld;
+import com.springboot.ModelNew.AIDSNew;
+import com.springboot.ModelOld.AIDSOld;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,9 +1,7 @@
-package com.dtsp.demo.ModelRef;
+package com.springboot.ModelRef;
 
-import com.dtsp.demo.ModelNew.AIDSNew;
-import com.dtsp.demo.ModelNew.InfectiousNew;
-import com.dtsp.demo.ModelOld.AIDSOld;
-import com.dtsp.demo.ModelOld.InfectiousOld;
+import com.springboot.ModelNew.InfectiousNew;
+import com.springboot.ModelOld.InfectiousOld;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;

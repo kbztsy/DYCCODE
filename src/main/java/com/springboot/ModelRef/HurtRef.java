@@ -1,12 +1,9 @@
-package com.dtsp.demo.ModelRef;
+package com.springboot.ModelRef;
 
-import com.dtsp.demo.ModelNew.HeartBrainNew;
-import com.dtsp.demo.ModelNew.HurtNew;
-import com.dtsp.demo.ModelOld.HeartBrainOld;
-import com.dtsp.demo.ModelOld.HurtOld;
+import com.springboot.ModelNew.HurtNew;
+import com.springboot.ModelOld.HurtOld;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Date;
 import java.util.List;
 
 public class HurtRef {

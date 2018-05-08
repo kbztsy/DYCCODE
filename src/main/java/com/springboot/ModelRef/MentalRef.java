@@ -1,9 +1,7 @@
-package com.dtsp.demo.ModelRef;
+package com.springboot.ModelRef;
 
-import com.dtsp.demo.ModelNew.InternalNew;
-import com.dtsp.demo.ModelNew.MentalNew;
-import com.dtsp.demo.ModelOld.InternalOld;
-import com.dtsp.demo.ModelOld.MentalOld;
+import com.springboot.ModelNew.MentalNew;
+import com.springboot.ModelOld.MentalOld;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;

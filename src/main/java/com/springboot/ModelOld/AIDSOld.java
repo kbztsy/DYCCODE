@@ -1,4 +1,4 @@
-package com.dtsp.demo.ModelOld;
+package com.springboot.ModelOld;
 
 import org.springframework.stereotype.Component;
 

@@ -1,9 +1,7 @@
-package com.dtsp.demo.ModelRef;
+package com.springboot.ModelRef;
 
-import com.dtsp.demo.ModelNew.AIDSNew;
-import com.dtsp.demo.ModelNew.DiabetesNew;
-import com.dtsp.demo.ModelOld.AIDSOld;
-import com.dtsp.demo.ModelOld.DiabetesOld;
+import com.springboot.ModelNew.DiabetesNew;
+import com.springboot.ModelOld.DiabetesOld;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;

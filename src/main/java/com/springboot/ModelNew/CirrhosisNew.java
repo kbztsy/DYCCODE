@@ -1,4 +1,4 @@
-package com.dtsp.demo.ModelNew;
+package com.springboot.ModelNew;
 import java.util.Date;
 public class CirrhosisNew {
     private String VISIT_NO;
