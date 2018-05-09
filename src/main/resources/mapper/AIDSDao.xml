@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.springboot.dao.AIDSDao">
+    <!-- 查询所有user -->
+    <select id="GetAIDS" resultType="com.springboot.ModelOld.AIDSOld">
+              select patient_name,
+              sex_id,
+              Nationality_ID,
+              HJ,
+              date_of_birth ,
+              Occupation_ID,
+              Address,
+              ZD,
+              sfgy,
+              SHBW,
+              FSDD,
+              YZCD,
+              FS_date,
+              Date_of_TB,
+              TBDW,
+              person_of_tb
+              from FBK_BKBZ_RECORD WHERE 1=1 AND BKLX_ID='11' ORDER BY Date_of_TB DESC;
+       </select>
+    <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
+    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
+    <insert id="InsertAIDS" parameterType="com.springboot.ModelNew.AIDSNew"
+            useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+
+    </insert>
+</mapper>

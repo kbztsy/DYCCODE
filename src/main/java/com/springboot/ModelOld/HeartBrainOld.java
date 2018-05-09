@@ -2,7 +2,7 @@ package com.springboot.ModelOld;
 
 import java.util.Date;
 
-public class HeartBrainOld {
+public class HeartBrainOld {//冠心病，腦卒中
     private String mzzy_id;
     private String patient_name;
     private String sex_id;

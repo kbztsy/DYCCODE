@@ -2,7 +2,7 @@ package com.springboot.ModelOld;
 
 import java.util.Date;
 
-public class HurtOld {
+public class HurtOld {//伤害
     private String patient_name;
     private String sex_id;
     private String nationality_id;

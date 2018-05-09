@@ -2,17 +2,16 @@ package com.springboot.ModelOld;
 
 import java.util.Date;
 
-public class DiabetesOld {
-
+public class DiabetesOld {//糖尿病
     private String  mzzy_id;//   门诊住院号
     private String	patient_name;//  患者姓名
     private String	sex_id;//    性别
     private String	nationality_id;//    民族
     private String	occupation_id;//    职业
-    private Date	date_of_birth;// 出生日期
+    private Date date_of_birth;// 出生日期
     private String	address;//  现住址
     private String	xzd1;//    诊断
-    private String 	xhbz1;//    合并症
+    private String xhbz1;//    合并症
     private String disease_id;// ICD--10
     private String	zddw;//    诊断单位
     private Date	date_of_zd;//诊断日期

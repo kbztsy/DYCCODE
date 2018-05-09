@@ -54,12 +54,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- 开发测试环境修改文件实时生效包,生产默认不使用 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
         <!-- springboot+freemarker整合包 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

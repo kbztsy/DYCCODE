@@ -2,7 +2,7 @@ package com.springboot.ModelOld;
 
 import java.util.Date;
 
-public class CirrhosisOld {
+public class CirrhosisOld {//肝硬化
     private String mzzy_id;
     private String patient_name;
     private String sex_id;

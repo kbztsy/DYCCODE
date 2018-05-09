@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.springboot.dao.HurtDao">
+    <!-- 查询所有user -->
+    <select id="GetHurt" resultType="com.springboot.ModelOld.HurtOld">
+        SELECT
+        Patient_Name as patient_name,
+        Sex_ID as sex_id,
+        Nationality_ID as nationality_id,
+        HJ as hj,
+        Date_of_Birth as date_of_birth,
+        Occupation_ID as occupation_id,
+        Address as address,
+        ZD as xzd,
+        SFGY as sfgy,
+        SHBW as xshbw,
+        FSDD as fsdd,
+        YZCD as yzcd,
+        FS_date as fs_date,
+        Date_of_TB as date_of_tb,
+        TBDW as tbdw,
+        Person_of_TB as person_of_tb
+        FROM FBK_BKBZ_Record WHERE 1=1 AND BKLX_ID = '01' order by Date_of_TB DESC;
+    </select>
+    <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
+    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
+</mapper>

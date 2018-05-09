@@ -1,9 +1,9 @@
-package com.springboot.ModelOld;
+package com.springboot.entity;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class AIDSOld {//艾滋病
+public class AIDS {
     private String marriagestate_id;
     private String culturedegree_id;
     private String crly;
