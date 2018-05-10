@@ -25,6 +25,10 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
         <!-- springboot核心包-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -59,7 +63,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
-
         <!-- mysql数据库连接包 -->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
