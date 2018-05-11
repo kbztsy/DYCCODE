@@ -25,4 +25,67 @@
     </select>
     <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
     <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
+
+    <!-- public  boolean insertHurt(HurtOld hurtOld);-->
+
+    <insert id="insertHurt"
+            parameterType="com.springboot.ModelNew.HurtNew">
+insert into
+    MEDICAL_INFORMATION_ENREGISTER
+    (
+      INF_ID,
+      SICK_NAME,
+      SICK_SEX,
+      NATION,
+      ZONE_TYPE,
+      BIRTHDAY,
+      OCCUPATION,
+      ADDRESS,
+      CREATE_TIME,
+      WRITE_DOCTOR
+     )
+    values
+    (
+      #{ID},
+      #{SICK_NAME},
+      #{SICK_SEX},
+      #{NATION},
+      #{ZONE_TYPE},
+      #{BIRTHDAY},
+      #{OCCUPATION},
+      #{ADDRESS},
+      #{CREATE_TIME},
+      #{WRITE_DOCTOR}
+     )
+    </insert>
+
+    <!--  public  boolean insertMEDICAL (HurtOld hurtOld);-->
+    <insert id="insertMEDICAL"
+            parameterType="com.springboot.ModelNew.HurtNew">
+insert into
+    FIRST_DIAGNOSE_REPORT_HARM
+    (
+      ID,
+      HARM_REASON,
+      DELIBERATELY,
+      HARM_PART,
+      PART_OTHER_TEXT,
+      TAKE_PLACE,
+      SEVERITY,
+      OCCURRED_DATE
+    )
+    values
+    (
+      #{FID},
+      #{HARM_REASON},
+      #{DELIBERATELY},
+      #{HARM_PART},
+      #{PART_OTHER_TEXT},
+      #{TAKE_PLACE},
+      #{SEVERITY},
+      #{OCCURRED_DATE}
+     )
+
+    </insert>
+
 </mapper>

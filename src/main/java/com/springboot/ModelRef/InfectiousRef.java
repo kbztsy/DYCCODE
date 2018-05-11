@@ -2,19 +2,31 @@ package com.springboot.ModelRef;
 
 import com.springboot.ModelNew.InfectiousNew;
 import com.springboot.ModelOld.InfectiousOld;
+import com.springboot.util.DateStr;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import javax.annotation.Resource;
 import java.util.List;
-
+@Component
 public class InfectiousRef {
 
     @Autowired
     private List<InfectiousNew> listNew;
     @Autowired
     private InfectiousNew infectiousN;
+    @Resource
+    private RandNum randNum;
+    @Resource
+    private RandNumber randNumber;
+    @Resource
+    private RandString randString;
+    @Resource
+    private DateStr dateStr;
     public List<InfectiousNew> REF(List<InfectiousOld> listOld){
         for (int i = 0;i<listOld.size();i++){
+            infectiousN.setFID(randNumber.Randint());
+            infectiousN.setID(randString.RandStr());
             infectiousN.setVISIT_NO(listOld.get(i).getMzzy_id());
             infectiousN.setRESI_CASE_NO(listOld.get(i).getMzzy_id());
             infectiousN.setSICK_NAME(listOld.get(i).getPatient_name());

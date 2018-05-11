@@ -1,6 +1,11 @@
 package com.springboot.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
+@Component
 public class InfectiousNew {
+    private String ID;
+    private Long FID;
     private String 	VISIT_NO;// 门诊住院号
     private String RESI_CASE_NO;
     private String 	SICK_NAME;// 患者姓名
@@ -20,6 +25,22 @@ public class InfectiousNew {
     private Date 	DEATH_DATE;//死亡日期
     private String 	WRITE_DOCTOR;//填报医生
     private Date  	CREATE_TIME;//医生填卡日期
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
 
     public String getVISIT_NO() {
         return VISIT_NO;

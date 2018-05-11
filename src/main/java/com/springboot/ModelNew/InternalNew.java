@@ -1,11 +1,32 @@
 package com.springboot.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
+@Component
 public class InternalNew {
+    private String ID;
+    private Long FID;
     private String VISIT_NO;// 门诊住院号
     private String RESI_CASE_NO;
     private String	SICK_NAME ;//患者姓名
     private String	SICK_SEX ;// 性别
     private Date	BIRTHDAY ;//出生日期
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
 
     public String getVISIT_NO() {
         return VISIT_NO;

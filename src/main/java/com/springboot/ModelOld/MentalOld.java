@@ -1,7 +1,9 @@
 package com.springboot.ModelOld;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class MentalOld {
     private String mzzy_id;
     private String patient_name;
@@ -196,6 +198,31 @@ public class MentalOld {
         this.person_of_tb = person_of_tb;
         this.fhrqz = fhrqz;
         this.bz = bz;
+    }
+
+    @Override
+    public String toString() {
+        return "MentalOld{" +
+                "mzzy_id='" + mzzy_id + '\'' +
+                ", patient_name='" + patient_name + '\'' +
+                ", sex_id='" + sex_id + '\'' +
+                ", nationality_id='" + nationality_id + '\'' +
+                ", occupation_id='" + occupation_id + '\'' +
+                ", date_of_birth=" + date_of_birth +
+                ", address='" + address + '\'' +
+                ", gzdw='" + gzdw + '\'' +
+                ", xxgys='" + xxgys + '\'' +
+                ", xzd='" + xzd + '\'' +
+                ", fb_date=" + fb_date +
+                ", ccmd_id='" + ccmd_id + '\'' +
+                ", zddw='" + zddw + '\'' +
+                ", date_of_zd=" + date_of_zd +
+                ", tbdw='" + tbdw + '\'' +
+                ", date_of_tb=" + date_of_tb +
+                ", person_of_tb='" + person_of_tb + '\'' +
+                ", fhrqz='" + fhrqz + '\'' +
+                ", bz='" + bz + '\'' +
+                '}';
     }
 
     public MentalOld() {

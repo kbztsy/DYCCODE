@@ -6,7 +6,7 @@ import java.util.Date;
 @Component
 public class DiabetesNew {
     private String ID;
-    private String FID;
+    private Long FID;
     private String  VISIT_NO;//   门诊住院号
     private String RESI_CASE_NO;
     private String	SICK_NAME;//  患者姓名
@@ -24,11 +24,11 @@ public class DiabetesNew {
     private Date	CREATE_TIME;//  填报日期
     private String	 WRITE_DOCTOR;//  填报医生
 
-    public String getFID() {
+    public Long getFID() {
         return FID;
     }
 
-    public void setFID(String FID) {
+    public void setFID(Long FID) {
         this.FID = FID;
     }
 

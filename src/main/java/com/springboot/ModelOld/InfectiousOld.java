@@ -1,7 +1,9 @@
 package com.springboot.ModelOld;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class InfectiousOld {
 
 
@@ -278,6 +280,39 @@ public class InfectiousOld {
         this.date_of_tb = date_of_tb;
         this.bysk_date = bysk_date;
         this.bz = bz;
+    }
+
+    @Override
+    public String toString() {
+        return "InfectiousOld{" +
+                "mzzy_id='" + mzzy_id + '\'' +
+                ", patient_name='" + patient_name + '\'' +
+                ", hejz_name='" + hejz_name + '\'' +
+                ", idcard_no='" + idcard_no + '\'' +
+                ", sex_id='" + sex_id + '\'' +
+                ", date_of_birth=" + date_of_birth +
+                ", telephone='" + telephone + '\'' +
+                ", gzdw='" + gzdw + '\'' +
+                ", brsy='" + brsy + '\'' +
+                ", address='" + address + '\'' +
+                ", occupation_id='" + occupation_id + '\'' +
+                ", xblfl1='" + xblfl1 + '\'' +
+                ", xblfl2='" + xblfl2 + '\'' +
+                ", fb_date=" + fb_date +
+                ", date_of_zd=" + date_of_zd +
+                ", dare_date=" + dare_date +
+                ", xzd='" + xzd + '\'' +
+                ", xzd2='" + xzd2 + '\'' +
+                ", xzd3='" + xzd3 + '\'' +
+                ", dzbm='" + dzbm + '\'' +
+                ", yzd='" + yzd + '\'' +
+                ", tbdw='" + tbdw + '\'' +
+                ", dept_id='" + dept_id + '\'' +
+                ", person_of_tb='" + person_of_tb + '\'' +
+                ", date_of_tb=" + date_of_tb +
+                ", bysk_date=" + bysk_date +
+                ", bz='" + bz + '\'' +
+                '}';
     }
 
     public InfectiousOld() {

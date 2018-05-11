@@ -1,6 +1,11 @@
 package com.springboot.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
+@Component
 public class MentalNew {
+    private String ID;
+    private Long FID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -20,6 +25,22 @@ public class MentalNew {
     private Date RECEPTION_TIME;
     private Date CREATE_TIME;
     private String WRITE_DOCTOR;
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
 
     public String getVISIT_NO() {
         return VISIT_NO;

@@ -1,6 +1,11 @@
 package com.springboot.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
+@Component
 public class HeartBrainNew {
+    private String ID;
+    private Long FID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -9,7 +14,7 @@ public class HeartBrainNew {
     private String OCCUPATION;
     private Date BIRTHDAY;
     private String ADDRESS;
-    private String SMOKING;
+    private Integer SMOKING;
     private String DIAGNOSECODE;
     private String DIAGNOSISBASIS;
     private String DIAGNOSISBASISOTHER;
@@ -17,6 +22,22 @@ public class HeartBrainNew {
     private Date RECEPTION_TIME;
     private Date CREATE_TIME;
     private String WRITE_DOCTOR;
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
 
     public String getVISIT_NO() {
         return VISIT_NO;
@@ -82,11 +103,11 @@ public class HeartBrainNew {
         this.ADDRESS = ADDRESS;
     }
 
-    public String getSMOKING() {
+    public Integer getSMOKING() {
         return SMOKING;
     }
 
-    public void setSMOKING(String SMOKING) {
+    public void setSMOKING(Integer SMOKING) {
         this.SMOKING = SMOKING;
     }
 
@@ -149,7 +170,9 @@ public class HeartBrainNew {
     @Override
     public String toString() {
         return "HeartBrainNew{" +
-                "VISIT_NO='" + VISIT_NO + '\'' +
+                "ID='" + ID + '\'' +
+                ", FID='" + FID + '\'' +
+                ", VISIT_NO='" + VISIT_NO + '\'' +
                 ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +
                 ", SICK_SEX='" + SICK_SEX + '\'' +

@@ -1,7 +1,9 @@
 package com.springboot.ModelOld;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class CirrhosisOld {//肝硬化
     private String mzzy_id;
     private String patient_name;
@@ -166,6 +168,28 @@ public class CirrhosisOld {//肝硬化
         this.tbdw = tbdw;
         this.date_of_tb = date_of_tb;
         this.person_of_tb = person_of_tb;
+    }
+
+    @Override
+    public String toString() {
+        return "CirrhosisOld{" +
+                "mzzy_id='" + mzzy_id + '\'' +
+                ", patient_name='" + patient_name + '\'' +
+                ", sex_id='" + sex_id + '\'' +
+                ", nationality_id='" + nationality_id + '\'' +
+                ", occupation_id='" + occupation_id + '\'' +
+                ", date_of_birth=" + date_of_birth +
+                ", address='" + address + '\'' +
+                ", xzd='" + xzd + '\'' +
+                ", disease_id='" + disease_id + '\'' +
+                ", xjws='" + xjws + '\'' +
+                ", xym='" + xym + '\'' +
+                ", zddw='" + zddw + '\'' +
+                ", date_of_zd=" + date_of_zd +
+                ", tbdw='" + tbdw + '\'' +
+                ", date_of_tb=" + date_of_tb +
+                ", person_of_tb='" + person_of_tb + '\'' +
+                '}';
     }
 
     public CirrhosisOld() {

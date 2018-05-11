@@ -17,8 +17,6 @@ import java.util.Map;
 public class AIDSController {
     @Autowired
     private AIDSService aidsService;
-    @Autowired
-
     @RequestMapping(value = "/all")
     @ResponseBody
     public List<HurtOld> aids(){

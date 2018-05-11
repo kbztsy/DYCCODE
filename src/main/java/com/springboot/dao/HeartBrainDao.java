@@ -1,5 +1,6 @@
 package com.springboot.dao;
 
+import com.springboot.ModelNew.HeartBrainNew;
 import com.springboot.ModelOld.HeartBrainOld;
 import com.springboot.config.DS;
 import org.apache.ibatis.annotations.Mapper;
@@ -12,4 +13,6 @@ import java.util.Map;
 @Component
 public interface HeartBrainDao {
     public List<HeartBrainOld> GetHeartBrain();
+    public  boolean insertHeartBrain(HeartBrainNew heartBrain);
+    public  boolean insertMEDICAL(HeartBrainNew heartBrain);
 }

@@ -1,7 +1,9 @@
 package com.springboot.ModelOld;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class NauseaOld {
     private String mzzy_id;
     private String patient_name;

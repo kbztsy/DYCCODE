@@ -2,19 +2,33 @@ package com.springboot.ModelRef;
 
 import com.springboot.ModelNew.HeartBrainNew;
 import com.springboot.ModelOld.HeartBrainOld;
+import com.springboot.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
-
+@Component
 public class HeartBrainRef {
     @Autowired
     private List<HeartBrainNew> listNew;
     @Autowired
     private HeartBrainNew heartBrainN;
+    @Resource
+    private RandNum randNum;
+    @Resource
+    private EqStr eqStr;
+    @Resource
+    private RandNumber randNumber;
+    @Resource
+    private RandString randString;
+    @Resource
+    private DateStr dateStr;
     public List<HeartBrainNew> REF(List<HeartBrainOld> listOld){
         for (int i = 0;i<listOld.size();i++){
-
+            heartBrainN.setID(randString.RandStr());
+            heartBrainN.setFID(randNumber.Randint());
             heartBrainN.setVISIT_NO(listOld.get(i).getMzzy_id());
             heartBrainN.setRESI_CASE_NO(listOld.get(i).getMzzy_id());
             heartBrainN.setSICK_NAME(listOld.get(i).getPatient_name());
@@ -23,7 +37,7 @@ public class HeartBrainRef {
             heartBrainN.setOCCUPATION(listOld.get(i).getOccupation_id());
             heartBrainN.setBIRTHDAY(listOld.get(i).getDate_of_birth());
             heartBrainN.setADDRESS(listOld.get(i).getAddress());
-            heartBrainN.setSMOKING(listOld.get(i).getXyqk());
+            heartBrainN.setSMOKING( eqStr.RefStr(listOld.get(i).getXyqk()));
             heartBrainN.setDIAGNOSECODE(listOld.get(i).getXzd());
             heartBrainN.setDIAGNOSISBASIS(listOld.get(i).getXzd());
             heartBrainN.setDIAGNOSISBASISOTHER(listOld.get(i).getXzd());

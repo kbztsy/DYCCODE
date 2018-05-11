@@ -2,18 +2,28 @@ package com.springboot.ModelRef;
 
 import com.springboot.ModelNew.CirrhosisNew;
 import com.springboot.ModelOld.CirrhosisOld;
+import com.springboot.util.DateStr;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import javax.annotation.Resource;
 import java.util.List;
-
+@Component
 public class CirrhosisRef {
     @Autowired
-    private List<CirrhosisNew> listNew;
+    private List<CirrhosisNew> listNew ;
     @Autowired
-    private CirrhosisNew cirrhosisN;
+    private CirrhosisNew cirrhosisN ;
+    @Resource
+    private RandNumber randNumber;
+    @Resource
+    private RandString randString;
+    @Resource
+    private DateStr dateStr;
     public List<CirrhosisNew> REF(List<CirrhosisOld> listOld){
         for (int i = 0;i<listOld.size();i++){
+            cirrhosisN.setFID(randNumber.Randint());
+            cirrhosisN.setID(randString.RandStr());
             cirrhosisN.setVISIT_NO(listOld.get(i).getMzzy_id());
             cirrhosisN.setRESI_CASE_NO(listOld.get(i).getMzzy_id());
             cirrhosisN.setSICK_NAME(listOld.get(i).getPatient_name());
@@ -21,6 +31,7 @@ public class CirrhosisRef {
             cirrhosisN.setNATION(listOld.get(i).getNationality_id());
             cirrhosisN.setOCCUPATION(listOld.get(i).getOccupation_id());
             cirrhosisN.setBIRTHDAY(listOld.get(i).getDate_of_birth());
+            cirrhosisN.setBIRTHDAY(dateStr.getDate2());
             cirrhosisN.setADDRESS(listOld.get(i).getAddress());
             cirrhosisN.setDIAGNOSECODE(listOld.get(i).getXzd());
             cirrhosisN.setICD_10_TEXT(listOld.get(i).getDisease_id());

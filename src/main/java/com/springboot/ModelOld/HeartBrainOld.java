@@ -1,7 +1,9 @@
 package com.springboot.ModelOld;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class HeartBrainOld {//冠心病，腦卒中
     private String mzzy_id;
     private String patient_name;
@@ -146,6 +148,26 @@ public class HeartBrainOld {//冠心病，腦卒中
         this.tbdw = tbdw;
         this.date_of_tb = date_of_tb;
         this.person_of_tb = person_of_tb;
+    }
+
+    @Override
+    public String toString() {
+        return "HeartBrainOld{" +
+                "mzzy_id='" + mzzy_id + '\'' +
+                ", patient_name='" + patient_name + '\'' +
+                ", sex_id='" + sex_id + '\'' +
+                ", nationality_id='" + nationality_id + '\'' +
+                ", occupation_id='" + occupation_id + '\'' +
+                ", date_of_birth=" + date_of_birth +
+                ", address='" + address + '\'' +
+                ", xyqk='" + xyqk + '\'' +
+                ", xzd='" + xzd + '\'' +
+                ", zddw='" + zddw + '\'' +
+                ", date_of_zd=" + date_of_zd +
+                ", tbdw='" + tbdw + '\'' +
+                ", date_of_tb=" + date_of_tb +
+                ", person_of_tb='" + person_of_tb + '\'' +
+                '}';
     }
 
     public HeartBrainOld() {

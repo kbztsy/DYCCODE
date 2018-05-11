@@ -1,6 +1,11 @@
 package com.springboot.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
+@Component
 public class CirrhosisNew {
+    private String ID;
+    private Long FID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -17,6 +22,22 @@ public class CirrhosisNew {
     private Date RECEPTION_TIME;
     private Date CREATE_TIME;
     private String WRITE_DOCTOR;
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
 
     public String getVISIT_NO() {
         return VISIT_NO;
@@ -149,12 +170,14 @@ public class CirrhosisNew {
     @Override
     public String toString() {
         return "CirrhosisNew{" +
-                "VISIT_NO='" + VISIT_NO + '\'' +
+                "ID='" + ID + '\'' +
+                ", FID='" + FID + '\'' +
+                ", VISIT_NO='" + VISIT_NO + '\'' +
                 ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +
                 ", SICK_SEX='" + SICK_SEX + '\'' +
                 ", NATION='" + NATION + '\'' +
-                ", REATE_TIME='" + OCCUPATION + '\'' +
+                ", OCCUPATION='" + OCCUPATION + '\'' +
                 ", BIRTHDAY=" + BIRTHDAY +
                 ", ADDRESS='" + ADDRESS + '\'' +
                 ", DIAGNOSECODE='" + DIAGNOSECODE + '\'' +

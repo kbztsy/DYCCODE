@@ -1,5 +1,6 @@
 package com.springboot.dao;
 
+import com.springboot.ModelNew.HurtNew;
 import com.springboot.ModelOld.HurtOld;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
@@ -10,4 +11,6 @@ import java.util.List;
 @Component
 public interface HurtDao {
     public List<HurtOld> GetHurt();
+    public  boolean insertHurt(HurtNew hurtNew);
+    public  boolean insertMEDICAL (HurtNew hurtNew);
 }

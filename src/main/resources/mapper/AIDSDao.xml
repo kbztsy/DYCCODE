@@ -23,9 +23,9 @@
               from FBK_BKBZ_RECORD WHERE 1=1 AND BKLX_ID='11' ORDER BY Date_of_TB DESC;
        </select>
     <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
-    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
+    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性
     <insert id="InsertAIDS" parameterType="com.springboot.ModelNew.AIDSNew"
             useGeneratedKeys="true" keyColumn="id" keyProperty="id">
 
-    </insert>
+    </insert> -->
 </mapper>

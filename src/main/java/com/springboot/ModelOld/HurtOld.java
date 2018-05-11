@@ -1,7 +1,9 @@
 package com.springboot.ModelOld;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class HurtOld {//伤害
     private String patient_name;
     private String sex_id;
@@ -176,6 +178,29 @@ public class HurtOld {//伤害
         this.tbdw = tbdw;
         this.person_of_tb = person_of_tb;
         this.dept_id = dept_id;
+    }
+
+    @Override
+    public String toString() {
+        return "HurtOld{" +
+                "patient_name='" + patient_name + '\'' +
+                ", sex_id='" + sex_id + '\'' +
+                ", nationality_id='" + nationality_id + '\'' +
+                ", hj='" + hj + '\'' +
+                ", date_of_birth=" + date_of_birth +
+                ", occupation_id='" + occupation_id + '\'' +
+                ", address='" + address + '\'' +
+                ", xzd='" + xzd + '\'' +
+                ", sfgy='" + sfgy + '\'' +
+                ", xshbw='" + xshbw + '\'' +
+                ", fsdd='" + fsdd + '\'' +
+                ", yzcd='" + yzcd + '\'' +
+                ", fs_date=" + fs_date +
+                ", date_of_tb=" + date_of_tb +
+                ", tbdw='" + tbdw + '\'' +
+                ", person_of_tb='" + person_of_tb + '\'' +
+                ", dept_id='" + dept_id + '\'' +
+                '}';
     }
 
     public HurtOld() {

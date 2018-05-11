@@ -2,19 +2,29 @@ package com.springboot.ModelRef;
 
 import com.springboot.ModelNew.MentalNew;
 import com.springboot.ModelOld.MentalOld;
+import com.springboot.util.DateStr;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import javax.annotation.Resource;
 import java.util.List;
-
+@Component
 public class MentalRef {
-
     @Autowired
     private List<MentalNew> listNew;
     @Autowired
     private MentalNew mentalN;
+
+    @Resource
+    private RandNumber randNumber;
+    @Resource
+    private RandString randString;
+    @Resource
+    private DateStr dateStr;
     public List<MentalNew> REF(List<MentalOld> listOld){
         for (int i = 0;i<listOld.size();i++){
+            mentalN.setFID(randNumber.Randint());
+            mentalN.setID(randString.RandStr());
             mentalN.setVISIT_NO(listOld.get(i).getMzzy_id());
             mentalN.setRESI_CASE_NO(listOld.get(i).getMzzy_id());
             mentalN.setSICK_NAME(listOld.get(i).getPatient_name());

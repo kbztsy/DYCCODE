@@ -2,12 +2,11 @@ package com.springboot.ModelRef;
 
 import com.springboot.ModelNew.DiabetesNew;
 import com.springboot.ModelOld.DiabetesOld;
-import com.springboot.util.RandNum;
+import com.springboot.util.DateStr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.List;
 @Component
 public class DiabetesRef {
@@ -16,11 +15,15 @@ public class DiabetesRef {
     @Autowired
     private DiabetesNew diabetesN;
     @Resource
-    private RandNum randNum;
+    private DateStr dateStr;
+    @Resource
+    private RandNumber randNumber;
+    @Resource
+    private RandString randString;
     public List<DiabetesNew> REF(List<DiabetesOld> listOld){
         for (int i = 0;i<listOld.size();i++){
-            diabetesN.setFID(randNum.Rand());
-            diabetesN.setID(randNum.RandStr());
+            diabetesN.setFID(randNumber.Randint());
+            diabetesN.setID(randString.RandStr());
             diabetesN.setVISIT_NO(listOld.get(i).getMzzy_id()) ;
             diabetesN.setRESI_CASE_NO(listOld.get(i).getMzzy_id());
             diabetesN.setSICK_NAME(listOld.get(i).getPatient_name()) ;

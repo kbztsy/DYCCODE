@@ -6,12 +6,30 @@ import java.util.Date;
 
 @Component
 public class AIDSNew {
+    private String ID;
+    private Long FID;
     private String MARRIAGE;
     private String EDUCATIONLEVEL_CODE;
     private String POSSIBLE_INFECTION_ROUTE_CODE;
     private String VENEREAL_HISTORY_CODE;
     private String CHLAMYDIAL_TRACHOMATIS_CODE;
     private String AIDS_CARD_ID;
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
 
     public String getMARRIAGE() {
         return MARRIAGE;
