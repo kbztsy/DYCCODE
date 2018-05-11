@@ -1,7 +1,9 @@
 package com.springboot.ModelOld;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class DiabetesOld {//糖尿病
     private String  mzzy_id;//   门诊住院号
     private String	patient_name;//  患者姓名
