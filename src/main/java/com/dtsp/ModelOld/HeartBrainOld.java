@@ -1,7 +1,10 @@
 package com.dtsp.ModelOld;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class HeartBrainOld {//冠心病，腦卒中
     private String mzzy_id;
     private String patient_name;

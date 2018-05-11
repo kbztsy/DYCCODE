@@ -1,8 +1,11 @@
 package com.dtsp.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class HeartBrainNew {
-    private int INF_ID =1111111;
+    private int INF_ID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;

@@ -1,7 +1,10 @@
 package com.dtsp.ModelOld;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class InfectiousOld {
 
 

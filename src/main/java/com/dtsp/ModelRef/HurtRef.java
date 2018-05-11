@@ -3,9 +3,11 @@ package com.dtsp.ModelRef;
 import com.dtsp.ModelNew.HurtNew;
 import com.dtsp.ModelOld.HurtOld;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class HurtRef {
 
     @Autowired

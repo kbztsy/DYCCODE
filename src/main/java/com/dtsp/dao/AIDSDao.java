@@ -1,5 +1,6 @@
 package com.dtsp.dao;
 
+import com.dtsp.ModelOld.HurtOld;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +9,7 @@ import java.util.Map;
 
 @Mapper
 @Component
-public interface DemoDao {
-    public List<Map> All1();
-    public List<Map> All2();
+public interface AIDSDao {
+    public List<HurtOld> GetAIDS();
+    public boolean InsertAIDS(Map map);
 }

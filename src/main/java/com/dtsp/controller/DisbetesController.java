@@ -1,38 +1,48 @@
 package com.dtsp.controller;
 
+
 import com.dtsp.ModelNew.DiabetesNew;
 import com.dtsp.ModelOld.DiabetesOld;
-import com.dtsp.ModelRef.DiabetesRef;
 import com.dtsp.service.DisbetesService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import java.util.List;
-
+//正常
 @Controller
 @RequestMapping(value = "/disbetes")
 public class DisbetesController {
-    @Autowired
+    @Resource
     private DisbetesService disbetesService;
-    @Autowired
-    private DiabetesRef diabetesRef;
 
     @RequestMapping(value = "/all")
     @ResponseBody
-    public boolean GetDisbetes(){
+    public List<DiabetesOld> GetDisbetes(){
         List<DiabetesOld> mapList = disbetesService.GetDisbetes();
-        System.out.println(mapList);
-        List<DiabetesNew> diabetesNew = diabetesRef.REF(mapList);
-        boolean diabetes =false;
-//        for(int i=0;i<= diabetesNew.size();i++) {
-//            System.out.println(diabetesNew.get(i).getINF_ID());
-//            diabetes = disbetesService.InsertDisBetea(diabetesNew.get(i));
-//
-//        }
-        return diabetes;
+        return mapList;
     }
+    @RequestMapping("/insert")
+    @ResponseBody
+    public boolean insert() {
+        try{
+            List<DiabetesOld> oldcir = disbetesService.GetDisbetes();
+            for (DiabetesOld diabetesOld:oldcir
+                    ) {
+                System.out.println(diabetesOld);
+            }
+            List<DiabetesNew> list= disbetesService.upCirrhosisls(oldcir);
+            for (DiabetesNew diabetesNew:list) {
+                System.out.println(diabetesNew);
+                disbetesService.insertDisbetes(diabetesNew);
+            }
 
+        } catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+                return true;
+    }
 
 }

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.dtsp.dao.HeartBrainDao">
+    <!-- 查询所有user -->
+    <select id="GetHeartBrain" resultType="com.dtsp.ModelOld.HeartBrainOld">
+             SELECT
+               mzzy_id  as  mzzy_id,
+               patient_name as patient_name,
+               sex_id as sex_id,
+               nationality_id as nationality_id,
+               occupation_id as occupation_id,
+               date_of_birth as date_of_birth,
+               address as address,
+               xyqk as xyqk,
+               zd as xzd,
+           --    disease_id as ,
+               zddw as zddw,
+               date_of_zd as date_of_zd,
+               tbdw as tbdw ,
+               date_of_tb as date_of_tb,
+               person_of_tb as person_of_tb
+             from
+               FBK_BKBZ_Record
+             WHERE 1=1 AND BKLX_ID = '03'
+             order by
+               Date_of_TB DESC;
+       </select>
+    <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
+    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
+     <!-- public  boolean insertHeartBrain(HeartBrainOld heartBrain);-->
+    <insert id="insertHeartBrain"
+            parameterType="com.dtsp.ModelNew.HeartBrainNew">
+       insert into  MEDICAL_INFORMATION_ENREGISTER
+       (
+          INF_ID,
+          VISIT_NO,
+          RESI_CASE_NO,
+          SICK_NAME,
+          SICK_SEX,
+          NATION,
+          OCCUPATION,
+          <if test="BIRTHDAY!=null">
+              BIRTHDAY,
+          </if>
+
+          ADDRESS,
+        <if test="RECEPTION_TIME!=null">
+            RECEPTION_TIME,
+        </if>
+        <if test=" CREATE_TIME!=null">
+            CREATE_TIME,
+        </if>
+          WRITE_DOCTOR)
+       values
+       (
+       #{ID},
+       #{VISIT_NO},
+       #{RESI_CASE_NO},
+       #{SICK_NAME},
+       #{SICK_SEX},
+       #{NATION},
+       #{OCCUPATION},
+        <if test="BIRTHDAY!=null">
+            #{BIRTHDAY},
+        </if>
+
+       #{ADDRESS},
+        <if test="RECEPTION_TIME!=null">
+            #{RECEPTION_TIME},
+        </if>
+        <if test=" CREATE_TIME!=null">
+            #{CREATE_TIME},
+        </if>
+
+       #{WRITE_DOCTOR}
+       )
+    </insert>
+
+    <!-- public  boolean insertMEDICAL(HeartBrainOld heartBrain);-->
+    <insert id="insertMEDICAL"
+            parameterType="com.dtsp.ModelNew.HeartBrainNew">
+ insert into
+     FIRST_DIAGNOSE_REPORT_HEIGHT(
+     ID,
+     DIAGNOSECODE,
+     SMOKING)
+ values (
+    #{FID},
+    #{DIAGNOSECODE},
+    #{SMOKING}
+ )
+    </insert>
+
+</mapper>

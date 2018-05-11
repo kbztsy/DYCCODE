@@ -1,6 +1,9 @@
 package com.dtsp.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class HurtNew {
     private String SICK_NAME;
     private String SICK_SEX;

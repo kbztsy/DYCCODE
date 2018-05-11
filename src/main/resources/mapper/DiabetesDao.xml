@@ -5,68 +5,78 @@
     <!-- 查询所有user -->
     <select id="GetDisbetes" resultType="com.dtsp.ModelOld.DiabetesOld">
             select
-            BKLX_ID,
-            MZZY_ID,
-            Patient_Name,
-            Sex_ID,
-            Nationality_ID,
-            Occupation_ID,
-            Date_of_Birth,
-            Address,
-            ZD,
-            HBZ,
-            Disease_ID,
-            ZDDW,
-            Date_of_ZD,
-            TBDW,
-            Date_of_TB,
-            Person_of_TB
+        --    BKLX_ID as ,
+            MZZY_ID  as mzzy_id,
+            Patient_Name as patient_name ,
+            Sex_ID as sex_id,
+            Nationality_ID as nationality_id,
+            Occupation_ID as occupation_id,
+            Date_of_Birth as date_of_birth ,
+            Address as address,
+            ZD as xzd1,
+            HBZ as xhbz1,
+            Disease_ID as disease_id,
+            ZDDW as 	zddw,
+            Date_of_ZD as date_of_zd,
+            TBDW as tbdw ,
+            Date_of_TB as date_of_tb,
+            Person_of_TB  as person_of_tb
             from FBK_BKBZ_Record WHERE 1=1 AND
-            BKLX_ID = '06' order by Date_of_TB DESC;
+            BKLX_ID = '06'
+            order by
+            Date_of_TB DESC
        </select>
     <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
     <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
-    <insert id="InsertDisBetea" parameterType="com.dtsp.ModelNew.DiabetesNew"
-            useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-         <!--insert into-->
-      <!--MEDICAL_INFORMATION_ENREGISTER-->
-        <!--(-->
-        <!--INF_ID-->
-        <!--<if test="VISIT_NO !=null and VISIT_NO!=''">-->
-        <!--,VISIT_NO-->
-        <!--</if>-->
-        <!--<if test="RESI_CASE_NO !=null and RESI_CASE_NO!=''">-->
-         <!--,RESI_CASE_NO-->
-        <!--</if>-->
-        <!--<if test="SICK_NAME !=null and SICK_NAME!=''">-->
-         <!--,SICK_NAME-->
-        <!--</if>-->
-        <!--<if test="SICK_SEX !=null and SICK_SEX!=''">-->
-         <!--,SICK_SEX-->
-        <!--</if>-->
-        <!--<if test="NATION !=null and NATION!=''">-->
-         <!--,NATION-->
-        <!--</if>-->
-        <!--<if test="OCCUPATION !=null and OCCUPATION!=''">-->
-         <!--,OCCUPATION-->
-        <!--</if>-->
-        <!--<if test="BIRTHDAY !=null and BIRTHDAY!=''">-->
-        <!--,BIRTHDAY-->
-        <!--</if>-->
-        <!--<if test="ADDRESS !=null and ADDRESS!=''">-->
-        <!--,ADDRESS-->
-        <!--</if>)-->
-    <!--values-->
-       <!--(-->
-         <!--#{INF_ID},-->
-         <!--#{VISIT_NO},-->
-         <!--#{RESI_CASE_NO},-->
-         <!--#{SICK_NAME},-->
-         <!--#{SICK_SEX},-->
-         <!--#{NATION},-->
-         <!--#{OCCUPATION},-->
-         <!--#{BIRTHDAY},-->
-         <!--#{ADDRESS}-->
---       )
-    </insert>
+    <!--  public  boolean insertDisbetes( DiabetesNew diabetesNew);-->
+    <insert id="insertDisbetes"
+             parameterType="com.dtsp.ModelNew.DiabetesNew">
+       insert into
+          MEDICAL_INFORMATION_ENREGISTER
+            (
+            INF_ID,
+            VISIT_NO,
+             RESI_CASE_NO,
+             SICK_NAME,
+             SICK_SEX,
+             NATION,
+             OCCUPATION,
+             <if test="BIRTHDAY!=null">
+             BIRTHDAY,
+             </if>
+
+             ADDRESS)
+        values
+           (
+             #{ID},
+             #{VISIT_NO},
+             #{RESI_CASE_NO},
+             #{SICK_NAME},
+             #{SICK_SEX},
+             #{NATION},
+             #{OCCUPATION},
+        <if test="BIRTHDAY!=null">
+            #{BIRTHDAY},
+        </if>
+             #{ADDRESS}
+               )
+       </insert>
+    <!--public  boolean insertMEDICAL(DiabetesNew diabetesNew);-->
+      <insert id="insertMEDICAL"
+            parameterType="com.dtsp.ModelNew.DiabetesNew">
+          insert  into
+             FIRST_DIAGNOSE_REPORT_GLUCOSE
+             (
+             ID,
+             DIAGNOSECODE,
+             DIAGNOSISBASISOTHER,
+             ICD_10_TEXT)
+          values (
+          #{FID},
+          #{DIAGNOSECODE},
+          #{DIAGNOSISBASISOTHER},
+          #{ICD_10_TEXT}
+          )
+      </insert>
+
 </mapper>

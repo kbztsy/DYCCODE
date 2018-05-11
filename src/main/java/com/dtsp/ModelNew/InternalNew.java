@@ -1,6 +1,9 @@
 package com.dtsp.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class InternalNew {
     private String VISIT_NO;// 门诊住院号
     private String RESI_CASE_NO;

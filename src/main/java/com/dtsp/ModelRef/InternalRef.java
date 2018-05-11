@@ -3,9 +3,11 @@ package com.dtsp.ModelRef;
 import com.dtsp.ModelNew.InternalNew;
 import com.dtsp.ModelOld.InternalOld;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class InternalRef {
 
     @Autowired

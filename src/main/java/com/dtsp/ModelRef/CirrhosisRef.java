@@ -3,9 +3,11 @@ package com.dtsp.ModelRef;
 import com.dtsp.ModelNew.CirrhosisNew;
 import com.dtsp.ModelOld.CirrhosisOld;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class CirrhosisRef {
     @Autowired
     private List<CirrhosisNew> listNew;

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.dtsp.dao.CirrhosisDao">
+            <!-- 查询所有user -->
+        <select id="GetCirrhosis" resultType="com.dtsp.ModelOld.CirrhosisOld">
+            select
+                MZZY_ID as mzzy_id,
+                Patient_Name as patient_name,
+                sex_id as sex_id,
+                Nationality_ID as nationality_id,
+                Occupation_ID as occupation_id,
+                Date_of_Birth as date_of_birth,
+                Address as address,
+                ZD as xzd,
+                Disease_ID as disease_id,
+                History as xjws,
+                History_of_YMJZ as xym,
+                ZDDW as zddw,
+                Date_of_ZD as date_of_zd,
+                TBDW as tbdw,
+                Date_of_TB as date_of_tb,
+                Person_of_TB as person_of_tb
+            from
+                FBK_BKBZ_Record
+            WHERE 1=1 AND BKLX_ID = '04' Order by date_of_zd DESC;
+         </select>
+    <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
+    <!--     public  boolean insertCirrhosis(CirrhosisNew cirrhosisNew);
+    -->
+    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
+    <insert id="insertCirrhosis"
+            parameterType="com.dtsp.ModelNew.CirrhosisNew">
+         insert into
+   MEDICAL_INFORMATION_ENREGISTER
+   (
+     INF_ID,
+     VISIT_NO,
+     RESI_CASE_NO,
+     SICK_NAME,
+     SICK_SEX,
+     NATION,
+     OCCUPATION,
+     <if test="BIRTHDAY!=null">
+         BIRTHDAY,
+     </if>
+     ADDRESS,
+     RECEPTION_ORG,
+        <if test="RECEPTION_TIME!=null">
+            RECEPTION_TIME,
+        </if>
+        <if test="CREATE_TIME!=null">
+            CREATE_TIME,
+        </if>
+     WRITE_DOCTOR
+   )
+   values
+   (
+     #{ID},
+     #{VISIT_NO},
+     #{RESI_CASE_NO},
+     #{SICK_NAME},
+     #{SICK_SEX},
+     #{NATION},
+     #{OCCUPATION},
+        <if test="BIRTHDAY!=null">
+            #{BIRTHDAY},
+        </if>
+     #{ADDRESS},
+     #{RECEPTION_ORG},
+        <if test="RECEPTION_TIME!=null">
+            #{RECEPTION_TIME},
+        </if>
+     #{CREATE_TIME},
+     #{WRITE_DOCTOR}
+   )
+    </insert>
+
+    <!--  public  boolean insertMEDICAL(CirrhosisNew cirrhosisNew);-->
+  <insert id="insertMEDICAL"
+          parameterType="com.dtsp.ModelNew.CirrhosisNew"
+        >
+ insert into
+   FIRST_DIAGNOSE_REPORT_PMH
+   (
+     ID,
+     DIAGNOSECODE,
+     ICD_10_TEXT,
+     PMH,
+     VACCINATE
+   )
+   values
+   (
+     #{FID},
+     #{DIAGNOSECODE},
+     #{ICD_10_TEXT},
+     #{PMH},
+     #{VACCINATE}
+   )
+
+  </insert>
+</mapper>

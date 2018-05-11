@@ -1,7 +1,10 @@
 package com.dtsp.ModelOld;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class CirrhosisOld {//肝硬化
     private String mzzy_id;
     private String patient_name;

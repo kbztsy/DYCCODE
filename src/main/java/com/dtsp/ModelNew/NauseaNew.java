@@ -1,6 +1,9 @@
 package com.dtsp.ModelNew;
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class NauseaNew {
     private String VISIT_NO;
     private String RESI_CASE_NO;

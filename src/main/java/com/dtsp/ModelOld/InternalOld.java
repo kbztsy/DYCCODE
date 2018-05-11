@@ -1,7 +1,10 @@
 package com.dtsp.ModelOld;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class InternalOld {
     private String mzzy_id;// 门诊住院号
     private String	dept_id;//科室

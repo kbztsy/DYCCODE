@@ -11,5 +11,6 @@ import java.util.List;
 @Component
 public interface DisbetesDao {
     public List<DiabetesOld> GetDisbetes();
-    public boolean InsertDisBetea(DiabetesNew diabetesNew);
+    public  boolean insertDisbetes(DiabetesNew diabetesNew);
+    public  boolean insertMEDICAL(DiabetesNew diabetesNew);
 }

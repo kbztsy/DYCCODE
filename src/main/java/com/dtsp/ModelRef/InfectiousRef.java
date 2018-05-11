@@ -3,9 +3,11 @@ package com.dtsp.ModelRef;
 import com.dtsp.ModelNew.InfectiousNew;
 import com.dtsp.ModelOld.InfectiousOld;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class InfectiousRef {
 
     @Autowired

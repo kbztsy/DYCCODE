@@ -1,7 +1,10 @@
 package com.dtsp.ModelOld;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Date;
 
+@Component
 public class HurtOld {//伤害
     private String patient_name;
     private String sex_id;

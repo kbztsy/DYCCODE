@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.dtsp.dao.NauseaDao">
+       <!-- //查询所有Mental
+    public List<Map> getNausea();
+    //插入
+    public boolean insertNausea(Map map);-->
+
+       <!-- 查询所有user -->
+       <select id="getNausea" resultType="com.dtsp.ModelOld.NauseaOld">
+    select
+           	MZZY_ID as mzzy_id,
+            Patient_Name as  patient_name,
+	        Sex_ID  as sex_id ,
+	        Nationality_ID as nationality_id ,
+	        Occupation_ID  as occupation_id,
+	        Date_of_Birth  as date_of_birth,
+	        hyqk  as hyqk,
+	        IDcARD_No as idcard_no ,
+	        Address  as address,
+	        HK_Address  as hk_address,
+            XYQK  as xyqk ,
+	        BLLX  as bllx,
+	        qzsqb  as qzsqb,
+            Disease_ID as disease_id,
+	        lcfq  as lcfq,
+	        ICDO3  as icdo3,
+	        fhcd as fhcd,
+	        ZDDW  as zddw,
+	        Date_of_ZD as date_of_zd,
+	        Date_of_TB  as date_of_tb,
+	        Person_of_TB as person_of_tb
+    from
+            FBK_BKBZ_Record
+    where
+    1 =1 and BKLX_ID = '02'
+         ORDER BY Date_of_TB DESC
+       </select>
+<!--public boolean insertNausea(NauseaOld nauseaOld);
+    public  boolean insertMEDICAL (NauseaOld nauseaOld);-->
+	<insert id="insertNausea"
+			parameterType="com.dtsp.ModelNew.NauseaNew">
+insert into
+    MEDICAL_INFORMATION_ENREGISTER
+    (
+      INF_ID,
+      VISIT_NO,
+      RESI_CASE_NO,
+      SICK_NAME,
+      SICK_SEX,
+      NATION,
+      OCCUPATION,
+      <if test="BIRTHDAY!=null">
+          BIRTHDAY,
+      </if>
+      MARRIAGE,
+      IDENTITY_CARD_NO,
+      ADDRESS,
+      RESIDENCE_ADDRESS,
+      RECEPTION_ORG,
+        <if test="RECEPTION_TIME!=null">
+            RECEPTION_TIME,
+        </if>
+<if test="CREATE_TIME!=null">
+    CREATE_TIME,
+</if>
+
+      WRITE_DOCTOR
+     )
+    values
+    (
+      #{ID},
+      #{VISIT_NO},
+      #{RESI_CASE_NO},
+      #{SICK_NAME},
+      #{SICK_SEX},
+      #{NATION},
+      #{OCCUPATION},
+        <if test="BIRTHDAY!=null">
+            #{BIRTHDAY},
+        </if>
+
+      #{MARRIAGE},
+      #{IDENTITY_CARD_NO},
+      #{ADDRESS},
+      #{RESIDENCE_ADDRESS},
+      #{RECEPTION_ORG},
+        <if test="RECEPTION_TIME!=null">
+            #{RECEPTION_TIME},
+        </if>
+        <if test="CREATE_TIME!=null">
+            #{CREATE_TIME},
+        </if>
+
+      #{WRITE_DOCTOR}
+     )
+
+
+	</insert>
+
+	<!--  public  boolean insertMEDICAL (NauseaOld nauseaOld);-->
+	<insert id="insertMEDICAL"
+			parameterType="com.dtsp.ModelNew.NauseaNew">
+    insert into
+    FIRST_DIAGNOSE_REPORT_TUMOR
+    (
+      ID,
+      SMOKING,
+      PATHOLOGIC_TYPES,
+      DIAGNOSIS_T,
+      DIAGNOSIS_N,
+      DIAGNOSIS_M,
+      DIAGNOSIS_NO,
+      ICD_10,
+      ICD_10_TEXT,
+      CLINICAL_STAGE,
+      ICD_03,
+      ICD_03_TEXT,
+      DIFFERENTIAL_DEGREE
+    )
+    values
+    (
+      #{FID}
+      #{SMOKING},
+      #{PATHOLOGIC_TYPES},
+      #{DIAGNOSIS_T},
+      #{DIAGNOSIS_N},
+      #{DIAGNOSIS_M},
+      #{DIAGNOSIS_NO},
+      #{ICD_10},
+      #{ICD_10_TEXT}
+      #{CLINICAL_STAGE},
+      #{ICD_03},
+      #{ICD_03_TEXT},
+      #{DIFFERENTIAL_DEGREE}
+     )
+	</insert>
+
+</mapper>
+
