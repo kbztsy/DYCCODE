@@ -1,8 +1,12 @@
 package com.springboot.ModelNew;
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class DiabetesNew {
+    private String ID;
+    private String FID;
     private String  VISIT_NO;//   门诊住院号
     private String RESI_CASE_NO;
     private String	SICK_NAME;//  患者姓名
@@ -13,13 +17,28 @@ public class DiabetesNew {
     private String	ADDRESS;//  现住址
     private String	DIAGNOSECODE;//    诊断
     private String DIAGNOSISBASISOTHER;
-    private String 	COMPLICATIONS;//    合并症
+    private String COMPLICATIONS;//    合并症
     private String ICD_10_TEXT;// ICD--10
     private String	RECEPTION_ORG;//    诊断单位
     private Date RECEPTION_TIME;//诊断日期
-    private String	tbdw;//    填报单位
-    private Date	date_of_tb;//  填报日期
+    private Date	CREATE_TIME;//  填报日期
     private String	 WRITE_DOCTOR;//  填报医生
+
+    public String getFID() {
+        return FID;
+    }
+
+    public void setFID(String FID) {
+        this.FID = FID;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
 
     public String getVISIT_NO() {
         return VISIT_NO;
@@ -133,20 +152,12 @@ public class DiabetesNew {
         this.RECEPTION_TIME = RECEPTION_TIME;
     }
 
-    public String getTbdw() {
-        return tbdw;
+    public Date getCREATE_TIME() {
+        return CREATE_TIME;
     }
 
-    public void setTbdw(String tbdw) {
-        this.tbdw = tbdw;
-    }
-
-    public Date getDate_of_tb() {
-        return date_of_tb;
-    }
-
-    public void setDate_of_tb(Date date_of_tb) {
-        this.date_of_tb = date_of_tb;
+    public void setCREATE_TIME(Date CREATE_TIME) {
+        this.CREATE_TIME = CREATE_TIME;
     }
 
     public String getWRITE_DOCTOR() {
@@ -155,5 +166,27 @@ public class DiabetesNew {
 
     public void setWRITE_DOCTOR(String WRITE_DOCTOR) {
         this.WRITE_DOCTOR = WRITE_DOCTOR;
+    }
+
+    @Override
+    public String toString() {
+        return "DiabetesNew{" +
+                "VISIT_NO='" + VISIT_NO + '\'' +
+                ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
+                ", SICK_NAME='" + SICK_NAME + '\'' +
+                ", SICK_SEX='" + SICK_SEX + '\'' +
+                ", NATION='" + NATION + '\'' +
+                ", OCCUPATION='" + OCCUPATION + '\'' +
+                ", BIRTHDAY=" + BIRTHDAY +
+                ", ADDRESS='" + ADDRESS + '\'' +
+                ", DIAGNOSECODE='" + DIAGNOSECODE + '\'' +
+                ", DIAGNOSISBASISOTHER='" + DIAGNOSISBASISOTHER + '\'' +
+                ", COMPLICATIONS='" + COMPLICATIONS + '\'' +
+                ", ICD_10_TEXT='" + ICD_10_TEXT + '\'' +
+                ", RECEPTION_ORG='" + RECEPTION_ORG + '\'' +
+                ", RECEPTION_TIME=" + RECEPTION_TIME +
+                ", CREATE_TIME=" + CREATE_TIME +
+                ", WRITE_DOCTOR='" + WRITE_DOCTOR + '\'' +
+                '}';
     }
 }
