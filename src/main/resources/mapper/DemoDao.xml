@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.springboot.dao.DemoDao">
-    <!-- 查询所有user -->
+<mapper namespace="com.dtsp.dao.DemoDao">
     <select id="All1" resultType="java.util.Map">
               select * from test01;
     </select>
