@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.springboot.dao.InfectiousDao">
+       <!--  //查询所有Infectious
+    public List<List<Map>> getInfectious(); -->
+       <select id="getInfectious" resultType="com.springboot.ModelOld.InfectiousOld">
+              select
+                  MZZY_ID  as  mzzy_id,
+                  Patient_Name as  patient_name,
+                  HEJZ_Name  as hejz_name,
+                  IDcARD_No as idcard_no,
+                  Sex_ID   as sex_id,
+                  Date_of_Birth  as date_of_birth ,
+                  Telephone  as telephone,
+                  GZDW  as gzdw,
+                  BRSY  as brsy,
+                  Address  as address,
+                  Occupation_ID  as occupation_id,
+                  FB_date  as fb_date,
+                  Date_of_ZD  as date_of_zd,
+                  Dare_date as dare_date,
+                  Person_of_TB  as person_of_tb,
+                  Date_of_TB as date_of_tb
+                 from
+                  FBK_BKBZ_Record
+                where
+                  1 =1 and BKLX_ID = '11'
+                ORDER BY Date_of_TB DESC
+       </select>
+       <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
+       <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性-->
+
+
+    <!--  public boolean insertInfectious(InfectiousNew infectiousNew);
+    public  boolean insertMEDICAL (InfectiousNew infectiousNew);-->
+
+    <insert id="insertInfectious"
+            parameterType="com.springboot.ModelNew.InfectiousNew">
+   insert into
+    MEDICAL_INFORMATION_ENREGISTER
+    (
+      INF_ID,
+      VISIT_NO,
+      RESI_CASE_NO,
+      SICK_NAME,
+      SICK_PARENT_NAME,
+      IDENTITY_CARD_NO,
+      SICK_SEX,
+      BIRTHDAY,
+      SICK_PHONE,
+      WORK_PLACE,
+      ADDRESS,
+      OCCUPATION,
+      CREATE_TIME,
+      WRITE_DOCTOR
+     )
+    values
+    (
+      #{ID},
+      #{VISIT_NO},
+      #{RESI_CASE_NO},
+      #{SICK_NAME},
+      #{SICK_PARENT_NAME},
+      #{IDENTITY_CARD_NO},
+      #{SICK_SEX},
+      #{BIRTHDAY},
+      #{SICK_PHONE},
+      #{WORK_PLACE},
+      #{ADDRESS},
+      #{OCCUPATION},
+      #{CREATE_TIME},
+      #{WRITE_DOCTOR}
+     )
+    </insert>
+
+    <!--   public  boolean insertMEDICAL (InfectiousOld infectiousOld);-->
+    <insert id="insertMEDICAL"
+            parameterType="com.springboot.ModelNew.InfectiousNew">
+insert into
+    FIRST_DIAGNOSE_REPORT_DISEASES
+    (
+      ID,
+      DIAGNOSIS_TYPE_CODE,
+      CASETYPE,
+      ACCIDENT_DATE,
+      DIAGNOSE_DATE,
+      DEATH_DATE
+    )
+    values
+    (
+      #{FID},
+      #{DIAGNOSIS_TYPE_CODE},
+      #{CASETYPE},
+      #{ACCIDENT_DATE},
+      #{DIAGNOSE_DATE},
+      #{DEATH_DATE}
+     )
+    </insert>
+
+
+</mapper>
+

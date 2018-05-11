@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.springboot.dao.MentalDao">
+       <!-- 查询所有user -->
+
+       <!-- //查询所有Mental
+    public List<Map> getMental();
+    //插入
+    public boolean insertMental(Map map);-->
+       <select id="getMental" resultType="com.springboot.ModelOld.MentalOld">
+  select
+    MZZY_ID as mzzy_id,
+	Patient_Name  as patient_name,
+	Sex_ID  as sex_id,
+	Nationality_ID  as nationality_id,
+	Occupation_ID  as occupation_id,
+	Date_of_Birth  as date_of_birth,
+	Address  as address,
+	GZDW  as gzdw,
+	FB_date  as fb_date ,
+	CCMD_ID  as ccmd_id,
+	ZDDW  as zddw,
+	Date_of_ZD  as date_of_zd ,
+    Date_of_TB as date_of_tb,
+	Person_of_TB as person_of_tb
+  from
+    FBK_BKBZ_Record
+  where
+    1=1 and BKLX_ID = '05'
+                ORDER BY Date_of_TB DESC
+       </select>
+       <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
+       <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性
+       <insert id="addUserGetID" parameterType="com.springboot.entity.Demo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+              insert into demo(name,create_time) values(#{name},#{createTime})
+       </insert>
+       <insert id="addUser">
+              insert into demo(name,create_time) values(#{name},#{createTime})
+       </insert>
+       <insert id="insertUser">
+              insert into demo(id,name,create_time) values(#{id},#{name},#{createTime})
+       </insert>
+--><!--public boolean insertMental(MentalOld mentalOld);-->
+
+	<insert id="insertMental"
+			parameterType="com.springboot.ModelNew.MentalNew">
+insert into
+    MEDICAL_INFORMATION_ENREGISTER
+    (
+      INF_ID,
+      VISIT_NO,
+      RESI_CASE_NO,
+      SICK_NAME,
+      SICK_SEX,
+      NATION,
+      OCCUPATION,
+      BIRTHDAY,
+      ADDRESS,
+      WORK_PLACE,
+      RECEPTION_ORG,
+      RECEPTION_TIME,
+      CREATE_TIME,
+      WRITE_DOCTOR
+     )
+    values
+    (
+      #{ID},
+      #{VISIT_NO},
+      #{RESI_CASE_NO},
+      #{SICK_NAME},
+      #{SICK_SEX},
+      #{NATION},
+      #{OCCUPATION},
+      #{BIRTHDAY},
+      #{MARRIAGE},
+      #{ADDRESS},
+      #{WORK_PLACE},
+      #{RECEPTION_ORG},
+      #{RECEPTION_TIME},
+      #{CREATE_TIME},
+      #{WRITE_DOCTOR}
+     )
+	</insert>
+
+	<!--  public  boolean insertMEDICAL  (MentalOld mentalOld);-->
+	<insert id="insertMEDICAL"
+			parameterType="com.springboot.ModelNew.MentalNew">
+insert into
+    FIRST_DIAGNOSE_REPORT_PSY
+    (
+     ID,
+      FAMILY_HISTORY,
+      DISPOSITION,
+      PSYCHO,
+      DIAGNOSECODE,
+      ACCIDENT_DATE,
+      CCMD3_CODE
+    )
+    values
+    (
+      #{FID},
+      #{FAMILY_HISTORY},
+      #{DISPOSITION},
+      #{PSYCHO},
+      #{DIAGNOSECODE},
+      #{ACCIDENT_DATE},
+      #{CCMD3_CODE}
+     )
+	</insert>
+
+</mapper>
+
