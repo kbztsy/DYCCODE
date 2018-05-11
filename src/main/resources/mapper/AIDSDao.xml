@@ -3,7 +3,7 @@
 
 <mapper namespace="com.dtsp.dao.AIDSDao">
     <!-- 查询所有user -->
-    <select id="GetAIDS" resultType="com.dtsp.dao.AIDSDao">
+    <select id="GetAIDS" resultType="com.dtsp.ModelOld.AIDSOld">
               select patient_name,
               sex_id,
               Nationality_ID,
