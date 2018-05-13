@@ -2,10 +2,10 @@ package com.dtsp.ModelNew;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-
 @Component
 public class HeartBrainNew {
-    private int INF_ID;
+    private String ID;
+    private Long FID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -14,7 +14,7 @@ public class HeartBrainNew {
     private String OCCUPATION;
     private Date BIRTHDAY;
     private String ADDRESS;
-    private String SMOKING;
+    private Integer SMOKING;
     private String DIAGNOSECODE;
     private String DIAGNOSISBASIS;
     private String DIAGNOSISBASISOTHER;
@@ -23,12 +23,20 @@ public class HeartBrainNew {
     private Date CREATE_TIME;
     private String WRITE_DOCTOR;
 
-    public int getINF_ID() {
-        return INF_ID;
+    public String getID() {
+        return ID;
     }
 
-    public void setINF_ID(int INF_ID) {
-        this.INF_ID = INF_ID;
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
     }
 
     public String getVISIT_NO() {
@@ -95,11 +103,11 @@ public class HeartBrainNew {
         this.ADDRESS = ADDRESS;
     }
 
-    public String getSMOKING() {
+    public Integer getSMOKING() {
         return SMOKING;
     }
 
-    public void setSMOKING(String SMOKING) {
+    public void setSMOKING(Integer SMOKING) {
         this.SMOKING = SMOKING;
     }
 
@@ -162,7 +170,8 @@ public class HeartBrainNew {
     @Override
     public String toString() {
         return "HeartBrainNew{" +
-                "INF_ID=" + INF_ID +
+                "ID='" + ID + '\'' +
+                ", FID='" + FID + '\'' +
                 ", VISIT_NO='" + VISIT_NO + '\'' +
                 ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +

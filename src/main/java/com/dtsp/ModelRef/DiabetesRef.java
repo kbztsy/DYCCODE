@@ -30,7 +30,7 @@ public class DiabetesRef {
             diabetesN.setRECEPTION_ORG(listOld.get(i).getZddw());
             diabetesN. setRECEPTION_TIME(listOld.get(i).getDate_of_zd());
            // diabetesN.setTbdw(listOld.get(i).) ;
-            diabetesN.setDate_of_tb(listOld.get(i).getDate_of_tb()) ;
+         //   diabetesN.setDate_of_tb(listOld.get(i).getDate_of_tb()) ;
             diabetesN.setWRITE_DOCTOR(listOld.get(i).getPerson_of_tb());
             listNew.add(diabetesN);
         }

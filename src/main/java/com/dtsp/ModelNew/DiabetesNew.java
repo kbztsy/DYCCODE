@@ -2,36 +2,42 @@ package com.dtsp.ModelNew;
 
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
 @Component
 public class DiabetesNew {
-    private String INF_ID=11111112+"";
-    private String  VISIT_NO ="131";//   门诊住院号
-    private String RESI_CASE_NO = "11232432";
-    private String	SICK_NAME ="张三";//  患者姓名
+    private String ID;
+    private Long FID;
+    private String  VISIT_NO;//   门诊住院号
+    private String RESI_CASE_NO;
+    private String	SICK_NAME;//  患者姓名
     private String	SICK_SEX;//    性别
     private String	NATION;//    民族
     private String	OCCUPATION;//    职业
-    private String BIRTHDAY = "2018-01-01";// 出生日期
+    private Date	BIRTHDAY;// 出生日期
     private String	ADDRESS;//  现住址
     private String	DIAGNOSECODE;//    诊断
     private String DIAGNOSISBASISOTHER;
-    private String 	COMPLICATIONS;//    合并症
+    private String COMPLICATIONS;//    合并症
     private String ICD_10_TEXT;// ICD--10
     private String	RECEPTION_ORG;//    诊断单位
-    private Date RECEPTION_TIME = new Date();//诊断日期
-    private String	tbdw;//    填报单位
-    private Date	date_of_tb;//  填报日期
+    private Date RECEPTION_TIME;//诊断日期
+    private Date	CREATE_TIME;//  填报日期
     private String	 WRITE_DOCTOR;//  填报医生
 
-    public String getINF_ID() {
-        return INF_ID;
+    public Long getFID() {
+        return FID;
     }
 
-    public void setINF_ID(String INF_ID) {
-        this.INF_ID = INF_ID;
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public String getVISIT_NO() {
@@ -82,11 +88,11 @@ public class DiabetesNew {
         this.OCCUPATION = OCCUPATION;
     }
 
-    public String getBIRTHDAY() {
+    public Date getBIRTHDAY() {
         return BIRTHDAY;
     }
 
-    public void setBIRTHDAY(String BIRTHDAY) {
+    public void setBIRTHDAY(Date BIRTHDAY) {
         this.BIRTHDAY = BIRTHDAY;
     }
 
@@ -146,20 +152,12 @@ public class DiabetesNew {
         this.RECEPTION_TIME = RECEPTION_TIME;
     }
 
-    public String getTbdw() {
-        return tbdw;
+    public Date getCREATE_TIME() {
+        return CREATE_TIME;
     }
 
-    public void setTbdw(String tbdw) {
-        this.tbdw = tbdw;
-    }
-
-    public Date getDate_of_tb() {
-        return date_of_tb;
-    }
-
-    public void setDate_of_tb(Date date_of_tb) {
-        this.date_of_tb = date_of_tb;
+    public void setCREATE_TIME(Date CREATE_TIME) {
+        this.CREATE_TIME = CREATE_TIME;
     }
 
     public String getWRITE_DOCTOR() {
@@ -173,8 +171,7 @@ public class DiabetesNew {
     @Override
     public String toString() {
         return "DiabetesNew{" +
-                "INF_ID=" + INF_ID +
-                ", VISIT_NO='" + VISIT_NO + '\'' +
+                "VISIT_NO='" + VISIT_NO + '\'' +
                 ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +
                 ", SICK_SEX='" + SICK_SEX + '\'' +
@@ -188,8 +185,7 @@ public class DiabetesNew {
                 ", ICD_10_TEXT='" + ICD_10_TEXT + '\'' +
                 ", RECEPTION_ORG='" + RECEPTION_ORG + '\'' +
                 ", RECEPTION_TIME=" + RECEPTION_TIME +
-                ", tbdw='" + tbdw + '\'' +
-                ", date_of_tb=" + date_of_tb +
+                ", CREATE_TIME=" + CREATE_TIME +
                 ", WRITE_DOCTOR='" + WRITE_DOCTOR + '\'' +
                 '}';
     }

@@ -11,7 +11,7 @@ public class DiabetesOld {//糖尿病
     private String	sex_id;//    性别
     private String	nationality_id;//    民族
     private String	occupation_id;//    职业
-    private String date_of_birth;// 出生日期
+    private Date date_of_birth;// 出生日期
     private String	address;//  现住址
     private String	xzd1;//    诊断
     private String xhbz1;//    合并症
@@ -62,11 +62,11 @@ public class DiabetesOld {//糖尿病
         this.occupation_id = occupation_id;
     }
 
-    public String getDate_of_birth() {
+    public Date getDate_of_birth() {
         return date_of_birth;
     }
 
-    public void setDate_of_birth(String date_of_birth) {
+    public void setDate_of_birth(Date date_of_birth) {
         this.date_of_birth = date_of_birth;
     }
 

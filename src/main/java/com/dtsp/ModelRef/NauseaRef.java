@@ -2,9 +2,11 @@ package com.dtsp.ModelRef;
 
 import com.dtsp.ModelNew.NauseaNew;
 import com.dtsp.ModelOld.NauseaOld;
+import com.dtsp.util.EqStr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Component
@@ -15,6 +17,8 @@ public class NauseaRef {
     private List<NauseaNew> listNew;
     @Autowired
     private NauseaNew nauseaN;
+    @Resource
+    private EqStr eqStr;
     public List<NauseaNew> REF(List<NauseaOld> listOld){
         for (int i = 0;i<listOld.size();i++){
 
@@ -29,7 +33,9 @@ public class NauseaRef {
             nauseaN.setIDENTITY_CARD_NO(listOld.get(i).getIdcard_no());
             nauseaN.setADDRESS(listOld.get(i).getAddress());
             nauseaN.setRESIDENCE_ADDRESS(listOld.get(i).getHk_address()) ;
-            nauseaN.setSMOKING(listOld.get(i).getHyqk()) ;
+               if(listOld.get(i).getHyqk()!=null){
+              nauseaN.setSMOKING( eqStr.RefStr(listOld.get(i).getHyqk())) ;
+            }
             nauseaN.setPATHOLOGIC_TYPES(listOld.get(i).getBllx()) ;
             nauseaN.setDIAGNOSIS_T(listOld.get(i).getQzsqb()) ;
             nauseaN.setDIAGNOSIS_N(listOld.get(i).getQzsqb()) ;

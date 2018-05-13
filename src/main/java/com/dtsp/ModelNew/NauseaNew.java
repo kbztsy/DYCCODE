@@ -2,9 +2,10 @@ package com.dtsp.ModelNew;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-
 @Component
 public class NauseaNew {
+    private String ID;
+    private Long FID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -16,7 +17,7 @@ public class NauseaNew {
     private String IDENTITY_CARD_NO;
     private String ADDRESS;
     private String RESIDENCE_ADDRESS;
-    private String SMOKING;
+    private Integer SMOKING;
     private String PATHOLOGIC_TYPES;
     private String DIAGNOSIS_T;
     private String DIAGNOSIS_N;
@@ -36,6 +37,22 @@ public class NauseaNew {
     private String DIAGNOSISBASIS;
     private String DIAGNOSISBASISOTHER;
     private String DETAILED_DIAGNOSIS;
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
 
     public String getVISIT_NO() {
         return VISIT_NO;
@@ -125,11 +142,11 @@ public class NauseaNew {
         this.RESIDENCE_ADDRESS = RESIDENCE_ADDRESS;
     }
 
-    public String getSMOKING() {
+    public Integer getSMOKING() {
         return SMOKING;
     }
 
-    public void setSMOKING(String SMOKING) {
+    public void setSMOKING(Integer SMOKING) {
         this.SMOKING = SMOKING;
     }
 
@@ -288,7 +305,9 @@ public class NauseaNew {
     @Override
     public String toString() {
         return "NauseaNew{" +
-                "VISIT_NO='" + VISIT_NO + '\'' +
+                "ID='" + ID + '\'' +
+                ", FID=" + FID +
+                ", VISIT_NO='" + VISIT_NO + '\'' +
                 ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +
                 ", SICK_SEX='" + SICK_SEX + '\'' +
@@ -299,7 +318,7 @@ public class NauseaNew {
                 ", IDENTITY_CARD_NO='" + IDENTITY_CARD_NO + '\'' +
                 ", ADDRESS='" + ADDRESS + '\'' +
                 ", RESIDENCE_ADDRESS='" + RESIDENCE_ADDRESS + '\'' +
-                ", SMOKING='" + SMOKING + '\'' +
+                ", SMOKING=" + SMOKING +
                 ", PATHOLOGIC_TYPES='" + PATHOLOGIC_TYPES + '\'' +
                 ", DIAGNOSIS_T='" + DIAGNOSIS_T + '\'' +
                 ", DIAGNOSIS_N='" + DIAGNOSIS_N + '\'' +
@@ -322,3 +341,4 @@ public class NauseaNew {
                 '}';
     }
 }
+

@@ -121,7 +121,7 @@ insert into
     )
     values
     (
-      #{FID}
+      #{FID},
       #{SMOKING},
       #{PATHOLOGIC_TYPES},
       #{DIAGNOSIS_T},
@@ -129,7 +129,7 @@ insert into
       #{DIAGNOSIS_M},
       #{DIAGNOSIS_NO},
       #{ICD_10},
-      #{ICD_10_TEXT}
+      #{ICD_10_TEXT},
       #{CLINICAL_STAGE},
       #{ICD_03},
       #{ICD_03_TEXT},

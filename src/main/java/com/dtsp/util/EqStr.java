@@ -1,5 +1,8 @@
 package com.dtsp.util;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class EqStr {
     public int RefStr(String str){
         int type=0;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
+
 //主键
 @Controller
 @RequestMapping(value = "/cirrhosis")

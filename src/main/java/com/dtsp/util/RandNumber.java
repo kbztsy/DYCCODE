@@ -1,7 +1,9 @@
 package com.dtsp.util;
 
-import java.util.Map;
+import org.springframework.stereotype.Component;
 
+import java.util.Map;
+@Component
 public class RandNumber {
     public Long Randint(){
         String intStr = "";

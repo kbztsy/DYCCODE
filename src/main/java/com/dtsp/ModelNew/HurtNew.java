@@ -2,9 +2,10 @@ package com.dtsp.ModelNew;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
-
 @Component
 public class HurtNew {
+    private String ID;
+    private Long FID;
     private String SICK_NAME;
     private String SICK_SEX;
     private String NATION;
@@ -21,6 +22,46 @@ public class HurtNew {
     private Date OCCURRED_DATE;
     private Date CREATE_TIME;
     private String WRITE_DOCTOR;
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public Long getFID() {
+        return FID;
+    }
+
+    public void setFID(Long FID) {
+        this.FID = FID;
+    }
+
+    public Date getBIRTHDAY() {
+        return BIRTHDAY;
+    }
+
+    public void setBIRTHDAY(Date BIRTHDAY) {
+        this.BIRTHDAY = BIRTHDAY;
+    }
+
+    public Date getOCCURRED_DATE() {
+        return OCCURRED_DATE;
+    }
+
+    public void setOCCURRED_DATE(Date OCCURRED_DATE) {
+        this.OCCURRED_DATE = OCCURRED_DATE;
+    }
+
+    public Date getCREATE_TIME() {
+        return CREATE_TIME;
+    }
+
+    public void setCREATE_TIME(Date CREATE_TIME) {
+        this.CREATE_TIME = CREATE_TIME;
+    }
 
     public String getSICK_NAME() {
         return SICK_NAME;
@@ -52,14 +93,6 @@ public class HurtNew {
 
     public void setZONE_TYPE(String ZONE_TYPE) {
         this.ZONE_TYPE = ZONE_TYPE;
-    }
-
-    public Date getBIRTHDAY() {
-        return BIRTHDAY;
-    }
-
-    public void setBIRTHDAY(Date BIRTHDAY) {
-        this.BIRTHDAY = BIRTHDAY;
     }
 
     public String getOCCUPATION() {
@@ -124,22 +157,6 @@ public class HurtNew {
 
     public void setSEVERITY(String SEVERITY) {
         this.SEVERITY = SEVERITY;
-    }
-
-    public Date getOCCURRED_DATE() {
-        return OCCURRED_DATE;
-    }
-
-    public void setOCCURRED_DATE(Date OCCURRED_DATE) {
-        this.OCCURRED_DATE = OCCURRED_DATE;
-    }
-
-    public Date getCREATE_TIME() {
-        return CREATE_TIME;
-    }
-
-    public void setCREATE_TIME(Date CREATE_TIME) {
-        this.CREATE_TIME = CREATE_TIME;
     }
 
     public String getWRITE_DOCTOR() {
