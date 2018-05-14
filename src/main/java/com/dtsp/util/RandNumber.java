@@ -2,15 +2,16 @@ package com.dtsp.util;
 
 import org.springframework.stereotype.Component;
 
-import java.util.Map;
+import java.math.BigDecimal;
+
 @Component
 public class RandNumber {
-    public Long Randint(){
+    public BigDecimal RandInt20(){
         String intStr = "";
-        for(int i =0; i<10;i++){
-          int in = (int)(Math.random()*9);
-            intStr +=in;
+        for(int i=0;i<20;i++){
+            int in = (int)(Math.random()*9);
+            intStr += in;
         }
-      return Long.parseLong(intStr);
+        return new BigDecimal(Double.parseDouble(intStr));
     }
 }
