@@ -9,27 +9,27 @@ import java.util.Date;
 public class InternalNew {
     @Autowired
     private RandNumber randNumber;
-    private BigDecimal ID;
-    private Long FID;
+    private String ID;
+    private BigDecimal FID;
     private String VISIT_NO;// 门诊住院号
     private String RESI_CASE_NO;
     private String	SICK_NAME ;//患者姓名
     private String	SICK_SEX ;// 性别
     private Date	BIRTHDAY ;//出生日期
 
-    public BigDecimal getID() {
-        return randNumber.RandInt20();
+    public String getID() {
+        return randNumber.RandStr15();
     }
 
-    public void setID(BigDecimal ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
-    public Long getFID() {
-        return FID;
+    public BigDecimal getFID() {
+        return randNumber.RandInt20();
     }
 
-    public void setFID(Long FID) {
+    public void setFID(BigDecimal FID) {
         this.FID = FID;
     }
 

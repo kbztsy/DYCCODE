@@ -61,6 +61,7 @@ public class NauseaService {
         try{
             return nauseaRef.REF(oldNausea);
         } catch(Exception e){
+            e.printStackTrace();
             return null;
         }
     }

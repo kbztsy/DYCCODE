@@ -91,5 +91,18 @@
     #{SMOKING}
  )
     </insert>
-
+<!-- public  boolean insertMEDICAL2(HeartBrainNew heartBrain);-->
+    <insert id="insertMEDICAL2"
+            parameterType="com.dtsp.ModelNew.HeartBrainNew">
+ insert into
+     FIRST_DIAGNOSE_REPORT_HEIGHT(
+     ID,
+     DIAGNOSECODE,
+     SMOKING)
+ values (
+    #{FID},
+    #{DIAGNOSECODE},
+    #{SMOKING}
+ )
+    </insert>
 </mapper>

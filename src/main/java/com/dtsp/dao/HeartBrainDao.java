@@ -13,4 +13,5 @@ public interface HeartBrainDao {
     public List<HeartBrainOld> GetHeartBrain();
     public  boolean insertHeartBrain(HeartBrainNew heartBrain);
     public  boolean insertMEDICAL(HeartBrainNew heartBrain);
+    public  boolean insertMEDICAL2(HeartBrainNew heartBrain);
 }

@@ -28,6 +28,7 @@ public class HeartBrainService {
         try{
             heartBrainDao.insertMEDICAL(heartBrainNew);
             heartBrainDao.insertHeartBrain(heartBrainNew);
+            heartBrainDao.insertMEDICAL2(heartBrainNew);
         } catch(Exception e){
             throw e;
         }

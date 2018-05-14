@@ -112,11 +112,15 @@ insert into
       DIAGNOSIS_N,
       DIAGNOSIS_M,
       DIAGNOSIS_NO,
-      ICD_10,
-      ICD_10_TEXT,
+        <if test="ICD_10!=null">
+            ICD_10,
+            ICD_10_TEXT,
+        </if>
       CLINICAL_STAGE,
-      ICD_03,
-      ICD_03_TEXT,
+      <if test="ICD_03!=null">
+          ICD_03,
+          ICD_03_TEXT,
+      </if>
       DIFFERENTIAL_DEGREE
     )
     values
@@ -128,11 +132,15 @@ insert into
       #{DIAGNOSIS_N},
       #{DIAGNOSIS_M},
       #{DIAGNOSIS_NO},
-      #{ICD_10},
-      #{ICD_10_TEXT},
+        <if test="ICD_10!=null">
+            #{ICD_10},
+            #{ICD_10_TEXT},
+        </if>
       #{CLINICAL_STAGE},
-      #{ICD_03},
-      #{ICD_03_TEXT},
+        <if test="ICD_03!=null">
+            #{ICD_03},
+            #{ICD_03_TEXT},
+        </if>
       #{DIFFERENTIAL_DEGREE}
      )
 	</insert>
