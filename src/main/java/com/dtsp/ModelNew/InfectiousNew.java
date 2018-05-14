@@ -1,10 +1,15 @@
 package com.dtsp.ModelNew;
+import com.dtsp.util.RandNumber;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class InfectiousNew {
-    private String ID;
+    @Autowired
+    private RandNumber randNumber;
+    private BigDecimal ID;
     private Long FID;
     private String 	VISIT_NO;// 门诊住院号
     private String RESI_CASE_NO;
@@ -26,20 +31,20 @@ public class InfectiousNew {
     private String 	WRITE_DOCTOR;//填报医生
     private Date  	CREATE_TIME;//医生填卡日期
 
+    public BigDecimal getID() {
+        return randNumber.RandInt20();
+    }
+
+    public void setID(BigDecimal ID) {
+        this.ID = ID;
+    }
+
     public Long getFID() {
         return FID;
     }
 
     public void setFID(Long FID) {
         this.FID = FID;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
     }
 
     public String getVISIT_NO() {
