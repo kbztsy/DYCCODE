@@ -18,22 +18,22 @@ public class HurtRef {
     public List<HurtNew> REF(List<HurtOld> listOld) {
         for (int i = 0; i < listOld.size(); i++) {
 
-            hurtN.setSICK_NAME(listOld.get(i).getPatient_name());
-            hurtN.setSICK_SEX(listOld.get(i).getSex_id());
-            hurtN.setNATION(listOld.get(i).getNationality_id());
-            hurtN.setZONE_TYPE(listOld.get(i).getHj());
+            hurtN.setSICK_NAME(listOld.get(i).getPatient_name().trim());
+            hurtN.setSICK_SEX(listOld.get(i).getSex_id().trim());
+            hurtN.setNATION(listOld.get(i).getNationality_id().trim());
+            hurtN.setZONE_TYPE(listOld.get(i).getHj().trim());
             hurtN.setBIRTHDAY(listOld.get(i).getDate_of_birth());
-            hurtN.setOCCUPATION(listOld.get(i).getOccupation_id());
-            hurtN.setADDRESS(listOld.get(i).getAddress());
-            hurtN.setHARM_REASON(listOld.get(i).getXzd());
-            hurtN.setDELIBERATELY(listOld.get(i).getSfgy());
-            hurtN.setHARM_PART(listOld.get(i).getXshbw());
-            hurtN.setPART_OTHER_TEXT(listOld.get(i).getXshbw());
-            hurtN.setTAKE_PLACE(listOld.get(i).getFsdd());
-            hurtN.setSEVERITY(listOld.get(i).getYzcd());
+            hurtN.setOCCUPATION(listOld.get(i).getOccupation_id().trim());
+            hurtN.setADDRESS(listOld.get(i).getAddress().trim());
+            hurtN.setHARM_REASON(listOld.get(i).getXzd().trim());
+            hurtN.setDELIBERATELY(listOld.get(i).getSfgy().trim());
+            hurtN.setHARM_PART(listOld.get(i).getXshbw().trim());
+            hurtN.setPART_OTHER_TEXT(listOld.get(i).getXshbw().trim());
+            hurtN.setTAKE_PLACE(listOld.get(i).getFsdd().trim());
+            hurtN.setSEVERITY(listOld.get(i).getYzcd().trim());
             hurtN.setOCCURRED_DATE(listOld.get(i).getFs_date());
             hurtN.setCREATE_TIME(listOld.get(i).getDate_of_tb());
-            hurtN.setWRITE_DOCTOR(listOld.get(i).getPerson_of_tb());
+            hurtN.setWRITE_DOCTOR(listOld.get(i).getPerson_of_tb().trim());
 
             listNew.add(hurtN);
         }
