@@ -36,7 +36,6 @@ public class InternalService {
     @DS("datasource1")
     public boolean insertInternal(InternalNew internalNew){
         try{
-            internalDao.insertMEDICAL(internalNew);
             internalDao.insertInternal(internalNew);
         } catch(Exception e){
             throw e;
