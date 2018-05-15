@@ -21,11 +21,6 @@ public class MentalService {
   @Resource
     private MentalRef mentalRef;
     //使用数据源1查询
-   @DS("datasource1")
-    public List<MentalOld> getAllMental1(){
-        return mentalDao.getMental();
-    }
-    //使用数据源2查询
     @DS("datasource2")
     public List<MentalOld> getAllMental2(){
         return mentalDao.getMental();

@@ -1,5 +1,6 @@
 package com.dtsp.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.dtsp.ModelNew.InternalNew;
 import com.dtsp.ModelOld.InternalOld;
 import com.dtsp.service.InternalService;
@@ -16,7 +17,7 @@ public class InternalController {
     @Resource
     private InternalService internalService;
 
-    @RequestMapping("/getDb1AllInternal")
+    @RequestMapping("/all")
     @ResponseBody
     public List<InternalOld> getDb1AllInternal() {
         List<InternalOld> list1 = internalService.getAllInternal2();
@@ -25,7 +26,8 @@ public class InternalController {
     }
     @RequestMapping("/insert")
     @ResponseBody
-    public boolean insert() {
+    public JSONObject insert() {
+        JSONObject jsonObject = new JSONObject();
         try{
             List<InternalOld> oldcir = internalService.getAllInternal2();
             for (InternalOld internalOld:oldcir
@@ -38,12 +40,15 @@ public class InternalController {
                 System.out.println(internalNew);
                 internalService.insertInternal(internalNew);
             }
-            return true;
-
+            jsonObject.put("NameMsg","Internal");
+            jsonObject.put("StateMsg",0);
+            return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
-            return false;
+            jsonObject.put("NameMsg","Internal");
+            jsonObject.put("StateMsg",1);
+            jsonObject.put("Message",e.getMessage());
+            return jsonObject;
         }
-
     }
 }

@@ -1,5 +1,6 @@
 package com.dtsp.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.dtsp.ModelNew.CirrhosisNew;
 import com.dtsp.ModelOld.CirrhosisOld;
 import com.dtsp.service.CirrhosisService;
@@ -20,32 +21,31 @@ public class CirrhosisController {
     @ResponseBody
     public List<CirrhosisOld> Cirrhosis() {
        List<CirrhosisOld> mapList =  cirrhosisService.GetCirrhosis();
-     //  System.out.println(mapList);
        return mapList;
     }
     @RequestMapping("/insert")
     @ResponseBody
-    public boolean insert() {
+    public JSONObject insert() {
+        JSONObject jsonObject = new JSONObject();
         try{
             List<CirrhosisOld> oldcir = cirrhosisService.GetCirrhosis();
-            for (CirrhosisOld cirrhosisNew:oldcir
-                    ) {
+            for (CirrhosisOld cirrhosisNew:oldcir) {
                 System.out.println(cirrhosisNew);
             }
             List<CirrhosisNew> list= cirrhosisService.upCirrhosisls(oldcir);
-            for (CirrhosisNew cirrhosisNew:list
-                    ) {
+            for (CirrhosisNew cirrhosisNew:list) {
                 System.out.println(cirrhosisNew);
                 cirrhosisService.insertCirrhosis(cirrhosisNew);
             }
-         return true;
-
+            jsonObject.put("NameMsg","Cirrhosis");
+            jsonObject.put("StateMsg",0);
+            return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
-            return false;
+            jsonObject.put("NameMsg","Cirrhosis");
+            jsonObject.put("StateMsg",1);
+            jsonObject.put("Message",e.getMessage());
+            return jsonObject;
         }
-
     }
-
-
 }

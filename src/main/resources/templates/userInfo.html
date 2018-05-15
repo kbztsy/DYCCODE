@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>UserInfo</title>
 </head>
 <body>
-<h3>用户查询界面</h3>
+<h3>用户同步界面</h3>
+<input type="button" onclick="ALL()" value="一键同步"/>
+<input type="button" onclick="Cirrhosis()" value="同步肝硬化"/>
+<input type="button" onclick="Disbetes()" value="同步糖尿病"/>
+<input type="button" onclick="HeartBrain()" value="同步冠心病,脑卒中,高血压"/>
+<input type="button" onclick="Hurt()" value="同步伤害"/>
+<input type="button" onclick="Infectious()" value="同步传染病"/>
+<input type="button" onclick="Internal()" value="同步内感染"/>
+<input type="button" onclick="Mental()" value="同步精神病"/>
+<input type="button" onclick="Nausea()" value="同步恶性肿瘤"/>
 </body>
+<script th:src="@{/jquery-1.8.3.min.js}"></script>
+<script>
+    function ALL() {
+        $.ajax({
+            type: "post",
+            url: "/all/all",
+            success: function (data) {
+            var all  = data.AllState;
+            console.log(all);
+                for(var i in all){
+                    console.log(all[i].NameMsg)
+                    console.log(all[i].StateMsg);
+                }
+            }
+        });
+    }
+    function Cirrhosis() {
+        $.ajax({
+            type: "post",
+            url: "/cirrhosis/insert",
+            success: function (data) {
+                console.log("肝硬化："+data.NameMsg+":"+data.StateMsg);
+            }
+        });
+    }
+    function Disbetes() {
+        $.ajax({
+            type: "post",
+            url: "/disbetes/insert",
+            success: function (data) {
+                console.log("糖尿病："+data.NameMsg+":"+data.StateMsg);
+            }
+        });
+    }
+    function HeartBrain() {
+        $.ajax({
+            type: "post",
+            url: "/heartbrain/insert",
+            success: function (data) {
+                console.log("冠心病,脑卒中,高血压："+data.NameMsg+":"+data.StateMsg);
+            }
+        });
+    }
+    function Hurt() {
+        $.ajax({
+            type: "post",
+            url: "/hurt/insert",
+            success: function (data) {
+                console.log("伤害："+data.NameMsg+":"+data.StateMsg);
+            }
+        });
+    }
+    function Infectious() {
+        $.ajax({
+            type: "post",
+            url: "/infectious/insert",
+            success: function (data) {
+                console.log("传染病："+data.NameMsg+":"+data.StateMsg);
+            }
+        });
+    }
+    function Internal() {
+        $.ajax({
+            type: "post",
+            url: "/internal/insert",
+            success: function (data) {
+                console.log("内感染："+data.NameMsg+":"+data.StateMsg);
+            }
+        });
+    }
+    function Mental() {
+        $.ajax({
+            type: "post",
+            url: "/mental/insert",
+            success: function (data) {
+                console.log("精神病："+data.NameMsg+":"+data.StateMsg);
+            }
+        });
+    }
+    function Nausea() {
+        $.ajax({
+            type: "post",
+            url: "/nausea/insert",
+            success: function (data) {
+                console.log("恶性肿瘤："+data.NameMsg+":"+data.StateMsg);
+            }
+        });
+    }
+</script>
 </html>

@@ -21,11 +21,6 @@ public class NauseaService {
  @Resource
     private NauseaRef nauseaRef;
     //使用数据源1查询
-   @DS("datasource1")
-    public List<NauseaOld> getAllNausea1(){
-        return nauseaDao.getNausea();
-    }
-    //使用数据源2查询
     @DS("datasource2")
     public List<NauseaOld> getAllNausea2(){
         return nauseaDao.getNausea();

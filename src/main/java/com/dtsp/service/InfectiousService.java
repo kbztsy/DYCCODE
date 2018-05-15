@@ -18,11 +18,6 @@ public class InfectiousService {
     private InfectiousRef infectiousRef;
 
     //使用数据源1查询
-    @DS("datasource1")
-    public List<InfectiousOld> getAllInternal1(){
-        return infectiousDao.getInfectious();
-    }
-    //使用数据源2查询
     @DS("datasource2")
     public List<InfectiousOld> getAllInternal2(){
         return infectiousDao.getInfectious();

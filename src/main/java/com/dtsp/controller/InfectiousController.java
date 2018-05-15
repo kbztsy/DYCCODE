@@ -1,5 +1,6 @@
 package com.dtsp.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.dtsp.ModelNew.InfectiousNew;
 import com.dtsp.ModelOld.InfectiousOld;
 import com.dtsp.service.InfectiousService;
@@ -16,7 +17,7 @@ public class InfectiousController {
     @Resource
     private InfectiousService infectiousService;
 
-    @RequestMapping(value = "/getDb1AllInfectious")
+    @RequestMapping(value = "/all")
     @ResponseBody
     public List<InfectiousOld> getDb1AllInfectious() {
         List<InfectiousOld> list1 = infectiousService.getAllInternal2();
@@ -25,7 +26,8 @@ public class InfectiousController {
     }
     @RequestMapping("/insert")
     @ResponseBody
-    public boolean insert() {
+    public JSONObject insert() {
+        JSONObject jsonObject = new JSONObject();
         try{
             List<InfectiousOld> oldcir = infectiousService.getAllInternal2();
             for (InfectiousOld infectiousOld:oldcir
@@ -38,13 +40,16 @@ public class InfectiousController {
                 System.out.println(infectiousNew);
                 infectiousService.insertInfectious(infectiousNew);
             }
-            return true;
-
+            jsonObject.put("NameMsg","Infectious");
+            jsonObject.put("StateMsg",0);
+            return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
-            return false;
+            jsonObject.put("NameMsg","Infectious");
+            jsonObject.put("StateMsg",1);
+            jsonObject.put("Message",e.getMessage());
+            return jsonObject;
         }
-
     }
 
 /*

@@ -1,5 +1,6 @@
 package com.dtsp.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.dtsp.ModelNew.MentalNew;
 import com.dtsp.ModelOld.MentalOld;
 import com.dtsp.service.MentalService;
@@ -16,7 +17,7 @@ public class MentalController {
     @Resource
     private MentalService mentalService;
 
-    @RequestMapping("/getDb1AllMental")
+    @RequestMapping("/all")
     @ResponseBody
     public List<MentalOld> getDb1Mental() {
         List<MentalOld> list1 = mentalService.getAllMental2();
@@ -25,25 +26,27 @@ public class MentalController {
     }
     @RequestMapping("/insert")
     @ResponseBody
-    public boolean insert() {
+    public JSONObject insert() {
+        JSONObject jsonObject = new JSONObject();
         try{
             List<MentalOld> oldcir = mentalService.getAllMental2();
-            for (MentalOld mentalOld:oldcir
-                    ) {
+            for (MentalOld mentalOld:oldcir) {
                 System.out.println(mentalOld);
             }
             List<MentalNew> list= mentalService.upMentalls(oldcir);
-            for (MentalNew mentalNew:list
-                    ) {
+            for (MentalNew mentalNew:list) {
                 System.out.println(mentalNew);
                 mentalService.insertMental(mentalNew);
             }
-            return true;
-
+            jsonObject.put("NameMsg","Mental");
+            jsonObject.put("StateMsg",0);
+            return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
-            return false;
+            jsonObject.put("NameMsg","Mental");
+            jsonObject.put("StateMsg",1);
+            jsonObject.put("Message",e.getMessage());
+            return jsonObject;
         }
-
     }
 }

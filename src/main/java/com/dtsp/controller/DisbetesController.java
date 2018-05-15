@@ -1,6 +1,7 @@
 package com.dtsp.controller;
 
 
+import com.alibaba.fastjson.JSONObject;
 import com.dtsp.ModelNew.DiabetesNew;
 import com.dtsp.ModelOld.DiabetesOld;
 import com.dtsp.service.DisbetesService;
@@ -25,11 +26,11 @@ public class DisbetesController {
     }
     @RequestMapping("/insert")
     @ResponseBody
-    public boolean insert() {
+    public JSONObject insert() {
+        JSONObject jsonObject = new JSONObject();
         try{
             List<DiabetesOld> oldcir = disbetesService.GetDisbetes();
-            for (DiabetesOld diabetesOld:oldcir
-                    ) {
+            for (DiabetesOld diabetesOld:oldcir) {
                 System.out.println(diabetesOld);
             }
             List<DiabetesNew> list= disbetesService.upCirrhosisls(oldcir);
@@ -37,12 +38,15 @@ public class DisbetesController {
                 System.out.println(diabetesNew);
                 disbetesService.insertDisbetes(diabetesNew);
             }
-
-        } catch(Exception e){
+            jsonObject.put("NameMsg","Disbetes");
+            jsonObject.put("StateMsg",0);
+            return jsonObject;
+        } catch(Exception e) {
             e.printStackTrace();
-            return false;
+            jsonObject.put("NameMsg","Disbetes");
+            jsonObject.put("StateMsg",1);
+            jsonObject.put("Message",e.getMessage());
+            return jsonObject;
         }
-                return true;
     }
-
 }

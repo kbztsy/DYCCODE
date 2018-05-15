@@ -15,7 +15,7 @@ public class RandNumber {
     public BigDecimal RandInt10(){
         String intStr = "";
         for(int i=0;i<10;i++){
-            int in = (int)(Math.random()*9);
+            int in = (int)(Math.random()*10);
             intStr+=in;
         }
         return new BigDecimal(Double.parseDouble(intStr));
@@ -23,7 +23,7 @@ public class RandNumber {
     public BigDecimal RandInt20(){
         String intStr = new Date().getTime()+"";
         for(int i=0;i<7;i++){
-            int in = (int)(Math.random()*9);
+            int in = (int)(Math.random()*10);
             intStr += in;
         }
         return new BigDecimal(Double.parseDouble(intStr));

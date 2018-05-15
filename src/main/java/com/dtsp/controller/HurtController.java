@@ -1,5 +1,6 @@
 package com.dtsp.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.dtsp.ModelNew.HurtNew;
 import com.dtsp.ModelOld.HurtOld;
 import com.dtsp.service.HurtService;
@@ -23,26 +24,27 @@ public class HurtController {
     }
     @RequestMapping("/insert")
     @ResponseBody
-    public boolean insert() {
+    public JSONObject insert() {
+        JSONObject jsonObject = new JSONObject();
         try{
             List<HurtOld> oldcir = hurtService.GetHurt();
-            for (HurtOld hurtOld:oldcir
-                    ) {
+            for (HurtOld hurtOld:oldcir) {
                 System.out.println(hurtOld);
             }
             List<HurtNew> list= hurtService.upHurtls(oldcir);
-            for (HurtNew hurtNew:list
-                    ) {
+            for (HurtNew hurtNew:list) {
                 System.out.println(hurtNew);
                 hurtService.insertHurt(hurtNew);
             }
-            return true;
-
+            jsonObject.put("NameMsg","Hurt");
+            jsonObject.put("StateMsg",0);
+            return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
-            return false;
+            jsonObject.put("NameMsg","Hurt");
+            jsonObject.put("StateMsg",1);
+            jsonObject.put("Message",e.getMessage());
+            return jsonObject;
         }
-
     }
-
 }

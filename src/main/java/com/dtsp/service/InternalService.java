@@ -22,11 +22,6 @@ public class InternalService {
     private InternalRef internalRef;
 
     //使用数据源1查询
-   @DS("datasource1")
-    public List<InternalOld> getAllInternal1(){
-        return internalDao.getInternal();
-    }
-    //使用数据源2查询
     @DS("datasource2")
     public List<InternalOld> getAllInternal2(){
         return internalDao.getInternal();

@@ -1,5 +1,6 @@
 package com.dtsp.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.dtsp.ModelNew.HeartBrainNew;
 import com.dtsp.ModelOld.HeartBrainOld;
 import com.dtsp.service.HeartBrainService;
@@ -24,25 +25,27 @@ public class HeartBrainController {
     }
     @RequestMapping("/insert")
     @ResponseBody
-    public boolean insert() {
-
+    public JSONObject insert() {
+        JSONObject jsonObject = new JSONObject();
         try{
             List<HeartBrainOld> oldcir = heartBrainService.GetHeartBrain();
-            for (HeartBrainOld cirrhosisNew:oldcir
-                    ) {
+            for (HeartBrainOld cirrhosisNew:oldcir) {
                 System.out.println(cirrhosisNew);
             }
             List<HeartBrainNew> list= heartBrainService.upHeartBrainls(oldcir);
-            for (HeartBrainNew heartBrainNew:list
-                    ) {
+            for (HeartBrainNew heartBrainNew:list) {
                 System.out.println(heartBrainNew);
                 heartBrainService.insertHeartBrain(heartBrainNew);
             }
-            return true;
-
+            jsonObject.put("NameMsg","HeartBrain");
+            jsonObject.put("StateMsg",0);
+            return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
-            return false;
+            jsonObject.put("NameMsg","HeartBrain");
+            jsonObject.put("StateMsg",1);
+            jsonObject.put("Message",e.getMessage());
+            return  jsonObject;
         }
     }
 }
