@@ -17,10 +17,8 @@ public class AIDSController {
     private AIDSService aidsService;
     @RequestMapping(value = "/all")
     @ResponseBody
-    public List<HurtOld> aids(){
+    public List<HurtOld> aids() {
         List<HurtOld> maps = aidsService.GetAIDS();
         return maps;
     }
-
-
 }

@@ -3,19 +3,22 @@ package com.dtsp.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.dtsp.ModelNew.InfectiousNew;
 import com.dtsp.ModelOld.InfectiousOld;
+import com.dtsp.ModelOld.Login;
 import com.dtsp.service.InfectiousService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import javax.annotation.Resource;
 import java.util.List;
 
 @Controller
 @RequestMapping("/infectious")
 public class InfectiousController {
 
-    @Resource
+    @Autowired
     private InfectiousService infectiousService;
+    @Autowired
+    private Login login;
 
     @RequestMapping(value = "/all")
     @ResponseBody
@@ -28,24 +31,26 @@ public class InfectiousController {
     @ResponseBody
     public JSONObject insert() {
         JSONObject jsonObject = new JSONObject();
+        jsonObject.put("NameMsg","Infectious");
+        if(login.getJurisdiction() > 6){
+            jsonObject.put("StateMsg",2);
+            return jsonObject;
+        }
         try{
-            List<InfectiousOld> oldcir = infectiousService.getAllInternal2();
-            for (InfectiousOld infectiousOld:oldcir
-                    ) {
+            List<InfectiousOld> lists = infectiousService.getAllInternal2();
+            for (InfectiousOld infectiousOld:lists) {
                 System.out.println(infectiousOld);
             }
-            List<InfectiousNew> list= infectiousService.upInfectious(oldcir);
+            List<InfectiousNew> list= infectiousService.upInfectious(lists);
             for (InfectiousNew infectiousNew:list
                     ) {
                 System.out.println(infectiousNew);
                 infectiousService.insertInfectious(infectiousNew);
             }
-            jsonObject.put("NameMsg","Infectious");
             jsonObject.put("StateMsg",0);
             return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
-            jsonObject.put("NameMsg","Infectious");
             jsonObject.put("StateMsg",1);
             jsonObject.put("Message",e.getMessage());
             return jsonObject;
