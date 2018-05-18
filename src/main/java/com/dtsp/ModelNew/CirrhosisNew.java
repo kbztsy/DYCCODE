@@ -29,7 +29,7 @@ public class CirrhosisNew {
     private String WRITE_DOCTOR;
 
     public String getINF_ID() {
-        return INF_ID;
+        return randNumber.RandStr15();
     }
 
     public void setINF_ID(String INF_ID) {
@@ -37,7 +37,7 @@ public class CirrhosisNew {
     }
 
     public BigDecimal getID() {
-        return ID;
+        return randNumber.RandInt20();
     }
 
     public void setID(BigDecimal ID) {

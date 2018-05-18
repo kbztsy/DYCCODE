@@ -27,84 +27,139 @@
          </select>
 
     <insert id="insertCirrhosis"
-            parameterType="com.dtsp.ModelNew.CirrhosisNew">
-         insert into
-      MEDICAL_INFORMATION_ENREGISTER
-        (
-      INF_ID
-      ,VISIT_NO
-        <if test="RESI_CASE_NO!=null AND RESI_CASE_NO!=''">
-      ,RESI_CASE_NO
-        </if>
-      ,SICK_NAME
-      ,SICK_SEX
-        <if test="NATION!=null AND NATION!=''">
-      ,NATION
-        </if>
-      ,OCCUPATION
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''" >
-      ,BIRTHDAY
-        </if>
-      ,ADDRESS
-      ,RECEPTION_ORG
-      ,RECEPTION_TIME
-      ,CREATE_TIME
-      ,WRITE_DOCTOR)
-      values(
-      #{INF_ID},
-      ,#{VISIT_NO}
-        <if test="RESI_CASE_NO!=null AND RESI_CASE_NO!=''">
-      ,#{RESI_CASE_NO}
-        </if>
-      ,#{SICK_NAME}
-      ,#{SICK_SEX}
-        <if test="NATION!=null AND NATION!=''">
-      ,#{NATION}
-        </if>
-      ,#{OCCUPATION}
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''" >
-      ,#{BIRTHDAY}
-        </if>
-      ,#{ADDRESS}
-      ,#{RECEPTION_ORG}
-      ,#{RECEPTION_TIME}
-      ,#{CREATE_TIME},
-      ,#{WRITE_DOCTOR}
-      )
-    </insert>
-  <insert id="insertMEDICAL"
-          parameterType="com.dtsp.ModelNew.CirrhosisNew"
-        >
+    parameterType="com.dtsp.ModelNew.CirrhosisNew">
     insert into
-      FIRST_DIAGNOSE_REPORT_PMH
+    MEDICAL_INFORMATION_ENREGISTER
     (
-     ID
-        <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
-     ,DIAGNOSECODE
-        </if>
-        <if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">
-     ,ICD_10_TEXT
-        </if>
-        <if test="PMH!=null AND PMH !=''">
-     ,PMH
-        </if>
-        <if test="VACCINATE!=null AND VACCINATE!=''">
-     ,VACCINATE
-        </if>)
-   values(
-      #{ID}
-      <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
-     ,#{DIAGNOSECODE}
-      </if>
-      <if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">
-     ,#{ICD_10_TEXT}
-      </if>
-      <if test="PMH!=null AND PMH !=''">
-     ,#{PMH}
-      </if>
-      <if test="VACCINATE!=null AND VACCINATE!=''">
-     ,#{VACCINATE}
-      </if>
-   )
-  </insert>
-</mapper>
+    INF_ID
+    ,VISIT_NO
+    ,RESI_CASE_NO
+    ,SICK_NAME
+    ,SICK_SEX
+    ,NATION
+    ,OCCUPATION
+    ,BIRTHDAY
+    ,ADDRESS
+    ,RECEPTION_ORG
+    ,RECEPTION_TIME
+    ,CREATE_TIME
+    ,WRITE_DOCTOR)
+    values(
+    #{INF_ID}
+    ,#{VISIT_NO}
+    ,#{RESI_CASE_NO}
+    ,#{SICK_NAME}
+    ,#{SICK_SEX}
+    ,#{NATION}
+    ,#{OCCUPATION}
+    ,#{BIRTHDAY}
+    ,#{ADDRESS}
+    ,#{RECEPTION_ORG}
+    ,#{RECEPTION_TIME}
+    ,#{CREATE_TIME}
+    ,#{WRITE_DOCTOR}
+    )
+    </insert>
+    <insert id="insertMEDICAL"
+    parameterType="com.dtsp.ModelNew.CirrhosisNew"
+    >
+    insert into
+    FIRST_DIAGNOSE_REPORT_PMH
+    (
+    ID
+    ,DIAGNOSECODE
+    ,ICD_10_TEXT
+    ,PMH
+    ,VACCINATE
+    )
+    values(
+    #{ID}
+    ,#{DIAGNOSECODE}
+    ,#{ICD_10_TEXT}
+    ,#{PMH}
+    ,#{VACCINATE}
+    )
+    </insert>
+
+    <!--<insert id="insertCirrhosis"-->
+        <!--parameterType="com.dtsp.ModelNew.CirrhosisNew">-->
+        <!--insert into-->
+        <!--MEDICAL_INFORMATION_ENREGISTER-->
+        <!--(-->
+        <!--INF_ID-->
+        <!--,VISIT_NO-->
+        <!--<if test="RESI_CASE_NO!=null AND RESI_CASE_NO!=''">-->
+        <!--,RESI_CASE_NO-->
+        <!--</if>-->
+        <!--,SICK_NAME-->
+        <!--,SICK_SEX-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+        <!--,NATION-->
+        <!--</if>-->
+        <!--,OCCUPATION-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''" >-->
+        <!--,BIRTHDAY-->
+        <!--</if>-->
+        <!--,ADDRESS-->
+        <!--,RECEPTION_ORG-->
+        <!--,RECEPTION_TIME-->
+        <!--,CREATE_TIME-->
+        <!--,WRITE_DOCTOR)-->
+        <!--values(-->
+        <!--#{INF_ID},-->
+        <!--,#{VISIT_NO}-->
+        <!--<if test="RESI_CASE_NO!=null AND RESI_CASE_NO!=''">-->
+        <!--,#{RESI_CASE_NO}-->
+        <!--</if>-->
+        <!--,#{SICK_NAME}-->
+        <!--,#{SICK_SEX}-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+        <!--,#{NATION}-->
+        <!--</if>-->
+        <!--,#{OCCUPATION}-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''" >-->
+        <!--,#{BIRTHDAY}-->
+        <!--</if>-->
+        <!--,#{ADDRESS}-->
+        <!--,#{RECEPTION_ORG}-->
+        <!--,#{RECEPTION_TIME}-->
+        <!--,#{CREATE_TIME},-->
+        <!--,#{WRITE_DOCTOR}-->
+        <!--)-->
+        <!--</insert>-->
+        <!--<insert id="insertMEDICAL"-->
+        <!--parameterType="com.dtsp.ModelNew.CirrhosisNew"-->
+        <!--&gt;-->
+        <!--insert into-->
+        <!--FIRST_DIAGNOSE_REPORT_PMH-->
+        <!--(-->
+        <!--ID-->
+        <!--<if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">-->
+        <!--,DIAGNOSECODE-->
+        <!--</if>-->
+        <!--<if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">-->
+        <!--,ICD_10_TEXT-->
+        <!--</if>-->
+        <!--<if test="PMH!=null AND PMH !=''">-->
+        <!--,PMH-->
+        <!--</if>-->
+        <!--<if test="VACCINATE!=null AND VACCINATE!=''">-->
+        <!--,VACCINATE-->
+        <!--</if>)-->
+        <!--values(-->
+        <!--#{ID}-->
+        <!--<if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">-->
+        <!--,#{DIAGNOSECODE}-->
+        <!--</if>-->
+        <!--<if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">-->
+        <!--,#{ICD_10_TEXT}-->
+        <!--</if>-->
+        <!--<if test="PMH!=null AND PMH !=''">-->
+        <!--,#{PMH}-->
+        <!--</if>-->
+        <!--<if test="VACCINATE!=null AND VACCINATE!=''">-->
+        <!--,#{VACCINATE}-->
+        <!--</if>-->
+        <!--)-->
+        <!--</insert>-->
+        </mapper>
