@@ -23,15 +23,16 @@ public class CirrhosisTimer {
            List<CirrhosisNew> newList = cirrhosisService.upCirrhosisls(lists);
            if(newList.size() == 0){
                logger.info("Cirrhosis查询为空");
+               logger.error("Cirrhosis查询失败，未插入");
                return;
            }
            for(int i=0;i<newList.size();i++) {
                cirrhosisService.insertCirrhosis(newList.get(i));
+               logger.info("Cirrhosis插入成功");
                logger.info("插入数据："+newList.get(i));
-               logger.info("插入成功");
            }
         }catch (Exception ex){
-            logger.error("异常日志");
+            logger.error("Cirrhosis异常日志");
             logger.error("失败"+ex.getMessage());
         }
     }
