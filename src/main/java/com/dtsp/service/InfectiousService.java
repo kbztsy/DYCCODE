@@ -23,7 +23,6 @@ public class InfectiousService {
         return infectiousDao.getInfectious();
     }
 
-    //插入单个数据
     @DS("datasource1")
     public boolean insertInfectious(InfectiousNew infectiousNew){
         try{
@@ -35,7 +34,6 @@ public class InfectiousService {
         return true;
     }
 
-    //将new集合插入到表中
     @DS("datasource1")
     public boolean insertInfectious(List<InfectiousNew> list){
         try{
@@ -47,9 +45,7 @@ public class InfectiousService {
         }
         return true;
     }
-    //查询数据转换，并存到数据库
     public List<InfectiousNew> upInfectious(List<InfectiousOld> oldcir){
-
         try{
             return infectiousRef.REF(oldcir);
 

@@ -9,8 +9,8 @@ import java.util.Date;
 public class HurtNew {
     @Autowired
     private RandNumber randNumber;
-    private String ID;
-    private BigDecimal FID;
+    private String INF_ID;
+    private BigDecimal ID;
     private String SICK_NAME;
     private String SICK_SEX;
     private String NATION;
@@ -28,20 +28,20 @@ public class HurtNew {
     private Date CREATE_TIME;
     private String WRITE_DOCTOR;
 
-    public String getID() {
-        return randNumber.RandStr15();
+    public String getINF_ID() {
+        return INF_ID;
     }
 
-    public void setID(String ID) {
+    public void setINF_ID(String INF_ID) {
+        this.INF_ID = INF_ID;
+    }
+
+    public BigDecimal getID() {
+        return ID;
+    }
+
+    public void setID(BigDecimal ID) {
         this.ID = ID;
-    }
-
-    public BigDecimal getFID() {
-        return randNumber.RandInt20();
-    }
-
-    public void setFID(BigDecimal FID) {
-        this.FID = FID;
     }
 
     public Date getBIRTHDAY() {
@@ -175,7 +175,9 @@ public class HurtNew {
     @Override
     public String toString() {
         return "HurtNew{" +
-                "SICK_NAME='" + SICK_NAME + '\'' +
+                "INF_ID='" + INF_ID + '\'' +
+                ", ID=" + ID +
+                ", SICK_NAME='" + SICK_NAME + '\'' +
                 ", SICK_SEX='" + SICK_SEX + '\'' +
                 ", NATION='" + NATION + '\'' +
                 ", ZONE_TYPE='" + ZONE_TYPE + '\'' +

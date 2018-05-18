@@ -30,101 +30,104 @@
     1=1 and BKLX_ID = '05'
                 ORDER BY Date_of_TB DESC
        </select>
-       <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
-       <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性
-       <insert id="addUserGetID" parameterType="com.dtsp.entity.Demo" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
-              insert into demo(name,create_time) values(#{name},#{createTime})
-       </insert>
-       <insert id="addUser">
-              insert into demo(name,create_time) values(#{name},#{createTime})
-       </insert>
-       <insert id="insertUser">
-              insert into demo(id,name,create_time) values(#{id},#{name},#{createTime})
-       </insert>
---><!--public boolean insertMental(MentalOld mentalOld);-->
-
 	<insert id="insertMental"
 			parameterType="com.dtsp.ModelNew.MentalNew">
-insert into
-    MEDICAL_INFORMATION_ENREGISTER
+    insert into
+      MEDICAL_INFORMATION_ENREGISTER
     (
-      INF_ID,
-      VISIT_NO,
-      RESI_CASE_NO,
-      SICK_NAME,
-      SICK_SEX,
-      NATION,
-      OCCUPATION,
-      <if test="BIRTHDAY!=null">
-          BIRTHDAY,
-      </if>
-
-      ADDRESS,
-      WORK_PLACE,
-      RECEPTION_ORG,
-        <if test="RECEPTION_TIME!=null">
-            RECEPTION_TIME,
+      INF_ID
+      ,VISIT_NO
+      ,RESI_CASE_NO
+      ,SICK_NAME
+      ,SICK_SEX
+        <if test="NATION!=null AND NATION!=''">
+      ,NATION
         </if>
-<if test="CREATE_TIME!=null">
-    CREATE_TIME,
-</if>
-
-      WRITE_DOCTOR
+      ,OCCUPATION
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,BIRTHDAY
+        </if>
+      ,ADDRESS
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,WORK_PLACE
+        </if>
+      ,RECEPTION_ORG
+      ,RECEPTION_TIME
+      ,CREATE_TIME
+      ,WRITE_DOCTOR
      )
     values
     (
-      #{ID},
-      #{VISIT_NO},
-      #{RESI_CASE_NO},
-      #{SICK_NAME},
-      #{SICK_SEX},
-      #{NATION},
-      #{OCCUPATION},
-        <if test="BIRTHDAY!=null">
-            #{BIRTHDAY},
+      #{ID}
+      ,#{VISIT_NO}
+      ,#{RESI_CASE_NO}
+      ,#{SICK_NAME}
+      ,#{SICK_SEX}
+        <if test="NATION!=null AND NATION!=''">
+      ,#{NATION}
         </if>
-      #{ADDRESS},
-      #{WORK_PLACE},
-      #{RECEPTION_ORG},
-        <if test="RECEPTION_TIME!=null">
-            #{RECEPTION_TIME},
+      ,#{OCCUPATION}
+      ,#{BIRTHDAY}
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,#{ADDRESS}
         </if>
-        <if test="CREATE_TIME!=null">
-            #{CREATE_TIME},
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,#{WORK_PLACE}
         </if>
-
-      #{WRITE_DOCTOR}
+      ,#{RECEPTION_ORG}
+      ,#{RECEPTION_TIME}
+      ,#{CREATE_TIME}
+      ,#{WRITE_DOCTOR}
      )
 	</insert>
 
 	<!--  public  boolean insertMEDICAL  (MentalOld mentalOld);-->
 	<insert id="insertMEDICAL"
 			parameterType="com.dtsp.ModelNew.MentalNew">
-insert into
-    FIRST_DIAGNOSE_REPORT_PSY
-    (
-     ID,
-      FAMILY_HISTORY,
-      DISPOSITION,
-      PSYCHO,
-      DIAGNOSECODE,
-      <if test="ACCIDENT_DATE!=null">
-          ACCIDENT_DATE,
-      </if>
-
-      CCMD3_CODE
-    )
-    values
-    (
-      #{FID},
-      #{FAMILY_HISTORY},
-      #{DISPOSITION},
-      #{PSYCHO},
-      #{DIAGNOSECODE},
-        <if test="ACCIDENT_DATE!=null">
-            #{ACCIDENT_DATE},
+      insert into
+        FIRST_DIAGNOSE_REPORT_PSY
+      (
+      ID
+        <if test="FAMILY_HISTORY!=null AND FAMILY_HISTORY!=''">
+      ,FAMILY_HISTORY
         </if>
+        <if test="DISPOSITION!=null AND DISPOSITION!=''">
+      ,DISPOSITION
+        </if>
+        <if test="PSYCHO!=null AND PSYCHO!=''">
+      ,PSYCHO
+        </if>
+        <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
+      ,DIAGNOSECODE
+        </if>
+        <if test="ACCIDENT_DATE!=null AND ACCIDENT_DATE!=''">
+      ,ACCIDENT_DATE
+        </if>
+        <if test="CCMD3_CODE!=null AND CCMD3_CODE!=''">
+      ,CCMD3_CODE
+        </if>
+    )
+      values
+      (
+      #{ID}
+        <if test="FAMILY_HISTORY!=null AND FAMILY_HISTORY!=''">
+      ,#{FAMILY_HISTORY}
+        </if>
+        <if test="DISPOSITION!=null AND DISPOSITION!=''">
+      ,#{DISPOSITION}
+        </if>
+        <if test="PSYCHO!=null AND PSYCHO!=''">
+      ,#{PSYCHO}
+        </if>
+        <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
+      ,#{DIAGNOSECODE}
+        </if>
+        <if test="ACCIDENT_DATE!=null AND ACCIDENT_DATE!=''">
+      ,#{ACCIDENT_DATE}
+        </if>
+        <if test="CCMD3_CODE!=null AND CCMD3_CODE!=''">
       #{CCMD3_CODE}
+        </if>
      )
 	</insert>
 

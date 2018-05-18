@@ -25,78 +25,86 @@
                 FBK_BKBZ_Record
             WHERE 1=1 AND BKLX_ID = '04' Order by date_of_zd DESC;
          </select>
-    <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
-    <!--     public  boolean insertCirrhosis(CirrhosisNew cirrhosisNew);
-    -->
-    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
+
     <insert id="insertCirrhosis"
             parameterType="com.dtsp.ModelNew.CirrhosisNew">
          insert into
-   MEDICAL_INFORMATION_ENREGISTER
-   (
-     INF_ID,
-     VISIT_NO,
-     RESI_CASE_NO,
-     SICK_NAME,
-     SICK_SEX,
-     NATION,
-     OCCUPATION,
-     <if test="BIRTHDAY!=null">
-         BIRTHDAY,
-     </if>
-     ADDRESS,
-     RECEPTION_ORG,
-        <if test="RECEPTION_TIME!=null">
-            RECEPTION_TIME,
+      MEDICAL_INFORMATION_ENREGISTER
+        (
+      INF_ID
+      ,VISIT_NO
+        <if test="RESI_CASE_NO!=null AND RESI_CASE_NO!=''">
+      ,RESI_CASE_NO
         </if>
-        <if test="CREATE_TIME!=null">
-            CREATE_TIME,
+      ,SICK_NAME
+      ,SICK_SEX
+        <if test="NATION!=null AND NATION!=''">
+      ,NATION
         </if>
-     WRITE_DOCTOR
-   )
-   values
-   (
-     #{ID},
-     #{VISIT_NO},
-     #{RESI_CASE_NO},
-     #{SICK_NAME},
-     #{SICK_SEX},
-     #{NATION},
-     #{OCCUPATION},
-        <if test="BIRTHDAY!=null">
-            #{BIRTHDAY},
+      ,OCCUPATION
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''" >
+      ,BIRTHDAY
         </if>
-     #{ADDRESS},
-     #{RECEPTION_ORG},
-        <if test="RECEPTION_TIME!=null">
-            #{RECEPTION_TIME},
+      ,ADDRESS
+      ,RECEPTION_ORG
+      ,RECEPTION_TIME
+      ,CREATE_TIME
+      ,WRITE_DOCTOR)
+      values(
+      #{INF_ID},
+      ,#{VISIT_NO}
+        <if test="RESI_CASE_NO!=null AND RESI_CASE_NO!=''">
+      ,#{RESI_CASE_NO}
         </if>
-     #{CREATE_TIME},
-     #{WRITE_DOCTOR}
-   )
+      ,#{SICK_NAME}
+      ,#{SICK_SEX}
+        <if test="NATION!=null AND NATION!=''">
+      ,#{NATION}
+        </if>
+      ,#{OCCUPATION}
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''" >
+      ,#{BIRTHDAY}
+        </if>
+      ,#{ADDRESS}
+      ,#{RECEPTION_ORG}
+      ,#{RECEPTION_TIME}
+      ,#{CREATE_TIME},
+      ,#{WRITE_DOCTOR}
+      )
     </insert>
-
-    <!--  public  boolean insertMEDICAL(CirrhosisNew cirrhosisNew);-->
   <insert id="insertMEDICAL"
           parameterType="com.dtsp.ModelNew.CirrhosisNew"
         >
- insert into
-   FIRST_DIAGNOSE_REPORT_PMH
-   (
-     ID,
-     DIAGNOSECODE,
-     ICD_10_TEXT,
-     PMH,
-     VACCINATE
+    insert into
+      FIRST_DIAGNOSE_REPORT_PMH
+    (
+     ID
+        <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
+     ,DIAGNOSECODE
+        </if>
+        <if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">
+     ,ICD_10_TEXT
+        </if>
+        <if test="PMH!=null AND PMH !=''">
+     ,PMH
+        </if>
+        <if test="VACCINATE!=null AND VACCINATE!=''">
+     ,VACCINATE
+        </if>)
+   values(
+      #{ID}
+      <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
+     ,#{DIAGNOSECODE}
+      </if>
+      <if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">
+     ,#{ICD_10_TEXT}
+      </if>
+      <if test="PMH!=null AND PMH !=''">
+     ,#{PMH}
+      </if>
+      <if test="VACCINATE!=null AND VACCINATE!=''">
+     ,#{VACCINATE}
+      </if>
    )
-   values
-   (
-     #{FID},
-     #{DIAGNOSECODE},
-     #{ICD_10_TEXT},
-     #{PMH},
-     #{VACCINATE}
-   )
-
   </insert>
 </mapper>

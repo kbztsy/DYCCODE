@@ -8,41 +8,40 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class DiabetesNew {
-    @Autowired
-    private RandNumber randNumber;
-    private String ID;
-    private BigDecimal FID;
+    private String INF_ID;
+    private BigDecimal ID;
     private String  VISIT_NO;//   门诊住院号
     private String RESI_CASE_NO;
     private String	SICK_NAME;//  患者姓名
     private String	SICK_SEX;//    性别
     private String	NATION;//    民族
     private String	OCCUPATION;//    职业
-    private Date	BIRTHDAY;// 出生日期
+    private Date BIRTHDAY;// 出生日期
     private String	ADDRESS;//  现住址
     private String	DIAGNOSECODE;//    诊断
     private String DIAGNOSISBASISOTHER;
     private String COMPLICATIONS;//    合并症
     private String ICD_10_TEXT;// ICD--10
+
     private String	RECEPTION_ORG;//    诊断单位
     private Date RECEPTION_TIME;//诊断日期
     private Date	CREATE_TIME;//  填报日期
     private String	 WRITE_DOCTOR;//  填报医生
 
-    public String getID() {
-        return randNumber.RandStr15();
+    public String getINF_ID() {
+        return INF_ID;
     }
 
-    public void setID(String ID) {
+    public void setINF_ID(String INF_ID) {
+        this.INF_ID = INF_ID;
+    }
+
+    public BigDecimal getID() {
+        return ID;
+    }
+
+    public void setID(BigDecimal ID) {
         this.ID = ID;
-    }
-
-    public BigDecimal getFID() {
-        return randNumber.RandInt20();
-    }
-
-    public void setFID(BigDecimal FID) {
-        this.FID = FID;
     }
 
     public String getVISIT_NO() {

@@ -35,7 +35,6 @@ public class HurtService {
         }
         return true;
     }
-
     //将new集合插入到表中
     @DS("datasource1")
     public boolean insertHurtls(List<HurtNew> list){

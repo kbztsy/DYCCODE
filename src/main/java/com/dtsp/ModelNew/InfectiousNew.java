@@ -9,42 +9,42 @@ import java.util.Date;
 public class InfectiousNew {
     @Autowired
     private RandNumber randNumber;
-    private String ID;
-    private BigDecimal FID;
-    private String 	VISIT_NO;// 门诊住院号
+    private String INF_ID;
+    private BigDecimal ID;
+    private String VISIT_NO;// 门诊住院号
     private String RESI_CASE_NO;
-    private String 	SICK_NAME;// 患者姓名
+    private String SICK_NAME;// 患者姓名
     private String SICK_PARENT_NAME;//患儿家长姓名
-    private String 	IDENTITY_CARD_NO;//身份证号
+    private String IDENTITY_CARD_NO;//身份证号
     private String  SICK_SEX;// 性别
     private Date BIRTHDAY;//出生日期
-    private String 	SICK_PHONE;//联系电话
-    private String 	WORK_PLACE;// 工作单位
+    private String SICK_PHONE;//联系电话
+    private String WORK_PLACE;// 工作单位
     private String SICK_BELONG;//病人属于
-    private String 	ADDRESS;//现住址（详填）
-    private String 	OCCUPATION;//患者职业
-    private String 	DIAGNOSIS_TYPE_CODE;//疾病分类
-    private String 	CASETYPE;//病例类型
-    private Date	ACCIDENT_DATE;//发病日期
-    private Date 	DIAGNOSE_DATE;//   诊断日期
-    private Date 	DEATH_DATE;//死亡日期
-    private String 	WRITE_DOCTOR;//填报医生
-    private Date  	CREATE_TIME;//医生填卡日期
+    private String ADDRESS;//现住址（详填）
+    private String OCCUPATION;//患者职业
+    private String DIAGNOSIS_TYPE_CODE;//疾病分类
+    private String CASETYPE;//病例类型
+    private Date ACCIDENT_DATE;//发病日期
+    private Date DIAGNOSE_DATE;//   诊断日期
+    private Date DEATH_DATE;//死亡日期
+    private String WRITE_DOCTOR;//填报医生
+    private Date CREATE_TIME;//医生填卡日期
 
-    public String getID() {
-        return randNumber.RandStr15();
+    public BigDecimal getID() {
+        return ID;
     }
 
-    public void setID(String ID) {
+    public String getINF_ID() {
+        return INF_ID;
+    }
+
+    public void setINF_ID(String INF_ID) {
+        this.INF_ID = INF_ID;
+    }
+
+    public void setID(BigDecimal ID) {
         this.ID = ID;
-    }
-
-    public BigDecimal getFID() {
-        return randNumber.RandInt20();
-    }
-
-    public void setFID(BigDecimal FID) {
-        this.FID = FID;
     }
 
     public String getVISIT_NO() {

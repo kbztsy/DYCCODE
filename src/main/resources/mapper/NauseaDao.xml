@@ -44,56 +44,61 @@
 insert into
     MEDICAL_INFORMATION_ENREGISTER
     (
-      INF_ID,
-      VISIT_NO,
-      RESI_CASE_NO,
-      SICK_NAME,
-      SICK_SEX,
-      NATION,
-      OCCUPATION,
-      <if test="BIRTHDAY!=null">
-          BIRTHDAY,
-      </if>
-      MARRIAGE,
-      IDENTITY_CARD_NO,
-      ADDRESS,
-      RESIDENCE_ADDRESS,
-      RECEPTION_ORG,
-        <if test="RECEPTION_TIME!=null">
-            RECEPTION_TIME,
+      INF_ID
+      ,VISIT_NO
+      ,RESI_CASE_NO
+      ,SICK_NAME
+      ,SICK_SEX
+        <if test="NATION!=null AND NATION!=''">
+      ,NATION
         </if>
-<if test="CREATE_TIME!=null">
-    CREATE_TIME,
-</if>
-
-      WRITE_DOCTOR
+      ,OCCUPATION
+      <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,BIRTHDAY
+      </if>
+        <if test="MARRIAGE!=null AND MARRIAGE!=''">
+      ,MARRIAGE
+        </if>
+        <if test="IDENTITY_CARD_NO!=null AND IDENTITY_CARD_NO!=''">
+      ,IDENTITY_CARD_NO
+        </if>
+      ,ADDRESS
+        <if test="RESIDENCE_ADDRESS!=null AND RESIDENCE_ADDRESS!=''">
+      ,RESIDENCE_ADDRESS
+        </if>
+      ,RECEPTION_ORG
+      ,RECEPTION_TIME
+      ,CREATE_TIME
+      ,WRITE_DOCTOR
      )
     values
     (
-      #{ID},
-      #{VISIT_NO},
-      #{RESI_CASE_NO},
-      #{SICK_NAME},
-      #{SICK_SEX},
-      #{NATION},
-      #{OCCUPATION},
-        <if test="BIRTHDAY!=null">
-            #{BIRTHDAY},
+      #{INF_ID}
+      ,#{VISIT_NO}
+      ,#{RESI_CASE_NO}
+      ,#{SICK_NAME}
+      ,#{SICK_SEX}
+        <if test="NATION!=null AND NATION!=''">
+      ,#{NATION}
         </if>
-
-      #{MARRIAGE},
-      #{IDENTITY_CARD_NO},
-      #{ADDRESS},
-      #{RESIDENCE_ADDRESS},
-      #{RECEPTION_ORG},
-        <if test="RECEPTION_TIME!=null">
-            #{RECEPTION_TIME},
+      ,#{OCCUPATION}
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,#{BIRTHDAY}
         </if>
-        <if test="CREATE_TIME!=null">
-            #{CREATE_TIME},
+        <if test="MARRIAGE!=null AND MARRIAGE!=''">
+      #{MARRIAGE}
         </if>
-
-      #{WRITE_DOCTOR}
+        <if test="IDENTITY_CARD_NO!=null AND IDENTITY_CARD_NO!=''">
+      ,#{IDENTITY_CARD_NO}
+        </if>
+      ,#{ADDRESS}
+        <if test="RESIDENCE_ADDRESS!=null AND RESIDENCE_ADDRESS!=''">
+      ,#{RESIDENCE_ADDRESS}
+        </if>
+      ,#{RECEPTION_ORG}
+      ,#{RECEPTION_TIME}
+      ,#{CREATE_TIME}
+      ,#{WRITE_DOCTOR}
      )
 
 
@@ -105,43 +110,83 @@ insert into
     insert into
     FIRST_DIAGNOSE_REPORT_TUMOR
     (
-      ID,
-      SMOKING,
-      PATHOLOGIC_TYPES,
-      DIAGNOSIS_T,
-      DIAGNOSIS_N,
-      DIAGNOSIS_M,
-      DIAGNOSIS_NO,
-        <if test="ICD_10!=null">
-            ICD_10,
-            ICD_10_TEXT,
+      ID
+        <if test="SMOKING!=null AND SMOKING!=''">
+      ,SMOKING
         </if>
-      CLINICAL_STAGE,
-      <if test="ICD_03!=null">
-          ICD_03,
-          ICD_03_TEXT,
+        <if test="PATHOLOGIC_TYPES!=null AND PATHOLOGIC_TYPES!=''">
+      ,PATHOLOGIC_TYPES
+        </if>
+        <if test="DIAGNOSIS_T!=null AND DIAGNOSIS_T!=''">
+      ,DIAGNOSIS_T
+        </if>
+        <if test="DIAGNOSIS_N!=null AND DIAGNOSIS_N!=''">
+      ,DIAGNOSIS_N
+        </if>
+        <if test="DIAGNOSIS_M!=null AND DIAGNOSIS_M!=''">
+      ,DIAGNOSIS_M
+        </if>
+        <if test="DIAGNOSIS_NO!=null AND DIAGNOSIS_NO!=''">
+      ,DIAGNOSIS_NO
+        </if>
+        <if test="ICD_10!=null AND ICD_10!=''">
+       ,ICD_10
+        </if>
+        <if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">
+        ,ICD_10_TEXT
+        </if>
+        <if test="CLINICAL_STAGE!=null AND CLINICAL_STAGE!=''">
+        ,CLINICAL_STAGE
+        </if>
+      <if test="ICD_03!=null AND ICD_03!=''">
+        ,ICD_03
       </if>
-      DIFFERENTIAL_DEGREE
+        <if test="ICD_03_TEXT!=null AND ICD_03_TEXT!=''">
+        ,ICD_03_TEXT
+        </if>
+        <if test="DIFFERENTIAL_DEGREE!=null AND DIFFERENTIAL_DEGREE!=''">
+        ,DIFFERENTIAL_DEGREE
+        </if>
     )
     values
     (
-      #{FID},
-      #{SMOKING},
-      #{PATHOLOGIC_TYPES},
-      #{DIAGNOSIS_T},
-      #{DIAGNOSIS_N},
-      #{DIAGNOSIS_M},
-      #{DIAGNOSIS_NO},
-        <if test="ICD_10!=null">
-            #{ICD_10},
-            #{ICD_10_TEXT},
+      #{ID}
+        <if test="SMOKING!=null AND SMOKING!=''">
+      #{SMOKING}
         </if>
-      #{CLINICAL_STAGE},
-        <if test="ICD_03!=null">
-            #{ICD_03},
-            #{ICD_03_TEXT},
+        <if test="PATHOLOGIC_TYPES!=null AND PATHOLOGIC_TYPES!=''">
+      #{PATHOLOGIC_TYPES}
         </if>
+        <if test="DIAGNOSIS_T!=null AND DIAGNOSIS_T!=''">
+      #{DIAGNOSIS_T}
+        </if>
+        <if test="DIAGNOSIS_N!=null AND DIAGNOSIS_N!=''">
+      #{DIAGNOSIS_N}
+        </if>
+        <if test="DIAGNOSIS_M!=null AND DIAGNOSIS_M!=''">
+      #{DIAGNOSIS_M}
+        </if>
+        <if test="DIAGNOSIS_NO!=null AND DIAGNOSIS_NO!=''">
+      #{DIAGNOSIS_NO}
+        </if>
+        <if test="ICD_10!=null AND ICD_10!=''">
+            #{ICD_10}
+        </if>
+        <if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">
+            #{ICD_10_TEXT}
+        </if>
+        <if test="CLINICAL_STAGE!=null AND CLINICAL_STAGE!=''">
+      #{CLINICAL_STAGE}
+        </if>
+        <if test="ICD_03!=null AND ICD_03!=''">
+            #{ICD_03}
+        </if>
+        <if test="ICD_03_TEXT!=null AND ICD_03_TEXT!=''">
+            #{ICD_03_TEXT}
+        </if>
+        <if test="DIFFERENTIAL_DEGREE!=null AND DIFFERENTIAL_DEGREE!=''">
       #{DIFFERENTIAL_DEGREE}
+        </if>
      )
 	</insert>
 

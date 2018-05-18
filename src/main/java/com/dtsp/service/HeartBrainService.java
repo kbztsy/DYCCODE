@@ -22,19 +22,16 @@ public class HeartBrainService {
     public List<HeartBrainOld> GetHeartBrain(){
         return heartBrainDao.GetHeartBrain();
     }
-    //将CirrhosisNew数据插到新表中
     @DS("datasource1")
     public  boolean insertHeartBrain(HeartBrainNew heartBrainNew) {
         try{
             heartBrainDao.insertMEDICAL(heartBrainNew);
             heartBrainDao.insertHeartBrain(heartBrainNew);
-            heartBrainDao.insertMEDICAL2(heartBrainNew);
         } catch(Exception e){
             throw e;
         }
         return true;
     }
-    //将new集合插入到表中
     @DS("datasource1")
     public boolean insertHeartBrainls(List<HeartBrainNew> list){
         try{
@@ -46,9 +43,7 @@ public class HeartBrainService {
         }
         return true;
     }
-    //查询数据转换，并存到数据库
     public List<HeartBrainNew>  upHeartBrainls( List<HeartBrainOld> oldHeartBrain ){
-
         try{
             return heartBrainRef.REF(oldHeartBrain);
 

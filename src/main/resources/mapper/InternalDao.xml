@@ -2,11 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.dtsp.dao.InternalDao">
-       <!--    //查询所有Internal
-    public List<List<Map>> getInternal();
-    //插入
-    public boolean insertInternal(Map map);-->
-       <!-- 查询所有user -->
        <select id="getInternal" resultType="com.dtsp.ModelOld.InternalOld">
               select
                      MZZY_ID as mzzy_id,
@@ -25,36 +20,21 @@
         insert into
         MEDICAL_INFORMATION_ENREGISTER
         (
-        INF_ID,
-        VISIT_NO,
-        RESI_CASE_NO,
-        <if test="BIRTHDAY!=null">
-            BIRTHDAY,
-        </if>
-        SICK_NAME,
-        SICK_SEX)
+        INF_ID
+        ,VISIT_NO
+        ,RESI_CASE_NO
+        ,BIRTHDAY
+        ,SICK_NAME
+        ,SICK_SEX)
       values(
-        #{ID},
-        #{VISIT_NO},
-        #{RESI_CASE_NO},
-        <if test="BIRTHDAY!=null">
-            #{BIRTHDAY},
+        #{INF_ID}
+        ,#{VISIT_NO}
+        ,#{RESI_CASE_NO}
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+        ,#{BIRTHDAY}
         </if>
-        #{SICK_NAME} ,
-        #{SICK_SEX} )
+        ,#{SICK_NAME}
+        ,#{SICK_SEX} )
     </insert>
-       <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
-       <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性
-
--->
-    <!-- public  boolean insertMEDICAL (InternalOld internalOld);
-    <insert id="insertMEDICAL"
-            parameterType="com.dtsp.ModelNew.InternalNew"
-            useGeneratedKeys="true"
-            keyColumn="MZZY_ID"
-            keyProperty="mzzy_id">
-
-    </insert>
--->
 </mapper>
 

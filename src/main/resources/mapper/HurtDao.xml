@@ -30,43 +30,44 @@
 
     <insert id="insertHurt"
             parameterType="com.dtsp.ModelNew.HurtNew">
-insert into
-    MEDICAL_INFORMATION_ENREGISTER
+      insert into
+      MEDICAL_INFORMATION_ENREGISTER
     (
-      INF_ID,
-      SICK_NAME,
-      SICK_SEX,
-      NATION,
-      ZONE_TYPE,
-      <if test="BIRTHDAY!=null">
-          BIRTHDAY,
-      </if>
-
-      OCCUPATION,
-      ADDRESS,
-        <if test="CREATE_TIME!=null">
-            CREATE_TIME,
+      INF_ID
+      ,SICK_NAME
+      ,SICK_SEX
+        <if test="NATION!=null AND NATION!=''">
+      ,NATION
         </if>
-      WRITE_DOCTOR
+        <if test="ZONE_TYPE!=null AND ZONE_TYPE!=''">
+      ,ZONE_TYPE
+        </if>
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,BIRTHDAY
+        </if>
+      ,OCCUPATION
+      ,ADDRESS
+      ,CREATE_TIME
+      ,WRITE_DOCTOR
      )
     values
     (
-      #{ID},
-      #{SICK_NAME},
-      #{SICK_SEX},
-      #{NATION},
-      #{ZONE_TYPE},
-        <if test="BIRTHDAY!=null">
-            #{BIRTHDAY},
+      #{INF_ID}
+      ,#{SICK_NAME}
+      ,#{SICK_SEX}
+        <if test="NATION!=null AND NATION!=''">
+      ,#{NATION}
         </if>
-
-      #{OCCUPATION},
-      #{ADDRESS},
-        <if test="CREATE_TIME!=null">
-            #{CREATE_TIME},
+        <if test="ZONE_TYPE!=null AND ZONE_TYPE!=''">
+      ,#{ZONE_TYPE}
         </if>
-
-      #{WRITE_DOCTOR}
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,#{BIRTHDAY}
+        </if>
+      ,#{OCCUPATION}
+      ,#{ADDRESS}
+      ,#{CREATE_TIME}
+      ,#{WRITE_DOCTOR}
      )
     </insert>
 
@@ -76,34 +77,23 @@ insert into
 insert into
     FIRST_DIAGNOSE_REPORT_HARM
     (
-      ID,
-      HARM_REASON,
-      DELIBERATELY,
-      HARM_PART,
-      PART_OTHER_TEXT,
-      TAKE_PLACE,
-        <if test="OCCURRED_DATE!=null">
-            OCCURRED_DATE,
-        </if>
-
+      ID
+      HARM_REASON
+      DELIBERATELY
+      HARM_PART
+      PART_OTHER_TEXT
+      TAKE_PLACE
+      OCCURRED_DATE
       SEVERITY
-
-    )
-    values
-    (
-      #{FID},
-      #{HARM_REASON},
-      #{DELIBERATELY},
-      #{HARM_PART},
-      #{PART_OTHER_TEXT},
-      #{TAKE_PLACE},
-        <if test="OCCURRED_DATE!=null">
-            #{OCCURRED_DATE},
-        </if>
+    )values(
+      #{ID}
+      #{HARM_REASON}
+      #{DELIBERATELY}
+      #{HARM_PART}
+      #{PART_OTHER_TEXT}
+      #{TAKE_PLACE}
+      #{OCCURRED_DATE}
       #{SEVERITY}
-
      )
-
     </insert>
-
 </mapper>

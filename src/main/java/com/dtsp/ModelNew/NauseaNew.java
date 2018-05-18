@@ -9,8 +9,8 @@ import java.util.Date;
 public class NauseaNew {
     @Autowired
     private RandNumber randNumber;
-    private String ID;
-    private BigDecimal FID;
+    private String INF_ID;
+    private BigDecimal ID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -43,20 +43,20 @@ public class NauseaNew {
     private String DIAGNOSISBASISOTHER;
     private String DETAILED_DIAGNOSIS;
 
-    public String getID() {
-        return randNumber.RandStr15();
+    public String getINF_ID() {
+        return INF_ID;
     }
 
-    public void setID(String ID) {
+    public void setINF_ID(String INF_ID) {
+        this.INF_ID = INF_ID;
+    }
+
+    public BigDecimal getID() {
+        return ID;
+    }
+
+    public void setID(BigDecimal ID) {
         this.ID = ID;
-    }
-
-    public BigDecimal getFID() {
-        return randNumber.RandInt20();
-    }
-
-    public void setFID(BigDecimal FID) {
-        this.FID = FID;
     }
 
     public String getVISIT_NO() {
@@ -310,8 +310,8 @@ public class NauseaNew {
     @Override
     public String toString() {
         return "NauseaNew{" +
-                "ID='" + ID + '\'' +
-                ", FID=" + FID +
+                "INF_ID='" + INF_ID + '\'' +
+                ", ID=" + ID +
                 ", VISIT_NO='" + VISIT_NO + '\'' +
                 ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +

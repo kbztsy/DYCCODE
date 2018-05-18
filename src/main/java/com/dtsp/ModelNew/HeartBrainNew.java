@@ -7,10 +7,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class HeartBrainNew {
-    @Autowired
-    private RandNumber randNumber;
-    private String ID;
-    private BigDecimal FID;
+    private String INF_ID;
+    private BigDecimal ID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -28,20 +26,20 @@ public class HeartBrainNew {
     private Date CREATE_TIME;
     private String WRITE_DOCTOR;
 
-    public String getID() {
-        return randNumber.RandStr15();
+    public String getINF_ID() {
+        return INF_ID;
     }
 
-    public void setID(String ID) {
+    public void setINF_ID(String INF_ID) {
+        this.INF_ID = INF_ID;
+    }
+
+    public BigDecimal getID() {
+        return ID;
+    }
+
+    public void setID(BigDecimal ID) {
         this.ID = ID;
-    }
-
-    public BigDecimal getFID() {
-        return randNumber.RandInt20();
-    }
-
-    public void setFID(BigDecimal FID) {
-        this.FID = FID;
     }
 
     public String getVISIT_NO() {
@@ -175,8 +173,8 @@ public class HeartBrainNew {
     @Override
     public String toString() {
         return "HeartBrainNew{" +
-                "ID='" + ID + '\'' +
-                ", FID='" + FID + '\'' +
+                "INF_ID='" + INF_ID + '\'' +
+                ", ID=" + ID +
                 ", VISIT_NO='" + VISIT_NO + '\'' +
                 ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +
@@ -185,7 +183,7 @@ public class HeartBrainNew {
                 ", OCCUPATION='" + OCCUPATION + '\'' +
                 ", BIRTHDAY=" + BIRTHDAY +
                 ", ADDRESS='" + ADDRESS + '\'' +
-                ", SMOKING='" + SMOKING + '\'' +
+                ", SMOKING=" + SMOKING +
                 ", DIAGNOSECODE='" + DIAGNOSECODE + '\'' +
                 ", DIAGNOSISBASIS='" + DIAGNOSISBASIS + '\'' +
                 ", DIAGNOSISBASISOTHER='" + DIAGNOSISBASISOTHER + '\'' +

@@ -26,83 +26,63 @@
              order by
                Date_of_TB DESC;
        </select>
-    <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
-    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
-     <!-- public  boolean insertHeartBrain(HeartBrainOld heartBrain);-->
     <insert id="insertHeartBrain"
             parameterType="com.dtsp.ModelNew.HeartBrainNew">
        insert into  MEDICAL_INFORMATION_ENREGISTER
        (
-          INF_ID,
-          VISIT_NO,
-          RESI_CASE_NO,
-          SICK_NAME,
-          SICK_SEX,
-          NATION,
-          OCCUPATION,
-          <if test="BIRTHDAY!=null">
-              BIRTHDAY,
-          </if>
-
-          ADDRESS,
-        <if test="RECEPTION_TIME!=null">
-            RECEPTION_TIME,
+        INF_ID
+        ,VISIT_NO
+        ,RESI_CASE_NO
+        ,SICK_NAME
+        ,SICK_SEX
+        <if test="NATION!=null AND NATION!=''">
+        ,NATION
         </if>
-        <if test=" CREATE_TIME!=null">
-            CREATE_TIME,
+        ,OCCUPATION
+        <if test="BIRTHDAY!=null AND BIRTHDAY=''">
+        ,BIRTHDAY
         </if>
-          WRITE_DOCTOR)
-       values
-       (
-       #{ID},
-       #{VISIT_NO},
-       #{RESI_CASE_NO},
-       #{SICK_NAME},
-       #{SICK_SEX},
-       #{NATION},
-       #{OCCUPATION},
+        ,ADDRESS
+        ,RECEPTION_ORG
+        ,RECEPTION_TIME
+        ,CREATE_TIME
+        ,WRITE_DOCTOR)
+        values
+        (
+         #{INF_ID}
+        ,#{VISIT_NO}
+        ,#{RESI_CASE_NO}
+        ,#{SICK_NAME}
+        ,#{SICK_SEX}
+        ,#{NATION}
+        ,#{OCCUPATION}
         <if test="BIRTHDAY!=null">
-            #{BIRTHDAY},
+        ,#{BIRTHDAY}
         </if>
-
-       #{ADDRESS},
+        ,#{ADDRESS}
         <if test="RECEPTION_TIME!=null">
-            #{RECEPTION_TIME},
+        ,#{RECEPTION_TIME}
         </if>
         <if test=" CREATE_TIME!=null">
-            #{CREATE_TIME},
+        ,#{CREATE_TIME}
         </if>
-
-       #{WRITE_DOCTOR}
+        ,#{WRITE_DOCTOR}
        )
     </insert>
 
-    <!-- public  boolean insertMEDICAL(HeartBrainOld heartBrain);-->
     <insert id="insertMEDICAL"
             parameterType="com.dtsp.ModelNew.HeartBrainNew">
  insert into
      FIRST_DIAGNOSE_REPORT_HEIGHT(
-     ID,
-     DIAGNOSECODE,
-     SMOKING)
- values (
-    #{FID},
-    #{DIAGNOSECODE},
-    #{SMOKING}
- )
-    </insert>
-<!-- public  boolean insertMEDICAL2(HeartBrainNew heartBrain);-->
-    <insert id="insertMEDICAL2"
-            parameterType="com.dtsp.ModelNew.HeartBrainNew">
- insert into
-     FIRST_DIAGNOSE_REPORT_HEIGHT(
-     ID,
-     DIAGNOSECODE,
-     SMOKING)
- values (
-    #{FID},
-    #{DIAGNOSECODE},
-    #{SMOKING}
- )
+     ID
+     ,DIAGNOSECODE
+     <if test="SMOKING!=null AND SMOKING!=''">
+     ,SMOKING</if>)
+    values (
+      #{ID}
+      ,#{DIAGNOSECODE}
+        <if test="SMOKING!=null AND SMOKING!=''">
+      ,#{SMOKING}
+        </if>)
     </insert>
 </mapper>

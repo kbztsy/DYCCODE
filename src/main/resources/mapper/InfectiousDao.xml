@@ -28,59 +28,59 @@
                   1 =1 and BKLX_ID = '11'
                 ORDER BY Date_of_TB DESC
        </select>
-       <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
-       <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性-->
-
-
-    <!--  public boolean insertInfectious(InfectiousNew infectiousNew);
-    public  boolean insertMEDICAL (InfectiousNew infectiousNew);-->
 
     <insert id="insertInfectious"
             parameterType="com.dtsp.ModelNew.InfectiousNew">
-   insert into
+    insert into
     MEDICAL_INFORMATION_ENREGISTER
     (
-      INF_ID,
-      VISIT_NO,
-      RESI_CASE_NO,
-      SICK_NAME,
-      SICK_PARENT_NAME,
-      IDENTITY_CARD_NO,
-      SICK_SEX,
-      <if test="BIRTHDAY!=null">
-          BIRTHDAY,
-      </if>
-      SICK_PHONE,
-      WORK_PLACE,
-      ADDRESS,
-      OCCUPATION,
-        <if test="CREATE_TIME!=null">
-            CREATE_TIME,
+      INF_ID
+      ,VISIT_NO
+      ,RESI_CASE_NO
+      ,SICK_NAME
+      ,SICK_PARENT_NAME
+        <if test="IDENTITY_CARD_NO!=null AND IDENTITY_CARD_NO!=''">
+      ,IDENTITY_CARD_NO
         </if>
-
-      WRITE_DOCTOR
+      ,SICK_SEX
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,BIRTHDAY
+        </if>
+        <if test="SICK_PHONE!=null AND SICK_PHONE!=''">
+      ,SICK_PHONE
+        </if>
+        <if test="WORK_PLACE!=null AND WORK_PLACE!=''">
+      ,WORK_PLACE
+        </if>
+      ,ADDRESS
+      ,OCCUPATION
+      ,CREATE_TIME
+      ,WRITE_DOCTOR
      )
     values
     (
-      #{ID},
-      #{VISIT_NO},
-      #{RESI_CASE_NO},
-      #{SICK_NAME},
-      #{SICK_PARENT_NAME},
-      #{IDENTITY_CARD_NO},
-      #{SICK_SEX},
-        <if test="BIRTHDAY!=null">
-            #{BIRTHDAY},
+       #{INF_ID}
+      ,#{VISIT_NO}
+      ,#{RESI_CASE_NO}
+      ,#{SICK_NAME}
+      ,#{SICK_PARENT_NAME}
+        <if test="IDENTITY_CARD_NO!=null AND IDENTITY_CARD_NO!=''">
+      ,#{IDENTITY_CARD_NO}
         </if>
-
-      #{SICK_PHONE},
-      #{WORK_PLACE},
-      #{ADDRESS},
-      #{OCCUPATION},
-        <if test="CREATE_TIME!=null">
-            #{CREATE_TIME},
+      ,#{SICK_SEX}
+        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
+      ,#{BIRTHDAY}
         </if>
-      #{WRITE_DOCTOR}
+        <if test="SICK_PHONE!=null AND SICK_PHONE!=''">
+      ,#{SICK_PHONE}
+        </if>
+        <if test="WORK_PLACE!=null AND WORK_PLACE!=''">
+      ,#{WORK_PLACE}
+        </if>
+      ,#{ADDRESS}
+      ,#{OCCUPATION}
+      ,#{CREATE_TIME}
+      ,#{WRITE_DOCTOR}
      )
     </insert>
 
@@ -90,35 +90,37 @@
 insert into
     FIRST_DIAGNOSE_REPORT_DISEASES
     (
-      ID,
-      DIAGNOSIS_TYPE_CODE,
-
-      <if test="ACCIDENT_DATE!=null">
-          ACCIDENT_DATE,
-      </if>
-<if test="DIAGNOSE_DATE!=null">
-    DIAGNOSE_DATE,
-</if>
-        <if test="DEATH_DATE!=null">
-            DEATH_DATE,
+      ID
+        <if test="DIAGNOSIS_TYPE_CODE!=null AND DIAGNOSIS_TYPE_CODE!=''">
+      ,DIAGNOSIS_TYPE_CODE
         </if>
-        CASETYPE
-
+        <if test="ACCIDENT_DATE!=null AND ACCIDENT_DATE!=''">
+      ,ACCIDENT_DATE
+        </if>
+      ,DIAGNOSE_DATE
+        <if test="DEATH_DATE!=null AND DEATH_DATE!=''">
+      ,DEATH_DATE
+        </if>
+        <if test="CASETYPE!=null AND CASETYPE!=''">
+      ,CASETYPE
+        </if>
     )
     values
     (
-      #{FID},
-      #{DIAGNOSIS_TYPE_CODE},
-        <if test="ACCIDENT_DATE!=null">
-            #{ACCIDENT_DATE},
+      #{ID},
+        <if test="DIAGNOSIS_TYPE_CODE!=null AND DIAGNOSIS_TYPE_CODE!=''">
+      ,#{DIAGNOSIS_TYPE_CODE},
         </if>
-        <if test="DIAGNOSE_DATE!=null">
-            #{DIAGNOSE_DATE},
+        <if test="ACCIDENT_DATE!=null AND ACCIDENT_DATE!=''">
+      ,#{ACCIDENT_DATE},
         </if>
-        <if test="DEATH_DATE!=null">
-            #{DEATH_DATE},
+      ,#{DIAGNOSE_DATE},
+        <if test="DEATH_DATE!=null AND DEATH_DATE!=''">
+      ,#{DEATH_DATE},
         </if>
-        #{CASETYPE}
+        <if test="CASETYPE!=null AND CASETYPE!=''">
+      ,#{CASETYPE}
+        </if>
      )
     </insert>
 

@@ -37,6 +37,7 @@
             url: "/all/all",
             success: function (data) {
             var all  = data.AllState;
+            alert(all);
             console.log(all);
                 for(var i in all){
                     console.log(all[i].NameMsg)
