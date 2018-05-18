@@ -31,6 +31,7 @@ public class CirrhosisTimer {
                logger.info("插入成功");
            }
         }catch (Exception ex){
+            logger.error("异常日志");
             logger.error("失败"+ex.getMessage());
         }
     }

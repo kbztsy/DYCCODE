@@ -12,8 +12,6 @@ import java.util.Map;
 @Component
 public interface CirrhosisDao {
     public List<CirrhosisOld> GetCirrhosis();
-    //MEDICAL_INFORMATION_ENREGISTER
     public  boolean insertCirrhosis(CirrhosisNew cirrhosisNew);
     public  boolean insertMEDICAL(CirrhosisNew cirrhosisNew);
-    public List<Map>  test();
 }

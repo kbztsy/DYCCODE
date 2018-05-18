@@ -7,10 +7,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class CirrhosisNew {
-    @Autowired
-    private RandNumber randNumber;
     private String INF_ID;
-    private BigDecimal ID;
+    private BigDecimal ID_No;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -29,19 +27,19 @@ public class CirrhosisNew {
     private String WRITE_DOCTOR;
 
     public String getINF_ID() {
-        return randNumber.RandStr15();
+        return INF_ID;
     }
 
     public void setINF_ID(String INF_ID) {
         this.INF_ID = INF_ID;
     }
 
-    public BigDecimal getID() {
-        return randNumber.RandInt20();
+    public BigDecimal getID_No() {
+        return ID_No;
     }
 
-    public void setID(BigDecimal ID) {
-        this.ID = ID;
+    public void setID_No(BigDecimal ID_No) {
+        this.ID_No = ID_No;
     }
 
     public String getVISIT_NO() {
@@ -176,7 +174,7 @@ public class CirrhosisNew {
     public String toString() {
         return "CirrhosisNew{" +
                 "INF_ID='" + INF_ID + '\'' +
-                ", ID=" + ID +
+                ", ID_No=" + ID_No +
                 ", VISIT_NO='" + VISIT_NO + '\'' +
                 ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +

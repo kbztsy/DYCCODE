@@ -28,21 +28,19 @@ public class CirrhosisService {
         try {
             cirrhosisDao.insertMEDICAL(cirrhosisNew);
             cirrhosisDao.insertCirrhosis(cirrhosisNew);
+            return true;
         } catch (Exception e) {
-            throw e;
+            return  false;
         }
-        return true;
     }
+    //查询数据转换，并存到数据库
     public List<CirrhosisNew> upCirrhosisls(List<CirrhosisOld> oldcir){
+
         try{
             List<CirrhosisNew> list= cirrhosisRef.REF(oldcir);
            return list;
         } catch(Exception e){
             return null;
         }
-    }
-    @DS("datasource1")
-    public List<Map> test(){
-        return cirrhosisDao.test();
     }
 }
