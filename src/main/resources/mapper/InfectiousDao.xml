@@ -52,6 +52,7 @@
         <if test="WORK_PLACE!=null AND WORK_PLACE!=''">
       ,WORK_PLACE
         </if>
+      ,SICK_BELONG
       ,ADDRESS
       ,OCCUPATION
       ,CREATE_TIME
@@ -77,6 +78,7 @@
         <if test="WORK_PLACE!=null AND WORK_PLACE!=''">
       ,#{WORK_PLACE}
         </if>
+      ,#{SICK_BELONG}
       ,#{ADDRESS}
       ,#{OCCUPATION}
       ,#{CREATE_TIME}

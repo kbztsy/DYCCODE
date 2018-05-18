@@ -11,6 +11,25 @@ public class HurtNew {
     private RandNumber randNumber;
     private String INF_ID;
     private BigDecimal ID;
+    private String VISIT_NO;
+    private String RESI_CASE_NO;
+
+    public String getVISIT_NO() {
+        return VISIT_NO;
+    }
+
+    public void setVISIT_NO(String VISIT_NO) {
+        this.VISIT_NO = VISIT_NO;
+    }
+
+    public String getRESI_CASE_NO() {
+        return RESI_CASE_NO;
+    }
+
+    public void setRESI_CASE_NO(String RESI_CASE_NO) {
+        this.RESI_CASE_NO = RESI_CASE_NO;
+    }
+
     private String SICK_NAME;
     private String SICK_SEX;
     private String NATION;
@@ -175,8 +194,11 @@ public class HurtNew {
     @Override
     public String toString() {
         return "HurtNew{" +
-                "INF_ID='" + INF_ID + '\'' +
+                "randNumber=" + randNumber +
+                ", INF_ID='" + INF_ID + '\'' +
                 ", ID=" + ID +
+                ", VISIT_NO='" + VISIT_NO + '\'' +
+                ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
                 ", SICK_NAME='" + SICK_NAME + '\'' +
                 ", SICK_SEX='" + SICK_SEX + '\'' +
                 ", NATION='" + NATION + '\'' +

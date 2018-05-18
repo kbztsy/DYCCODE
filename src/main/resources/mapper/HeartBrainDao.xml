@@ -76,11 +76,15 @@
      FIRST_DIAGNOSE_REPORT_HEIGHT(
      ID
      ,DIAGNOSECODE
+     ,DIAGNOSISBASIS
+     ,DIAGNOSISBASISOTHER
      <if test="SMOKING!=null AND SMOKING!=''">
      ,SMOKING</if>)
     values (
       #{ID}
       ,#{DIAGNOSECODE}
+      ,#{DIAGNOSISBASIS}
+      ,#{DIAGNOSISBASISOTHER}
         <if test="SMOKING!=null AND SMOKING!=''">
       ,#{SMOKING}
         </if>)

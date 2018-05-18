@@ -34,6 +34,8 @@
       MEDICAL_INFORMATION_ENREGISTER
     (
       INF_ID
+      ,VISIT_NO
+      ,RESI_CASE_NO
       ,SICK_NAME
       ,SICK_SEX
         <if test="NATION!=null AND NATION!=''">
@@ -53,6 +55,8 @@
     values
     (
       #{INF_ID}
+      ,#{VISIT_NO}
+      ,#{RESI_CASE_NO}
       ,#{SICK_NAME}
       ,#{SICK_SEX}
         <if test="NATION!=null AND NATION!=''">
@@ -78,22 +82,50 @@ insert into
     FIRST_DIAGNOSE_REPORT_HARM
     (
       ID
-      HARM_REASON
-      DELIBERATELY
-      HARM_PART
-      PART_OTHER_TEXT
-      TAKE_PLACE
-      OCCURRED_DATE
-      SEVERITY
+        <if test="HARM_REASON!=null AND HARM_REASON!=''">
+      ,HARM_REASON
+        </if>
+        <if test="DELIBERATELY!=null AND DELIBERATELY!=''">
+      ,DELIBERATELY
+        </if>
+        <if test="HARM_PART!=null AND HARM_PART!=''">
+      ,HARM_PART
+        </if>
+        <if test="PART_OTHER_TEXT!=null AND PART_OTHER_TEXT!=''">
+      ,PART_OTHER_TEXT
+        </if>
+        <if test="TAKE_PLACE!=null AND TAKE_PLACE!=''">
+      ,TAKE_PLACE
+        </if>
+        <if test="OCCURRED_DATE!=null AND OCCURRED_DATE!=''">
+      ,OCCURRED_DATE
+        </if>
+        <if test="SEVERITY!=null AND SEVERITY!=''">
+      ,SEVERITY
+        </if>
     )values(
       #{ID}
-      #{HARM_REASON}
-      #{DELIBERATELY}
-      #{HARM_PART}
-      #{PART_OTHER_TEXT}
-      #{TAKE_PLACE}
-      #{OCCURRED_DATE}
-      #{SEVERITY}
+        <if test="HARM_REASON!=null AND HARM_REASON!=''">
+      ,#{HARM_REASON}
+        </if>
+        <if test="DELIBERATELY!=null AND DELIBERATELY!=''">
+      ,#{DELIBERATELY}
+        </if>
+        <if test="HARM_PART!=null AND HARM_PART!=''">
+      ,#{HARM_PART}
+        </if>
+        <if test="PART_OTHER_TEXT!=null AND PART_OTHER_TEXT!=''">
+      ,#{PART_OTHER_TEXT}
+        </if>
+        <if test="TAKE_PLACE!=null AND TAKE_PLACE!=''">
+      ,#{TAKE_PLACE}
+        </if>
+        <if test="OCCURRED_DATE!=null AND OCCURRED_DATE!=''">
+      ,#{OCCURRED_DATE}
+        </if>
+        <if test="SEVERITY!=null AND SEVERITY!=''">
+      ,#{SEVERITY}
+        </if>
      )
     </insert>
 </mapper>
