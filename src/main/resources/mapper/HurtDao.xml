@@ -27,105 +27,166 @@
     <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
 
     <!-- public  boolean insertHurt(HurtOld hurtOld);-->
-
     <insert id="insertHurt"
             parameterType="com.dtsp.ModelNew.HurtNew">
-      insert into
-      MEDICAL_INFORMATION_ENREGISTER
-    (
-      INF_ID
-      ,VISIT_NO
-      ,RESI_CASE_NO
-      ,SICK_NAME
-      ,SICK_SEX
-        <if test="NATION!=null AND NATION!=''">
-      ,NATION
-        </if>
-        <if test="ZONE_TYPE!=null AND ZONE_TYPE!=''">
-      ,ZONE_TYPE
-        </if>
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
-      ,BIRTHDAY
-        </if>
-      ,OCCUPATION
-      ,ADDRESS
-      ,CREATE_TIME
-      ,WRITE_DOCTOR
-     )
-    values
-    (
-      #{INF_ID}
-      ,#{VISIT_NO}
-      ,#{RESI_CASE_NO}
-      ,#{SICK_NAME}
-      ,#{SICK_SEX}
-        <if test="NATION!=null AND NATION!=''">
-      ,#{NATION}
-        </if>
-        <if test="ZONE_TYPE!=null AND ZONE_TYPE!=''">
-      ,#{ZONE_TYPE}
-        </if>
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
-      ,#{BIRTHDAY}
-        </if>
-      ,#{OCCUPATION}
-      ,#{ADDRESS}
-      ,#{CREATE_TIME}
-      ,#{WRITE_DOCTOR}
-     )
+        insert into
+        MEDICAL_INFORMATION_ENREGISTER
+        (
+        INF_ID
+        ,VISIT_NO
+        ,RESI_CASE_NO
+        ,SICK_NAME
+        ,SICK_SEX
+        ,NATION
+        ,ZONE_TYPE
+        ,BIRTHDAY
+        ,OCCUPATION
+        ,ADDRESS
+        ,CREATE_TIME
+        ,WRITE_DOCTOR
+        )
+        values
+        (
+        #{INF_ID}
+        ,#{VISIT_NO}
+        ,#{RESI_CASE_NO}
+        ,#{SICK_NAME}
+        ,#{SICK_SEX}
+        ,#{NATION}
+        ,#{ZONE_TYPE}
+        ,#{BIRTHDAY}
+        ,#{OCCUPATION}
+        ,#{ADDRESS}
+        ,#{CREATE_TIME}
+        ,#{WRITE_DOCTOR}
+        )
     </insert>
 
     <!--  public  boolean insertMEDICAL (HurtOld hurtOld);-->
     <insert id="insertMEDICAL"
             parameterType="com.dtsp.ModelNew.HurtNew">
-insert into
-    FIRST_DIAGNOSE_REPORT_HARM
-    (
-      ID
-        <if test="HARM_REASON!=null AND HARM_REASON!=''">
-      ,HARM_REASON
-        </if>
-        <if test="DELIBERATELY!=null AND DELIBERATELY!=''">
-      ,DELIBERATELY
-        </if>
-        <if test="HARM_PART!=null AND HARM_PART!=''">
-      ,HARM_PART
-        </if>
-        <if test="PART_OTHER_TEXT!=null AND PART_OTHER_TEXT!=''">
-      ,PART_OTHER_TEXT
-        </if>
-        <if test="TAKE_PLACE!=null AND TAKE_PLACE!=''">
-      ,TAKE_PLACE
-        </if>
-        <if test="OCCURRED_DATE!=null AND OCCURRED_DATE!=''">
-      ,OCCURRED_DATE
-        </if>
-        <if test="SEVERITY!=null AND SEVERITY!=''">
-      ,SEVERITY
-        </if>
-    )values(
-      #{ID}
-        <if test="HARM_REASON!=null AND HARM_REASON!=''">
-      ,#{HARM_REASON}
-        </if>
-        <if test="DELIBERATELY!=null AND DELIBERATELY!=''">
-      ,#{DELIBERATELY}
-        </if>
-        <if test="HARM_PART!=null AND HARM_PART!=''">
-      ,#{HARM_PART}
-        </if>
-        <if test="PART_OTHER_TEXT!=null AND PART_OTHER_TEXT!=''">
-      ,#{PART_OTHER_TEXT}
-        </if>
-        <if test="TAKE_PLACE!=null AND TAKE_PLACE!=''">
-      ,#{TAKE_PLACE}
-        </if>
-        <if test="OCCURRED_DATE!=null AND OCCURRED_DATE!=''">
-      ,#{OCCURRED_DATE}
-        </if>
-        <if test="SEVERITY!=null AND SEVERITY!=''">
-      ,#{SEVERITY}
-        </if>
-     )
+        insert into
+        FIRST_DIAGNOSE_REPORT_HARM
+        (
+        ID
+        ,HARM_REASON
+        ,DELIBERATELY
+        ,HARM_PART
+        ,PART_OTHER_TEXT
+        ,TAKE_PLACE
+        ,OCCURRED_DATE
+        ,SEVERITY
+        )
+        values
+        (
+        #{ID}
+        ,#{HARM_REASON}
+        ,#{DELIBERATELY}
+        ,#{HARM_PART}
+        ,#{PART_OTHER_TEXT}
+        ,#{TAKE_PLACE}
+        ,#{OCCURRED_DATE}
+        ,#{SEVERITY}
+        )
     </insert>
+    <!--<insert id="insertHurt"-->
+            <!--parameterType="com.dtsp.ModelNew.HurtNew">-->
+      <!--insert into-->
+      <!--MEDICAL_INFORMATION_ENREGISTER-->
+    <!--(-->
+      <!--INF_ID-->
+      <!--,VISIT_NO-->
+      <!--,RESI_CASE_NO-->
+      <!--,SICK_NAME-->
+      <!--,SICK_SEX-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+      <!--,NATION-->
+        <!--</if>-->
+        <!--<if test="ZONE_TYPE!=null AND ZONE_TYPE!=''">-->
+      <!--,ZONE_TYPE-->
+        <!--</if>-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+      <!--,BIRTHDAY-->
+        <!--</if>-->
+      <!--,OCCUPATION-->
+      <!--,ADDRESS-->
+      <!--,CREATE_TIME-->
+      <!--,WRITE_DOCTOR-->
+     <!--)-->
+    <!--values-->
+    <!--(-->
+      <!--#{INF_ID}-->
+      <!--,#{VISIT_NO}-->
+      <!--,#{RESI_CASE_NO}-->
+      <!--,#{SICK_NAME}-->
+      <!--,#{SICK_SEX}-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+      <!--,#{NATION}-->
+        <!--</if>-->
+        <!--<if test="ZONE_TYPE!=null AND ZONE_TYPE!=''">-->
+      <!--,#{ZONE_TYPE}-->
+        <!--</if>-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+      <!--,#{BIRTHDAY}-->
+        <!--</if>-->
+      <!--,#{OCCUPATION}-->
+      <!--,#{ADDRESS}-->
+      <!--,#{CREATE_TIME}-->
+      <!--,#{WRITE_DOCTOR}-->
+     <!--)-->
+    <!--</insert>-->
+
+    <!--&lt;!&ndash;  public  boolean insertMEDICAL (HurtOld hurtOld);&ndash;&gt;-->
+    <!--<insert id="insertMEDICAL"-->
+            <!--parameterType="com.dtsp.ModelNew.HurtNew">-->
+<!--insert into-->
+    <!--FIRST_DIAGNOSE_REPORT_HARM-->
+    <!--(-->
+      <!--ID-->
+        <!--<if test="HARM_REASON!=null AND HARM_REASON!=''">-->
+      <!--,HARM_REASON-->
+        <!--</if>-->
+        <!--<if test="DELIBERATELY!=null AND DELIBERATELY!=''">-->
+      <!--,DELIBERATELY-->
+        <!--</if>-->
+        <!--<if test="HARM_PART!=null AND HARM_PART!=''">-->
+      <!--,HARM_PART-->
+        <!--</if>-->
+        <!--<if test="PART_OTHER_TEXT!=null AND PART_OTHER_TEXT!=''">-->
+      <!--,PART_OTHER_TEXT-->
+        <!--</if>-->
+        <!--<if test="TAKE_PLACE!=null AND TAKE_PLACE!=''">-->
+      <!--,TAKE_PLACE-->
+        <!--</if>-->
+        <!--<if test="OCCURRED_DATE!=null AND OCCURRED_DATE!=''">-->
+      <!--,OCCURRED_DATE-->
+        <!--</if>-->
+        <!--<if test="SEVERITY!=null AND SEVERITY!=''">-->
+      <!--,SEVERITY-->
+        <!--</if>-->
+    <!--)values(-->
+      <!--#{ID}-->
+        <!--<if test="HARM_REASON!=null AND HARM_REASON!=''">-->
+      <!--,#{HARM_REASON}-->
+        <!--</if>-->
+        <!--<if test="DELIBERATELY!=null AND DELIBERATELY!=''">-->
+      <!--,#{DELIBERATELY}-->
+        <!--</if>-->
+        <!--<if test="HARM_PART!=null AND HARM_PART!=''">-->
+      <!--,#{HARM_PART}-->
+        <!--</if>-->
+        <!--<if test="PART_OTHER_TEXT!=null AND PART_OTHER_TEXT!=''">-->
+      <!--,#{PART_OTHER_TEXT}-->
+        <!--</if>-->
+        <!--<if test="TAKE_PLACE!=null AND TAKE_PLACE!=''">-->
+      <!--,#{TAKE_PLACE}-->
+        <!--</if>-->
+        <!--<if test="OCCURRED_DATE!=null AND OCCURRED_DATE!=''">-->
+      <!--,#{OCCURRED_DATE}-->
+        <!--</if>-->
+        <!--<if test="SEVERITY!=null AND SEVERITY!=''">-->
+      <!--,#{SEVERITY}-->
+        <!--</if>-->
+     <!--)-->
+    <!--</insert>-->
 </mapper>

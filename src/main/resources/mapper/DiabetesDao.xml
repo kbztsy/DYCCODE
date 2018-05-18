@@ -30,81 +30,137 @@
     <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
     <!--  public  boolean insertDisbetes( DiabetesNew diabetesNew);-->
     <insert id="insertDisbetes"
-             parameterType="com.dtsp.ModelNew.DiabetesNew">
-       insert into
-          MEDICAL_INFORMATION_ENREGISTER
-            (
-              INF_ID
-             ,VISIT_NO
-             ,RESI_CASE_NO
-             ,SICK_NAME
-             ,SICK_SEX
-        <if test="NATION!=null AND NATION!=''">
-             ,NATION
-        </if>
-             ,OCCUPATION
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
-             ,BIRTHDAY
-        </if>
-          ,ADDRESS
-          ,RECEPTION_ORG
-          ,RECEPTION_TIME
-          ,CREATE_TIME
-          ,WRITE_DOCTOR)
-        values
-           (
-             #{INF_ID}
-             ,#{VISIT_NO}
-             ,#{RESI_CASE_NO}
-             ,#{SICK_NAME}
-             ,#{SICK_SEX}
-        <if test="NATION!=null AND NATION!=''">
-             ,#{NATION}
-        </if>
-             ,#{OCCUPATION}
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
-             ,#{BIRTHDAY}
-        </if>
-             ,#{ADDRESS}
-             ,#{RECEPTION_ORG}
-             ,#{RECEPTION_TIME}
-             ,#{CREATE_TIME}
-             ,#{WRITE_DOCTOR}
-               )
-       </insert>
-    <!--public  boolean insertMEDICAL(DiabetesNew diabetesNew);-->
-      <insert id="insertMEDICAL"
             parameterType="com.dtsp.ModelNew.DiabetesNew">
-          insert  into
-             FIRST_DIAGNOSE_REPORT_GLUCOSE
-             (
-             ID
-             <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
-             ,DIAGNOSECODE
-             </if>
-            <if test="DIAGNOSISBASISOTHER!=null AND DIAGNOSISBASISOTHER!=''">
-             ,DIAGNOSISBASISOTHER
-            </if>
-            <if test="COMPLICATIONS!=null AND COMPLICATIONS!=''">
-             ,COMPLICATIONS
-            </if>
-            <if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">
-             ,ICD_10_TEXT
-            </if>)
-          values (
-          #{ID},
-          <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
-          ,#{DIAGNOSECODE}
-          </if>
-          <if test="DIAGNOSISBASISOTHER!=null AND DIAGNOSISBASISOTHER!=''">
-          #{DIAGNOSISBASISOTHER}
-          </if>
-          <if test="COMPLICATIONS!=null AND COMPLICATIONS!=''">
-          ,#{COMPLICATIONS}
-          </if>
-          <if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">
-          #{ICD_10_TEXT}
-          </if>)
-      </insert>
+        insert into
+        MEDICAL_INFORMATION_ENREGISTER
+        (
+        INF_ID
+        ,VISIT_NO
+        ,RESI_CASE_NO
+        ,SICK_NAME
+        ,SICK_SEX
+        ,NATION
+        ,OCCUPATION
+        ,BIRTHDAY
+        ,ADDRESS
+        ,RECEPTION_ORG
+        ,RECEPTION_TIME
+        ,CREATE_TIME
+        ,WRITE_DOCTOR)
+        values
+        (
+        #{INF_ID}
+        ,#{VISIT_NO}
+        ,#{RESI_CASE_NO}
+        ,#{SICK_NAME}
+        ,#{SICK_SEX}
+        ,#{NATION}
+        ,#{OCCUPATION}
+        ,#{BIRTHDAY}
+        ,#{ADDRESS}
+        ,#{RECEPTION_ORG}
+        ,#{RECEPTION_TIME}
+        ,#{CREATE_TIME}
+        ,#{WRITE_DOCTOR}
+        )
+    </insert>
+    <!--public  boolean insertMEDICAL(DiabetesNew diabetesNew);-->
+    <insert id="insertMEDICAL"
+            parameterType="com.dtsp.ModelNew.DiabetesNew">
+        insert  into
+        FIRST_DIAGNOSE_REPORT_GLUCOSE
+        (
+        ID
+        ,DIAGNOSECODE
+        ,DIAGNOSISBASISOTHER
+        ,COMPLICATIONS
+        ,ICD_10_TEXT
+        )
+        values
+        (
+        #{ID}
+        ,#{DIAGNOSECODE}
+        ,#{DIAGNOSISBASISOTHER}
+        ,#{COMPLICATIONS}
+        ,#{ICD_10_TEXT}
+        )
+    </insert>
+    <!--<insert id="insertDisbetes"-->
+             <!--parameterType="com.dtsp.ModelNew.DiabetesNew">-->
+       <!--insert into-->
+          <!--MEDICAL_INFORMATION_ENREGISTER-->
+            <!--(-->
+              <!--INF_ID-->
+             <!--,VISIT_NO-->
+             <!--,RESI_CASE_NO-->
+             <!--,SICK_NAME-->
+             <!--,SICK_SEX-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+             <!--,NATION-->
+        <!--</if>-->
+             <!--,OCCUPATION-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+             <!--,BIRTHDAY-->
+        <!--</if>-->
+          <!--,ADDRESS-->
+          <!--,RECEPTION_ORG-->
+          <!--,RECEPTION_TIME-->
+          <!--,CREATE_TIME-->
+          <!--,WRITE_DOCTOR)-->
+        <!--values-->
+           <!--(-->
+             <!--#{INF_ID}-->
+             <!--,#{VISIT_NO}-->
+             <!--,#{RESI_CASE_NO}-->
+             <!--,#{SICK_NAME}-->
+             <!--,#{SICK_SEX}-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+             <!--,#{NATION}-->
+        <!--</if>-->
+             <!--,#{OCCUPATION}-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+             <!--,#{BIRTHDAY}-->
+        <!--</if>-->
+             <!--,#{ADDRESS}-->
+             <!--,#{RECEPTION_ORG}-->
+             <!--,#{RECEPTION_TIME}-->
+             <!--,#{CREATE_TIME}-->
+             <!--,#{WRITE_DOCTOR}-->
+               <!--)-->
+       <!--</insert>-->
+    <!--&lt;!&ndash;public  boolean insertMEDICAL(DiabetesNew diabetesNew);&ndash;&gt;-->
+      <!--<insert id="insertMEDICAL"-->
+            <!--parameterType="com.dtsp.ModelNew.DiabetesNew">-->
+          <!--insert  into-->
+             <!--FIRST_DIAGNOSE_REPORT_GLUCOSE-->
+             <!--(-->
+             <!--ID-->
+             <!--<if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">-->
+             <!--,DIAGNOSECODE-->
+             <!--</if>-->
+            <!--<if test="DIAGNOSISBASISOTHER!=null AND DIAGNOSISBASISOTHER!=''">-->
+             <!--,DIAGNOSISBASISOTHER-->
+            <!--</if>-->
+            <!--<if test="COMPLICATIONS!=null AND COMPLICATIONS!=''">-->
+             <!--,COMPLICATIONS-->
+            <!--</if>-->
+            <!--<if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">-->
+             <!--,ICD_10_TEXT-->
+            <!--</if>)-->
+          <!--values (-->
+          <!--#{ID}-->
+          <!--<if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">-->
+          <!--,#{DIAGNOSECODE}-->
+          <!--</if>-->
+          <!--<if test="DIAGNOSISBASISOTHER!=null AND DIAGNOSISBASISOTHER!=''">-->
+          <!--,#{DIAGNOSISBASISOTHER}-->
+          <!--</if>-->
+          <!--<if test="COMPLICATIONS!=null AND COMPLICATIONS!=''">-->
+          <!--,#{COMPLICATIONS}-->
+          <!--</if>-->
+          <!--<if test="ICD_10_TEXT!=null AND ICD_10_TEXT!=''">-->
+          <!--,#{ICD_10_TEXT}-->
+          <!--</if>)-->
+      <!--</insert>-->
 
 </mapper>

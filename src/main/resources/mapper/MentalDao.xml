@@ -30,106 +30,171 @@
     1=1 and BKLX_ID = '05'
                 ORDER BY Date_of_TB DESC
        </select>
-	<insert id="insertMental"
-			parameterType="com.dtsp.ModelNew.MentalNew">
+  <insert id="insertMental"
+          parameterType="com.dtsp.ModelNew.MentalNew">
     insert into
-      MEDICAL_INFORMATION_ENREGISTER
+    MEDICAL_INFORMATION_ENREGISTER
     (
-      INF_ID
-      ,VISIT_NO
-      ,RESI_CASE_NO
-      ,SICK_NAME
-      ,SICK_SEX
-        <if test="NATION!=null AND NATION!=''">
-      ,NATION
-        </if>
-      ,OCCUPATION
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
-      ,BIRTHDAY
-        </if>
-      ,ADDRESS
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
-      ,WORK_PLACE
-        </if>
-      ,RECEPTION_ORG
-      ,RECEPTION_TIME
-      ,CREATE_TIME
-      ,WRITE_DOCTOR
-     )
+    INF_ID
+    ,VISIT_NO
+    ,RESI_CASE_NO
+    ,SICK_NAME
+    ,SICK_SEX
+    ,NATION
+    ,OCCUPATION
+    ,BIRTHDAY
+    ,ADDRESS
+    ,WORK_PLACE
+    ,RECEPTION_ORG
+    ,RECEPTION_TIME
+    ,CREATE_TIME
+    ,WRITE_DOCTOR
+    )
     values
     (
-      #{ID}
-      ,#{VISIT_NO}
-      ,#{RESI_CASE_NO}
-      ,#{SICK_NAME}
-      ,#{SICK_SEX}
-        <if test="NATION!=null AND NATION!=''">
-      ,#{NATION}
-        </if>
-      ,#{OCCUPATION}
-      ,#{BIRTHDAY}
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
-      ,#{ADDRESS}
-        </if>
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
-      ,#{WORK_PLACE}
-        </if>
-      ,#{RECEPTION_ORG}
-      ,#{RECEPTION_TIME}
-      ,#{CREATE_TIME}
-      ,#{WRITE_DOCTOR}
-     )
-	</insert>
-
-	<!--  public  boolean insertMEDICAL  (MentalOld mentalOld);-->
-	<insert id="insertMEDICAL"
-			parameterType="com.dtsp.ModelNew.MentalNew">
-      insert into
-        FIRST_DIAGNOSE_REPORT_PSY
-      (
-      ID
-        <if test="FAMILY_HISTORY!=null AND FAMILY_HISTORY!=''">
-      ,FAMILY_HISTORY
-        </if>
-        <if test="DISPOSITION!=null AND DISPOSITION!=''">
-      ,DISPOSITION
-        </if>
-        <if test="PSYCHO!=null AND PSYCHO!=''">
-      ,PSYCHO
-        </if>
-        <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
-      ,DIAGNOSECODE
-        </if>
-        <if test="ACCIDENT_DATE!=null AND ACCIDENT_DATE!=''">
-      ,ACCIDENT_DATE
-        </if>
-        <if test="CCMD3_CODE!=null AND CCMD3_CODE!=''">
-      ,CCMD3_CODE
-        </if>
+    #{ID}
+    ,#{VISIT_NO}
+    ,#{RESI_CASE_NO}
+    ,#{SICK_NAME}
+    ,#{SICK_SEX}
+    ,#{NATION}
+    ,#{OCCUPATION}
+    ,#{BIRTHDAY}
+    ,#{ADDRESS}
+    ,#{WORK_PLACE}
+    ,#{RECEPTION_ORG}
+    ,#{RECEPTION_TIME}
+    ,#{CREATE_TIME}
+    ,#{WRITE_DOCTOR}
     )
-      values
-      (
-      #{ID}
-        <if test="FAMILY_HISTORY!=null AND FAMILY_HISTORY!=''">
-      ,#{FAMILY_HISTORY}
-        </if>
-        <if test="DISPOSITION!=null AND DISPOSITION!=''">
-      ,#{DISPOSITION}
-        </if>
-        <if test="PSYCHO!=null AND PSYCHO!=''">
-      ,#{PSYCHO}
-        </if>
-        <if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">
-      ,#{DIAGNOSECODE}
-        </if>
-        <if test="ACCIDENT_DATE!=null AND ACCIDENT_DATE!=''">
-      ,#{ACCIDENT_DATE}
-        </if>
-        <if test="CCMD3_CODE!=null AND CCMD3_CODE!=''">
-      #{CCMD3_CODE}
-        </if>
-     )
-	</insert>
+  </insert>
+
+  <!--  public  boolean insertMEDICAL  (MentalOld mentalOld);-->
+  <insert id="insertMEDICAL"
+          parameterType="com.dtsp.ModelNew.MentalNew">
+    insert into
+    FIRST_DIAGNOSE_REPORT_PSY
+    (
+    ID
+    ,FAMILY_HISTORY
+    ,DISPOSITION
+    ,PSYCHO
+    ,DIAGNOSECODE
+    ,ACCIDENT_DATE
+    ,CCMD3_CODE
+    )
+    values
+    (
+    #{ID}
+    ,#{FAMILY_HISTORY}
+    ,#{DISPOSITION}
+    ,#{PSYCHO}
+    ,#{DIAGNOSECODE}
+    ,#{ACCIDENT_DATE}
+    ,#{CCMD3_CODE}
+    )
+  </insert>
+
+  <!--<insert id="insertMental"-->
+			<!--parameterType="com.dtsp.ModelNew.MentalNew">-->
+    <!--insert into-->
+      <!--MEDICAL_INFORMATION_ENREGISTER-->
+    <!--(-->
+      <!--INF_ID-->
+      <!--,VISIT_NO-->
+      <!--,RESI_CASE_NO-->
+      <!--,SICK_NAME-->
+      <!--,SICK_SEX-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+      <!--,NATION-->
+        <!--</if>-->
+      <!--,OCCUPATION-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+      <!--,BIRTHDAY-->
+        <!--</if>-->
+      <!--,ADDRESS-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+      <!--,WORK_PLACE-->
+        <!--</if>-->
+      <!--,RECEPTION_ORG-->
+      <!--,RECEPTION_TIME-->
+      <!--,CREATE_TIME-->
+      <!--,WRITE_DOCTOR-->
+     <!--)-->
+    <!--values-->
+    <!--(-->
+      <!--#{ID}-->
+      <!--,#{VISIT_NO}-->
+      <!--,#{RESI_CASE_NO}-->
+      <!--,#{SICK_NAME}-->
+      <!--,#{SICK_SEX}-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+      <!--,#{NATION}-->
+        <!--</if>-->
+      <!--,#{OCCUPATION}-->
+      <!--,#{BIRTHDAY}-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+      <!--,#{ADDRESS}-->
+        <!--</if>-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+      <!--,#{WORK_PLACE}-->
+        <!--</if>-->
+      <!--,#{RECEPTION_ORG}-->
+      <!--,#{RECEPTION_TIME}-->
+      <!--,#{CREATE_TIME}-->
+      <!--,#{WRITE_DOCTOR}-->
+     <!--)-->
+	<!--</insert>-->
+
+	<!--&lt;!&ndash;  public  boolean insertMEDICAL  (MentalOld mentalOld);&ndash;&gt;-->
+	<!--<insert id="insertMEDICAL"-->
+			<!--parameterType="com.dtsp.ModelNew.MentalNew">-->
+      <!--insert into-->
+        <!--FIRST_DIAGNOSE_REPORT_PSY-->
+      <!--(-->
+      <!--ID-->
+        <!--<if test="FAMILY_HISTORY!=null AND FAMILY_HISTORY!=''">-->
+      <!--,FAMILY_HISTORY-->
+        <!--</if>-->
+        <!--<if test="DISPOSITION!=null AND DISPOSITION!=''">-->
+      <!--,DISPOSITION-->
+        <!--</if>-->
+        <!--<if test="PSYCHO!=null AND PSYCHO!=''">-->
+      <!--,PSYCHO-->
+        <!--</if>-->
+        <!--<if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">-->
+      <!--,DIAGNOSECODE-->
+        <!--</if>-->
+        <!--<if test="ACCIDENT_DATE!=null AND ACCIDENT_DATE!=''">-->
+      <!--,ACCIDENT_DATE-->
+        <!--</if>-->
+        <!--<if test="CCMD3_CODE!=null AND CCMD3_CODE!=''">-->
+      <!--,CCMD3_CODE-->
+        <!--</if>-->
+    <!--)-->
+      <!--values-->
+      <!--(-->
+      <!--#{ID}-->
+        <!--<if test="FAMILY_HISTORY!=null AND FAMILY_HISTORY!=''">-->
+      <!--,#{FAMILY_HISTORY}-->
+        <!--</if>-->
+        <!--<if test="DISPOSITION!=null AND DISPOSITION!=''">-->
+      <!--,#{DISPOSITION}-->
+        <!--</if>-->
+        <!--<if test="PSYCHO!=null AND PSYCHO!=''">-->
+      <!--,#{PSYCHO}-->
+        <!--</if>-->
+        <!--<if test="DIAGNOSECODE!=null AND DIAGNOSECODE!=''">-->
+      <!--,#{DIAGNOSECODE}-->
+        <!--</if>-->
+        <!--<if test="ACCIDENT_DATE!=null AND ACCIDENT_DATE!=''">-->
+      <!--,#{ACCIDENT_DATE}-->
+        <!--</if>-->
+        <!--<if test="CCMD3_CODE!=null AND CCMD3_CODE!=''">-->
+      <!--#{CCMD3_CODE}-->
+        <!--</if>-->
+     <!--)-->
+	<!--</insert>-->
 
 </mapper>
 

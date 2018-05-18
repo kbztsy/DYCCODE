@@ -26,15 +26,34 @@
         ,BIRTHDAY
         ,SICK_NAME
         ,SICK_SEX)
-      values(
+        values(
         #{INF_ID}
         ,#{VISIT_NO}
         ,#{RESI_CASE_NO}
-        <if test="BIRTHDAY!=null AND BIRTHDAY!=''">
         ,#{BIRTHDAY}
-        </if>
         ,#{SICK_NAME}
         ,#{SICK_SEX} )
     </insert>
+    <!--<insert id="insertInternal"-->
+            <!--parameterType="com.dtsp.ModelNew.InternalNew">-->
+        <!--insert into-->
+        <!--MEDICAL_INFORMATION_ENREGISTER-->
+        <!--(-->
+        <!--INF_ID-->
+        <!--,VISIT_NO-->
+        <!--,RESI_CASE_NO-->
+        <!--,BIRTHDAY-->
+        <!--,SICK_NAME-->
+        <!--,SICK_SEX)-->
+      <!--values(-->
+        <!--#{INF_ID}-->
+        <!--,#{VISIT_NO}-->
+        <!--,#{RESI_CASE_NO}-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY!=''">-->
+        <!--,#{BIRTHDAY}-->
+        <!--</if>-->
+        <!--,#{SICK_NAME}-->
+        <!--,#{SICK_SEX} )-->
+    <!--</insert>-->
 </mapper>
 

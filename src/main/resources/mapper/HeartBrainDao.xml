@@ -28,65 +28,120 @@
        </select>
     <insert id="insertHeartBrain"
             parameterType="com.dtsp.ModelNew.HeartBrainNew">
-       insert into  MEDICAL_INFORMATION_ENREGISTER
-       (
+        insert into
+        MEDICAL_INFORMATION_ENREGISTER
+        (
         INF_ID
         ,VISIT_NO
         ,RESI_CASE_NO
         ,SICK_NAME
         ,SICK_SEX
-        <if test="NATION!=null AND NATION!=''">
         ,NATION
-        </if>
         ,OCCUPATION
-        <if test="BIRTHDAY!=null AND BIRTHDAY=''">
         ,BIRTHDAY
-        </if>
         ,ADDRESS
         ,RECEPTION_ORG
         ,RECEPTION_TIME
         ,CREATE_TIME
-        ,WRITE_DOCTOR)
+        ,WRITE_DOCTOR
+        )
         values
         (
-         #{INF_ID}
+        #{INF_ID}
         ,#{VISIT_NO}
         ,#{RESI_CASE_NO}
         ,#{SICK_NAME}
         ,#{SICK_SEX}
         ,#{NATION}
         ,#{OCCUPATION}
-        <if test="BIRTHDAY!=null">
         ,#{BIRTHDAY}
-        </if>
         ,#{ADDRESS}
-        <if test="RECEPTION_TIME!=null">
         ,#{RECEPTION_TIME}
-        </if>
-        <if test=" CREATE_TIME!=null">
         ,#{CREATE_TIME}
-        </if>
         ,#{WRITE_DOCTOR}
-       )
+        )
     </insert>
 
     <insert id="insertMEDICAL"
             parameterType="com.dtsp.ModelNew.HeartBrainNew">
- insert into
-     FIRST_DIAGNOSE_REPORT_HEIGHT(
-     ID
-     ,DIAGNOSECODE
-     ,DIAGNOSISBASIS
-     ,DIAGNOSISBASISOTHER
-     <if test="SMOKING!=null AND SMOKING!=''">
-     ,SMOKING</if>)
-    values (
-      #{ID}
-      ,#{DIAGNOSECODE}
-      ,#{DIAGNOSISBASIS}
-      ,#{DIAGNOSISBASISOTHER}
-        <if test="SMOKING!=null AND SMOKING!=''">
-      ,#{SMOKING}
-        </if>)
+        insert into
+        FIRST_DIAGNOSE_REPORT_HEIGHT
+        (
+        ID
+        ,DIAGNOSECODE
+        ,DIAGNOSISBASIS
+        ,DIAGNOSISBASISOTHER
+        ,SMOKING
+        )
+        values (
+        #{ID}
+        ,#{DIAGNOSECODE}
+        ,#{DIAGNOSISBASIS}
+        ,#{DIAGNOSISBASISOTHER}
+        ,#{SMOKING}
+        )
     </insert>
+    <!--<insert id="insertHeartBrain"-->
+            <!--parameterType="com.dtsp.ModelNew.HeartBrainNew">-->
+       <!--insert into  MEDICAL_INFORMATION_ENREGISTER-->
+       <!--(-->
+        <!--INF_ID-->
+        <!--,VISIT_NO-->
+        <!--,RESI_CASE_NO-->
+        <!--,SICK_NAME-->
+        <!--,SICK_SEX-->
+        <!--<if test="NATION!=null AND NATION!=''">-->
+        <!--,NATION-->
+        <!--</if>-->
+        <!--,OCCUPATION-->
+        <!--<if test="BIRTHDAY!=null AND BIRTHDAY=''">-->
+        <!--,BIRTHDAY-->
+        <!--</if>-->
+        <!--,ADDRESS-->
+        <!--,RECEPTION_ORG-->
+        <!--,RECEPTION_TIME-->
+        <!--,CREATE_TIME-->
+        <!--,WRITE_DOCTOR)-->
+        <!--values-->
+        <!--(-->
+         <!--#{INF_ID}-->
+        <!--,#{VISIT_NO}-->
+        <!--,#{RESI_CASE_NO}-->
+        <!--,#{SICK_NAME}-->
+        <!--,#{SICK_SEX}-->
+        <!--,#{NATION}-->
+        <!--,#{OCCUPATION}-->
+        <!--<if test="BIRTHDAY!=null">-->
+        <!--,#{BIRTHDAY}-->
+        <!--</if>-->
+        <!--,#{ADDRESS}-->
+        <!--<if test="RECEPTION_TIME!=null">-->
+        <!--,#{RECEPTION_TIME}-->
+        <!--</if>-->
+        <!--<if test=" CREATE_TIME!=null">-->
+        <!--,#{CREATE_TIME}-->
+        <!--</if>-->
+        <!--,#{WRITE_DOCTOR}-->
+       <!--)-->
+    <!--</insert>-->
+
+    <!--<insert id="insertMEDICAL"-->
+            <!--parameterType="com.dtsp.ModelNew.HeartBrainNew">-->
+ <!--insert into-->
+     <!--FIRST_DIAGNOSE_REPORT_HEIGHT(-->
+     <!--ID-->
+     <!--,DIAGNOSECODE-->
+     <!--,DIAGNOSISBASIS-->
+     <!--,DIAGNOSISBASISOTHER-->
+     <!--<if test="SMOKING!=null AND SMOKING!=''">-->
+     <!--,SMOKING</if>)-->
+    <!--values (-->
+      <!--#{ID}-->
+      <!--,#{DIAGNOSECODE}-->
+      <!--,#{DIAGNOSISBASIS}-->
+      <!--,#{DIAGNOSISBASISOTHER}-->
+        <!--<if test="SMOKING!=null AND SMOKING!=''">-->
+      <!--,#{SMOKING}-->
+        <!--</if>)-->
+    <!--</insert>-->
 </mapper>
