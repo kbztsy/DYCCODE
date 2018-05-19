@@ -12,6 +12,8 @@ import java.util.List;
 public interface HeartBrainDao {
     public List<HeartBrainOld> GetHeartBrain();
     public  boolean insertHeartBrain(HeartBrainNew heartBrain);
-    public  boolean insertMEDICAL(HeartBrainNew heartBrain);
-    public  boolean insertMEDICAL2(HeartBrainNew heartBrain);
+    public  boolean insertBRAIN(HeartBrainNew heartBrain);//脑卒中
+    public  boolean insertHEART(HeartBrainNew heartBrain);//冠心病
+    public  boolean insertHEIGHT(HeartBrainNew heartBrain);//高血压
+
 }

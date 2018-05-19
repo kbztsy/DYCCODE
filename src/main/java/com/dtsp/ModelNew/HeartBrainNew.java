@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class HeartBrainNew {
+    @Autowired
+    private RandNumber randNumber;
     private String INF_ID;
     private BigDecimal ID;
     private String VISIT_NO;
@@ -25,7 +27,15 @@ public class HeartBrainNew {
     private Date RECEPTION_TIME;
     private Date CREATE_TIME;
     private String WRITE_DOCTOR;
+    private String BKLX_ID;
 
+    public String getBKLX_ID() {
+        return BKLX_ID;
+    }
+
+    public void setBKLX_ID(String BKLX_ID) {
+        this.BKLX_ID = BKLX_ID;
+    }
     public String getINF_ID() {
         return INF_ID;
     }

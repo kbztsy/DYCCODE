@@ -28,10 +28,12 @@ public class InfectiousService {
         try{
             infectiousDao.insertMEDICAL(infectiousNew);
             infectiousDao.insertInfectious(infectiousNew);
+            return true;
         } catch(Exception e){
-            throw e;
-        }
-        return true;
+            e.printStackTrace();
+            return  false;
+       }
+
     }
 
     @DS("datasource1")

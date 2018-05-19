@@ -7,8 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class InternalNew {
-    @Autowired
-    private RandNumber randNumber;
+
     private String INF_ID;
     private BigDecimal ID;
     private String VISIT_NO;// 门诊住院号

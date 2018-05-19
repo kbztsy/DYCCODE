@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class DiabetesNew {
+    @Autowired
+    private RandNumber randNumber;
     private String INF_ID;
     private BigDecimal ID;
     private String  VISIT_NO;//   门诊住院号
@@ -22,7 +24,6 @@ public class DiabetesNew {
     private String DIAGNOSISBASISOTHER;
     private String COMPLICATIONS;//    合并症
     private String ICD_10_TEXT;// ICD--10
-
     private String	RECEPTION_ORG;//    诊断单位
     private Date RECEPTION_TIME;//诊断日期
     private Date	CREATE_TIME;//  填报日期

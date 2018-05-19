@@ -5,6 +5,7 @@ import com.dtsp.ModelNew.NauseaNew;
 import com.dtsp.ModelOld.Login;
 import com.dtsp.ModelOld.NauseaOld;
 import com.dtsp.service.NauseaService;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/nausea")
 public class NauseaController {
+    private final org.apache.logging.log4j.Logger logger = LogManager.getLogger(NauseaController.class);
     @Autowired
     private NauseaService nauseaService;
     @Autowired
@@ -38,18 +40,26 @@ public class NauseaController {
         }
         try{
             List<NauseaOld> oldcir = nauseaService.getAllNausea2();
-            for (NauseaOld nauseaOld:oldcir) {
-                System.out.println(nauseaOld);
-            }
+
             List<NauseaNew> list= nauseaService.upNauseals(oldcir);
+            if (list.size() == 0) {
+                logger.info("Nausea查询为空");
+                logger.error("Nausea查询失败，未插入");
+                jsonObject.put("StateMag", 3);
+                return jsonObject;
+            }
+            logger.info("Nausea本次获取" + list.size() + "条数据");
             for (NauseaNew nuseaNew:list) {
-                System.out.println(nuseaNew);
                 nauseaService.insertNausea(nuseaNew);
+                logger.info("Nausea插入成功");
+                logger.info("插入数据：" + nuseaNew);
             }
             jsonObject.put("StateMsg",0);
             return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
+            logger.error("Nausea异常日志");
+            logger.error("失败" + e.getMessage());
             jsonObject.put("StateMsg",1);
             jsonObject.put("Message",e.getMessage());
             return jsonObject;

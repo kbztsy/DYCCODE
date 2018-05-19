@@ -32,10 +32,13 @@ public class NauseaService {
         try{
             nauseaDao.insertMEDICAL(nauseaNew);
             nauseaDao.insertNausea(nauseaNew);
+            return true;
         } catch(Exception e){
-            throw e;
+
+            e.printStackTrace();
+            return  false;
         }
-        return true;
+
     }
 
     //将new集合插入到表中

@@ -36,7 +36,7 @@
     MEDICAL_INFORMATION_ENREGISTER
     (
     INF_ID
-    ,VISIT_NO
+   ,VISIT_NO
     ,RESI_CASE_NO
     ,SICK_NAME
     ,SICK_SEX
@@ -52,20 +52,20 @@
     )
     values
     (
-    #{ID}
-    ,#{VISIT_NO}
-    ,#{RESI_CASE_NO}
-    ,#{SICK_NAME}
-    ,#{SICK_SEX}
-    ,#{NATION}
-    ,#{OCCUPATION}
-    ,#{BIRTHDAY}
-    ,#{ADDRESS}
-    ,#{WORK_PLACE}
-    ,#{RECEPTION_ORG}
-    ,#{RECEPTION_TIME}
-    ,#{CREATE_TIME}
-    ,#{WRITE_DOCTOR}
+    #{INF_ID}
+     ,#{VISIT_NO}
+     ,#{RESI_CASE_NO}
+     ,#{SICK_NAME}
+     ,#{SICK_SEX}
+     ,#{NATION}
+     ,#{OCCUPATION}
+     ,#{BIRTHDAY}
+     ,#{ADDRESS}
+     ,#{WORK_PLACE}
+     ,#{RECEPTION_ORG}
+     ,#{RECEPTION_TIME}
+     ,#{CREATE_TIME}
+     ,#{WRITE_DOCTOR}
     )
   </insert>
 

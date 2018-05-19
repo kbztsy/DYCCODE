@@ -26,13 +26,14 @@ public class DisbetesService {
     @DS("datasource1")
     public  boolean insertDisbetes( DiabetesNew diabetesNew){
         try{
-            disbetesDao.insertDisbetes(diabetesNew);
             disbetesDao.insertMEDICAL(diabetesNew);
+            disbetesDao.insertDisbetes(diabetesNew);
+            return true;
         } catch(Exception e){
-
+            e.printStackTrace();
             return false;
         }
-        return true;
+
     }
     //list插入
     //将new集合插入到表中

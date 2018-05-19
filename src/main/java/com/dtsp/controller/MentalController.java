@@ -5,6 +5,7 @@ import com.dtsp.ModelNew.MentalNew;
 import com.dtsp.ModelOld.Login;
 import com.dtsp.ModelOld.MentalOld;
 import com.dtsp.service.MentalService;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/mental")
 public class MentalController {
+    private final org.apache.logging.log4j.Logger logger = LogManager.getLogger(MentalController.class);
     @Autowired
     private MentalService mentalService;
     @Autowired
@@ -39,19 +41,27 @@ public class MentalController {
         }
         try{
             List<MentalOld> oldcir = mentalService.getAllMental2();
-            for (MentalOld mentalOld:oldcir) {
-                System.out.println(mentalOld);
-            }
+
             List<MentalNew> list= mentalService.upMentalls(oldcir);
+            if (list.size() == 0) {
+                logger.info("Mental查询为空");
+                logger.error("Mental查询失败，未插入");
+                jsonObject.put("StateMag", 3);
+                return jsonObject;
+            }
+            logger.info("Mental本次获取" + list.size() + "条数据");
             for (MentalNew mentalNew:list) {
-                System.out.println(mentalNew);
                 mentalService.insertMental(mentalNew);
+                logger.info("Mental插入成功");
+                logger.info("插入数据：" + mentalNew);
             }
 
             jsonObject.put("StateMsg",0);
             return jsonObject;
         } catch(Exception e){
             e.printStackTrace();
+            logger.error("Mental异常日志");
+            logger.error("失败" + e.getMessage());
             jsonObject.put("NameMsg","Mental");
             jsonObject.put("StateMsg",1);
             jsonObject.put("Message",e.getMessage());

@@ -20,6 +20,15 @@ public class HeartBrainOld {//冠心病，腦卒中
     private String tbdw;
     private Date date_of_tb;
     private String person_of_tb;
+    private String BKLX_ID;
+
+    public String getBKLX_ID() {
+        return BKLX_ID;
+    }
+
+    public void setBKLX_ID(String BKLX_ID) {
+        this.BKLX_ID = BKLX_ID;
+    }
 
     public String getMzzy_id() {
         return mzzy_id;

@@ -20,7 +20,7 @@ public class CirrhosisTimer {
     private RandNumber randNumber;
     @Autowired
     private CirrhosisService cirrhosisService;
-    @Scheduled(fixedRate = 10000)
+   // @Scheduled(fixedRate = 10000)
     public synchronized void CirrhosisDemo(){
         try{
            List<CirrhosisOld> lists = cirrhosisService.GetCirrhosis();

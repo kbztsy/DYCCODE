@@ -32,10 +32,12 @@ public class InternalService {
     public boolean insertInternal(InternalNew internalNew){
         try{
             internalDao.insertInternal(internalNew);
+            return true;
         } catch(Exception e){
-            throw e;
+         e.printStackTrace();
+         return  false;
         }
-        return true;
+
     }
 
     //将new集合插入到表中

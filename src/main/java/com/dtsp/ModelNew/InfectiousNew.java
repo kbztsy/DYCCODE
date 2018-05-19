@@ -7,8 +7,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class InfectiousNew {
-    @Autowired
-    private RandNumber randNumber;
     private String INF_ID;
     private BigDecimal ID;
     private String VISIT_NO;// 门诊住院号
@@ -31,16 +29,16 @@ public class InfectiousNew {
     private String WRITE_DOCTOR;//填报医生
     private Date CREATE_TIME;//医生填卡日期
 
-    public BigDecimal getID() {
-        return ID;
-    }
-
     public String getINF_ID() {
         return INF_ID;
     }
 
     public void setINF_ID(String INF_ID) {
         this.INF_ID = INF_ID;
+    }
+
+    public BigDecimal getID() {
+        return ID;
     }
 
     public void setID(BigDecimal ID) {

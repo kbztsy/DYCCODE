@@ -19,13 +19,17 @@
                date_of_zd as date_of_zd,
                tbdw as tbdw ,
                date_of_tb as date_of_tb,
-               person_of_tb as person_of_tb
+               person_of_tb as person_of_tb,
+               BKLX_ID
              from
                FBK_BKBZ_Record
-             WHERE 1=1 AND BKLX_ID = '03'
+             WHERE 1=1 AND (BKLX_ID = '31' or BKLX_ID = '32' or BKLX_ID = '33')
              order by
                Date_of_TB DESC;
        </select>
+    <!-- public  boolean insertHeartBrain(HeartBrainNew heartBrain);
+    public  boolean insertMEDICAL(HeartBrainNew heartBrain);
+    public  boolean insertMEDICAL2(HeartBrainNew heartBrain);-->
     <insert id="insertHeartBrain"
             parameterType="com.dtsp.ModelNew.HeartBrainNew">
         insert into
@@ -56,25 +60,66 @@
         ,#{OCCUPATION}
         ,#{BIRTHDAY}
         ,#{ADDRESS}
+        ,#{RECEPTION_ORG}
         ,#{RECEPTION_TIME}
         ,#{CREATE_TIME}
         ,#{WRITE_DOCTOR}
         )
     </insert>
-
-    <insert id="insertMEDICAL"
+<!--
+    public  boolean insertHEIGHT(HeartBrainNew heartBrain);//高血压33
+-->
+    <insert id="insertHEIGHT"
             parameterType="com.dtsp.ModelNew.HeartBrainNew">
         insert into
         FIRST_DIAGNOSE_REPORT_HEIGHT
         (
-        ID
+         ID
+        ,DIAGNOSECODE
+        ,SMOKING
+        )
+        values (
+         #{ID}
+        ,#{DIAGNOSECODE}
+        ,#{SMOKING}
+        )
+    </insert>
+    <!--
+    public  boolean insertHEART(HeartBrainNew heartBrain);//冠心病 31-->
+    <insert id="insertHEART"
+            parameterType="com.dtsp.ModelNew.HeartBrainNew">
+ insert into
+        FIRST_DIAGNOSE_REPORT_HEART
+         (
+         ID
         ,DIAGNOSECODE
         ,DIAGNOSISBASIS
         ,DIAGNOSISBASISOTHER
         ,SMOKING
         )
         values (
-        #{ID}
+         #{ID}
+        ,#{DIAGNOSECODE}
+        ,#{DIAGNOSISBASIS}
+        ,#{DIAGNOSISBASISOTHER}
+        ,#{SMOKING}
+        )
+
+    </insert>
+<!--public  boolean insertBRAIN(HeartBrainNew heartBrain);//脑卒中 32-->
+    <insert id="insertBRAIN"
+            parameterType="com.dtsp.ModelNew.HeartBrainNew">
+ insert into
+        FIRST_DIAGNOSE_REPORT_BRAIN
+        (
+         ID
+        ,DIAGNOSECODE
+        ,DIAGNOSISBASIS
+        ,DIAGNOSISBASISOTHER
+        ,SMOKING
+        )
+        values (
+         #{ID}
         ,#{DIAGNOSECODE}
         ,#{DIAGNOSISBASIS}
         ,#{DIAGNOSISBASISOTHER}

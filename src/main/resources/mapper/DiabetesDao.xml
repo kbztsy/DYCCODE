@@ -27,7 +27,9 @@
             Date_of_TB DESC
        </select>
     <!-- 添加数据并返回主键ID,接收主键,必须以实体类接收 -->
-    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性  -->
+    <!-- keyColumn="id"对应数据库字段,keyProperty="id"对应实体类属性
+      public  boolean insertDisbetes(DiabetesNew diabetesNew);
+    public  boolean insertMEDICAL(DiabetesNew diabetesNew);-->
     <!--  public  boolean insertDisbetes( DiabetesNew diabetesNew);-->
     <insert id="insertDisbetes"
             parameterType="com.dtsp.ModelNew.DiabetesNew">
@@ -41,11 +43,19 @@
         ,SICK_SEX
         ,NATION
         ,OCCUPATION
-        ,BIRTHDAY
+
+            ,BIRTHDAY
+
+
         ,ADDRESS
         ,RECEPTION_ORG
-        ,RECEPTION_TIME
-        ,CREATE_TIME
+        <if test="RECEPTION_TIME">
+            ,RECEPTION_TIME
+        </if>
+        <if test="CREATE_TIME">
+            ,CREATE_TIME
+        </if>
+
         ,WRITE_DOCTOR)
         values
         (
@@ -56,11 +66,18 @@
         ,#{SICK_SEX}
         ,#{NATION}
         ,#{OCCUPATION}
+
         ,#{BIRTHDAY}
+
         ,#{ADDRESS}
         ,#{RECEPTION_ORG}
-        ,#{RECEPTION_TIME}
-        ,#{CREATE_TIME}
+        <if test="RECEPTION_TIME">
+            ,#{RECEPTION_TIME}
+        </if>
+     <if test="CREATE_TIME">
+       ,#{CREATE_TIME}
+     </if>
+
         ,#{WRITE_DOCTOR}
         )
     </insert>
@@ -70,7 +87,7 @@
         insert  into
         FIRST_DIAGNOSE_REPORT_GLUCOSE
         (
-        ID
+         ID
         ,DIAGNOSECODE
         ,DIAGNOSISBASISOTHER
         ,COMPLICATIONS
@@ -78,7 +95,7 @@
         )
         values
         (
-        #{ID}
+         #{ID}
         ,#{DIAGNOSECODE}
         ,#{DIAGNOSISBASISOTHER}
         ,#{COMPLICATIONS}

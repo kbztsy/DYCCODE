@@ -33,7 +33,8 @@ public class MentalService {
             mentalDao.insertMEDICAL(mentalNew);
             mentalDao.insertMental(mentalNew);
         } catch(Exception e){
-            throw e;
+           e.printStackTrace();
+           return false;
         }
         return true;
     }

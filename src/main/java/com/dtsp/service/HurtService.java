@@ -30,10 +30,12 @@ public class HurtService {
         try{
             hurtDao.insertMEDICAL(hurtNew);
             hurtDao.insertHurt(hurtNew);
+            return true;
         } catch(Exception e){
-            throw e;
+       e.printStackTrace();
+       return  false;
         }
-        return true;
+
     }
     //将new集合插入到表中
     @DS("datasource1")

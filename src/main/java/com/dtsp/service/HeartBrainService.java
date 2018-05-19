@@ -25,12 +25,26 @@ public class HeartBrainService {
     @DS("datasource1")
     public  boolean insertHeartBrain(HeartBrainNew heartBrainNew) {
         try{
-            heartBrainDao.insertMEDICAL(heartBrainNew);
-            heartBrainDao.insertHeartBrain(heartBrainNew);
+            switch (heartBrainNew.getBKLX_ID()){
+                case "31"://冠心病 31
+                    heartBrainDao.insertHEART(heartBrainNew);
+                    heartBrainDao.insertHeartBrain(heartBrainNew);
+                    return true;
+                case "32"://脑卒中 32
+                    heartBrainDao.insertBRAIN(heartBrainNew);
+                    heartBrainDao.insertHeartBrain(heartBrainNew);
+                    return true;
+                case "33"://高血压33
+                    heartBrainDao.insertHEIGHT(heartBrainNew);
+                    heartBrainDao.insertHeartBrain(heartBrainNew);
+                    return true;
+            }
+            return true;
         } catch(Exception e){
-            throw e;
+         e.printStackTrace();
+         return  false;
         }
-        return true;
+
     }
     @DS("datasource1")
     public boolean insertHeartBrainls(List<HeartBrainNew> list){
@@ -39,6 +53,7 @@ public class HeartBrainService {
                 insertHeartBrain(heartBrainNew);
             }
         } catch(Exception e){
+            e.printStackTrace();
             return false;
         }
         return true;

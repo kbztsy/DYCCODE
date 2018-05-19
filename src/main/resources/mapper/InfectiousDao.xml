@@ -84,11 +84,11 @@
         )
         values
         (
-        #{ID},
-        ,#{DIAGNOSIS_TYPE_CODE},
-        ,#{ACCIDENT_DATE},
-        ,#{DIAGNOSE_DATE},
-        ,#{DEATH_DATE},
+        #{ID}
+        ,#{DIAGNOSIS_TYPE_CODE}
+        ,#{ACCIDENT_DATE}
+        ,#{DIAGNOSE_DATE}
+        ,#{DEATH_DATE}
         ,#{CASETYPE}
         )
     </insert>

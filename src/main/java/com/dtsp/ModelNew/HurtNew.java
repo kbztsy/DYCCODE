@@ -7,8 +7,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class HurtNew {
-    @Autowired
-    private RandNumber randNumber;
+
     private String INF_ID;
     private BigDecimal ID;
     private String VISIT_NO;
@@ -194,7 +193,6 @@ public class HurtNew {
     @Override
     public String toString() {
         return "HurtNew{" +
-                "randNumber=" + randNumber +
                 ", INF_ID='" + INF_ID + '\'' +
                 ", ID=" + ID +
                 ", VISIT_NO='" + VISIT_NO + '\'' +
