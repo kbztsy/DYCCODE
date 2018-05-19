@@ -7,8 +7,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 @Component
 public class CirrhosisNew {
-    @Autowired
-    private RandNumber randNumber;
     private String INF_ID;
     private BigDecimal ID_No;
     private String VISIT_NO;
@@ -29,7 +27,7 @@ public class CirrhosisNew {
     private String WRITE_DOCTOR;
 
     public String getINF_ID() {
-        return randNumber.RandStr15();
+        return INF_ID;
     }
 
     public void setINF_ID(String INF_ID) {
@@ -37,7 +35,7 @@ public class CirrhosisNew {
     }
 
     public BigDecimal getID_No() {
-        return randNumber.RandInt20();
+        return ID_No;
     }
 
     public void setID_No(BigDecimal ID_No) {

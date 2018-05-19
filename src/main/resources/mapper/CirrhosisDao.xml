@@ -45,7 +45,7 @@
     ,CREATE_TIME
     ,WRITE_DOCTOR)
     values(
-    #{INF_ID}
+     #{INF_ID}
     ,#{VISIT_NO}
     ,#{RESI_CASE_NO}
     ,#{SICK_NAME}
@@ -73,7 +73,7 @@
     ,VACCINATE
     )
     values(
-    #{ID}
+    #{ID_No}
     ,#{DIAGNOSECODE}
     ,#{ICD_10_TEXT}
     ,#{PMH}
