@@ -12,8 +12,6 @@ import java.util.List;
 @Component
 public class CirrhosisRef {
     @Autowired
-    private RandNumber randNumber;
-    @Autowired
     private List<CirrhosisNew> listNew;
     @Autowired
     private CirrhosisNew cirrhosisN;
@@ -26,10 +24,6 @@ public class CirrhosisRef {
     }
     public List<CirrhosisNew> REF(List<CirrhosisOld> listOld){
         for (int i = 0;i<listOld.size();i++){
-            System.out.println(randNumber.RandStr15());
-            System.out.println(randNumber.RandInt20());
-            cirrhosisN.setINF_ID(randNumber.RandStr15());
-            cirrhosisN.setID_No(randNumber.RandInt20());
             replaceNullString(listOld.get(i).getMzzy_id());
             cirrhosisN.setVISIT_NO(listOld.get(i).getMzzy_id());
             replaceNullString(listOld.get(i).getMzzy_id());

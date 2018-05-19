@@ -16,8 +16,8 @@ public class CirrhosisTimer {
     private final Logger logger = LogManager.getLogger(CirrhosisTimer.class);
     @Autowired
     private CirrhosisService cirrhosisService;
-    @Scheduled(fixedRate = 2000)
-    public void CirrhosisDemo(){
+    @Scheduled(fixedRate = 10000)
+    public synchronized void CirrhosisDemo(){
         try{
            List<CirrhosisOld> lists = cirrhosisService.GetCirrhosis();
            List<CirrhosisNew> newList = cirrhosisService.upCirrhosisls(lists);
@@ -26,6 +26,7 @@ public class CirrhosisTimer {
                logger.error("Cirrhosis查询失败，未插入");
                return;
            }
+           logger.info("本次获取"+newList.size()+"条数据");
            for(int i=0;i<newList.size();i++) {
                cirrhosisService.insertCirrhosis(newList.get(i));
                logger.info("Cirrhosis插入成功");
