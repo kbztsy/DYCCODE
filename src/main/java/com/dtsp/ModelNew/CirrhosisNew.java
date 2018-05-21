@@ -8,7 +8,7 @@ import java.util.Date;
 @Component
 public class CirrhosisNew {
     private String INF_ID;
-    private BigDecimal ID_No;
+    private BigDecimal ID;
     private String VISIT_NO;
     private String RESI_CASE_NO;
     private String SICK_NAME;
@@ -34,12 +34,12 @@ public class CirrhosisNew {
         this.INF_ID = INF_ID;
     }
 
-    public BigDecimal getID_No() {
-        return ID_No;
+    public BigDecimal getID() {
+        return ID;
     }
 
-    public void setID_No(BigDecimal ID_No) {
-        this.ID_No = ID_No;
+    public void setID(BigDecimal ID) {
+        this.ID = ID;
     }
 
     public String getVISIT_NO() {
@@ -168,29 +168,5 @@ public class CirrhosisNew {
 
     public void setWRITE_DOCTOR(String WRITE_DOCTOR) {
         this.WRITE_DOCTOR = WRITE_DOCTOR;
-    }
-
-    @Override
-    public String toString() {
-        return "CirrhosisNew{" +
-                "INF_ID='" + INF_ID + '\'' +
-                ", ID_No=" + ID_No +
-                ", VISIT_NO='" + VISIT_NO + '\'' +
-                ", RESI_CASE_NO='" + RESI_CASE_NO + '\'' +
-                ", SICK_NAME='" + SICK_NAME + '\'' +
-                ", SICK_SEX='" + SICK_SEX + '\'' +
-                ", NATION='" + NATION + '\'' +
-                ", OCCUPATION='" + OCCUPATION + '\'' +
-                ", BIRTHDAY=" + BIRTHDAY +
-                ", ADDRESS='" + ADDRESS + '\'' +
-                ", DIAGNOSECODE='" + DIAGNOSECODE + '\'' +
-                ", ICD_10_TEXT='" + ICD_10_TEXT + '\'' +
-                ", PMH='" + PMH + '\'' +
-                ", VACCINATE='" + VACCINATE + '\'' +
-                ", RECEPTION_ORG='" + RECEPTION_ORG + '\'' +
-                ", RECEPTION_TIME=" + RECEPTION_TIME +
-                ", CREATE_TIME=" + CREATE_TIME +
-                ", WRITE_DOCTOR='" + WRITE_DOCTOR + '\'' +
-                '}';
     }
 }

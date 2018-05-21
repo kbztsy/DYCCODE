@@ -55,7 +55,7 @@ public class CirrhosisController {
             }
             logger.info("Cirrhosis本次获取" + newList.size() + "条数据");
             for (int i = 0; i < newList.size(); i++) {
-                newList.get(i).setID_No(randNumber.RandInt20());
+                newList.get(i).setID(randNumber.RandInt20());
                 newList.get(i).setINF_ID(randNumber.RandStr15());
                 cirrhosisService.insertCirrhosis(newList.get(i));
                 logger.info("Cirrhosis插入成功");
