@@ -20,14 +20,14 @@ public class CirrhosisTimer {
     private RandNumber randNumber;
     @Autowired
     private CirrhosisService cirrhosisService;
-   // @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 10000)
     public synchronized void CirrhosisDemo(){
         try{
            List<CirrhosisOld> lists = cirrhosisService.GetCirrhosis();
+           System.out.println(lists.size());
            List<CirrhosisNew> newList = cirrhosisService.upCirrhosisls(lists);
-           if(newList.size() == 0){
+           if(lists.size() == 0){
                logger.info("Cirrhosis查询为空");
-               logger.error("Cirrhosis查询失败，未插入");
                return;
            }
            logger.info("Cirrhosis本次获取"+newList.size()+"条数据");

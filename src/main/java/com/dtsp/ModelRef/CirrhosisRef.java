@@ -7,6 +7,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,9 +15,9 @@ import java.util.List;
 @Component
 public class CirrhosisRef {
     @Autowired
-    private List<CirrhosisNew> listNew;
-    @Autowired
     private CirrhosisNew cirrhosisN;
+    @Autowired
+    private List<CirrhosisNew> listNew;
     public void replaceNullString(String str){
         if(str == null ) str = "";
 
@@ -25,8 +26,8 @@ public class CirrhosisRef {
         if(date == null) date=new Date();
     }
     public List<CirrhosisNew> REF(List<CirrhosisOld> listOld){
+        List<CirrhosisNew> listNew = new ArrayList<>();
         for (int i = 0;i<listOld.size();i++){
-            cirrhosisN=null;
             replaceNullString(listOld.get(i).getMzzy_id());
             cirrhosisN.setVISIT_NO(listOld.get(i).getMzzy_id());
             replaceNullString(listOld.get(i).getMzzy_id());
@@ -57,10 +58,8 @@ public class CirrhosisRef {
             cirrhosisN.setCREATE_TIME(listOld.get(i).getDate_of_tb());
             replaceNullString(listOld.get(i).getPerson_of_tb());
             cirrhosisN.setWRITE_DOCTOR(listOld.get(i).getPerson_of_tb());
-            System.out.println("++++=="+listNew.size());
             listNew.add(cirrhosisN);
         }
         return listNew;
     }
-
 }
